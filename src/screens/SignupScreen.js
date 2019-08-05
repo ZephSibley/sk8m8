@@ -1,14 +1,14 @@
+import React from 'react';
 
+const SignupScreen = () => {
 
-SignupScreen = () => {
-
-    signUpHandler = async () => {
+    const signUpHandler = async () => {
         //await AsyncStorage.setItem('userToken', 'abc');
         this.props.navigation.navigate('Main')
       };
 
     return (
-        pass
+        <div>signup</div>
     );
 }
 

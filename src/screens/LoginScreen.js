@@ -1,18 +1,18 @@
+import React from 'react';
 
+const LoginScreen = () => {
 
-LoginScreen = () => {
-
-    loginHandler = async () => {
+    const loginHandler = async () => {
         //await AsyncStorage.setItem('userToken', 'abc');
         this.props.navigation.navigate('Main');
       }
       
-      signupHandler = () => {
+      const signupHandler = () => {
         this.props.navigation.navigate('Signup');
       }
 
       return (
-        pass
+        <div>login</div>
       );
 };
 

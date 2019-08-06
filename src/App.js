@@ -12,9 +12,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route path="/login" component={LoginScreen} />
-        <Route path="/signup" component={SignupScreen} />
-        <PrivateRoute path="" component={HomeScreen} />
+        <Switch>
+          <Route path="/login" component={LoginScreen} />
+          <Route path="/signup" component={SignupScreen} />
+          <PrivateRoute path="" component={HomeScreen} />
+        </Switch>
       </div>
     </Router>
   );

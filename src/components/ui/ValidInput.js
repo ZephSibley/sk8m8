@@ -7,7 +7,7 @@ ValidInput = props => {
     // prop: validationRules: object
     // prop: (optional) equalityControlValue: string
     // prop: Any TextField prop https://material-ui.com/components/text-fields/
-    
+
     const [state, setState] = React.useState({
         value: '',
         valid: false,
@@ -45,4 +45,4 @@ ValidInput = props => {
     )
 }
 
-export default ValidInput;
+export default React.memo(ValidInput);

@@ -6,6 +6,7 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import HomeScreen from './screens/HomeScreen';
+import MapScreen from './screens/MapScreen';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" component={LoginScreen} />
           <Route path="/signup" component={SignupScreen} />
           <PrivateRoute path="" component={HomeScreen} />
+          <PrivateRoute path="trickspot" component={MapScreen} />
         </Switch>
       </div>
     </Router>

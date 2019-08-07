@@ -15,7 +15,7 @@ const MapScreen = () => {
     useEffect(() => {
         getLocation();
         fetchMarkers();
-    }, [location, markers]);
+    }, [location, markers, radius]);
 
     const getLocation = async () => {
         const {latitude, longitude} = await locate();

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
-//import locate from '../utility/locate';
+import locate from '../utility/locate';
 
 const MapScreen = () => {
     const [setState,location,markers,radius,]=useState({
@@ -19,7 +19,7 @@ const MapScreen = () => {
     }, [location, markers]);
 
     const getLocation = async () => {
-        //const {latitude, longitude} = await locate();
+        const {latitude, longitude} = await locate();
         setState(prevState => {
             return {
                 ...prevState,

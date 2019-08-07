@@ -4,14 +4,13 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import locate from '../utility/locate';
 
 const MapScreen = () => {
-    const [setState,location,markers,radius,]=useState({
-        location: {
-            lat: '',
-            long: '',
-        },
-        markers: false,
-        radius: 10,
-    });
+    const [location, setLocation] = useState({
+            lat: null,
+            long: null,
+        });
+    // Marker format TBD
+    const [markers, setMarkers] = useState(null);
+    const [radius, setRadius] = useState(10);
 
     useEffect(() => {
         getLocation();
@@ -20,14 +19,9 @@ const MapScreen = () => {
 
     const getLocation = async () => {
         const {latitude, longitude} = await locate();
-        setState(prevState => {
-            return {
-                ...prevState,
-                location: {
-                    lat: latitude, 
-                    long: longitude
-                },
-            }
+        setLocation({
+                lat: latitude, 
+                long: longitude
         });
     }
 
@@ -37,25 +31,11 @@ const MapScreen = () => {
             ''
         );
         //const markers = await data.json();
-        setState(prevState => {
-            return {
-                ...prevState,
-                markers: data,
-            }
-        });
+        setMarkers(data);
     }
 
-    const handleChange = name => event => {
-        setState(prevState => {
-            return {
-                ...prevState,
-                [name]: event.target.value,
-            }
-        });
-    }
-
-    const handleRadiusChange = name => event => {
-        handleChange(name, event);
+    const handleRadiusChange = event => {
+        setRadius(event.target.value)
         fetchMarkers();
     }
 
@@ -74,7 +54,7 @@ const MapScreen = () => {
                 <option value={0} />
                 <option value={5} />
                 <option value={10} />
-                <option value={20} />
+                <option value={25} />
                 <option value={50} />
                 <option value={100} />
             </NativeSelect>

@@ -7,11 +7,10 @@ ValidInput = props => {
     // prop: validationRules: object
     // prop: (optional) equalityControlValue: string
     // prop: Any TextField prop https://material-ui.com/components/text-fields/
-
-    const [values, setValues] = React.useState({
+    
+    const [state, setState] = React.useState({
         value: '',
         valid: false,
-        validationRules: props.validationRules
       });
 
     inputChangeHandler = val => {
@@ -23,9 +22,8 @@ ValidInput = props => {
               equalTo: equalityControlValue
             };
           }
-
-        setValues({
-            ...values,
+        setState({
+            ...state,
             value: val,
             valid: validate(
                 value, 
@@ -39,8 +37,8 @@ ValidInput = props => {
         <TextField 
             onChangeText={val => this.inputChangeHandler(val)}
             textColor={
-                !this.props.valid ?
-                '#B00020' : 'black'
+                state.valid ?
+                'black' : '#B00020'
             }
             {...props}
         />

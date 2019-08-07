@@ -3,6 +3,8 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 
 import locate from '../utility/locate';
 
+// TODO: Map api, location null case
+
 const MapScreen = () => {
     // Marker format TBD
     const [markers, setMarkers] = useState(null);

@@ -4,46 +4,37 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import locate from '../utility/locate';
 
 const MapScreen = () => {
-    const [location, setLocation] = useState({
-            lat: null,
-            long: null,
-        });
     // Marker format TBD
     const [markers, setMarkers] = useState(null);
     const [radius, setRadius] = useState(10);
+    const [isLoading, setLoadingStatus] = useState(true);
 
     useEffect(() => {
-        getLocation();
         fetchMarkers();
-    }, [location, markers, radius]);
-
-    const getLocation = async () => {
-        const {latitude, longitude} = await locate();
-        setLocation({
-                lat: latitude, 
-                long: longitude
-        });
-    }
+    }, [markers, radius,]);
 
     const fetchMarkers = async () => {
-        // Need to send state.location and state.radius
+        // Need to send location and radius
+        const { lat, long } = await locate();
         const data = await fetch(
-            ''
+            '',
+            lat,
+            long,
+            radius,
         );
         //const markers = await data.json();
         setMarkers(data);
+        setLoadingStatus(false);
     }
 
     const handleRadiusChange = event => {
         setRadius(event.target.value)
-        fetchMarkers();
     }
 
     return (
-        // TODO: render map but give loading spinner for markers
-        markers ? <div>loading...</div> :
         <div>
             Map Stuff
+            {isLoading ? "Spinner" : ""}
             <NativeSelect
                 value={radius}
                 onChange={handleRadiusChange('radius')}

@@ -1,48 +1,85 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import validate from '../../utils/validation/validateTextField';
 
-ValidInput = props => {
-    // prop: validationRules: object
-    // prop: (optional) equalityControlValue: string
-    // prop: Any TextField prop https://material-ui.com/components/text-fields/
+const ValidInput = props => {
+  // prop: label: string
+  // prop: validationRules: object
+  // prop: (optional) controlValue: string
+  // prop: Any Input prop https://material-ui.com/components/text-fields/
 
-    const [state, setState] = React.useState({
-        value: '',
-        valid: false,
-      });
+  const [fieldValue, updateFieldValue] = React.useState('');
+  const [validity, updateValidity] = React.useState(false);
+  const [showField, setShowField] = React.useState(true);
 
-    inputChangeHandler = val => {
-        let connectedValue = {};
-        // Confirmation field handler
-        if (typeof props.equalityControlValue !== 'undefined') {
-            connectedValue = {
-              ...connectedValue,
-              equalTo: equalityControlValue
-            };
-          }
-        setState({
-            ...state,
-            value: val,
-            valid: validate(
-                value, 
-                props.validationRules,
-                connectedValue,
-            )
-        });
+  const inputChangeHandler = val => {
+    updateFieldValue(val);
+    let connectedValue = checkConnectedValue();
+    updateValidity(
+      validate(
+        val,
+        props.validationrules,
+        connectedValue,
+      )
+    );
+  };
+
+  const checkConnectedValue = () => {
+    // Confirmation field handler
+    let connectedValue = {}
+    if (typeof props.controlValue !== 'undefined') {
+      connectedValue = {
+        ...connectedValue,
+        equalTo: props.controlValue
       };
+    }
+    return connectedValue;
+  }
 
-    return(
-        <TextField 
-            onChangeText={val => this.inputChangeHandler(val)}
-            textColor={
-                state.valid ?
-                'black' : '#B00020'
-            }
-            {...props}
-        />
-    )
+  const handleClickShowField = () => {
+    setShowField(!showField);
+  };
+
+  const handleMouseDownField = event => {
+    event.preventDefault();
+  };
+
+  return (
+    <FormControl>
+      <InputLabel htmlFor={props.label}>{props.label}</InputLabel>
+      <Input
+        {...props}
+        id={props.label}
+        value={fieldValue}
+        onChange={e => inputChangeHandler(e.target.value)}
+        textcolor={
+          validity ?
+            'black' : '#B00020'
+        }
+        type={showField ? 'text' : 'password'}
+        endAdornment={
+          (props.label === 'password') ?
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowField}
+                onMouseDown={handleMouseDownField}
+              >
+                {showField ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+            : null
+        }
+      />
+    </FormControl>
+  )
 }
 
 export default React.memo(ValidInput);

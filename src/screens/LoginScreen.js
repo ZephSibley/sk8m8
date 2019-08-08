@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ValidInput from '../components/ui/ValidInput';
+
 const LoginScreen = () => {
 
     const loginHandler = async () => {
@@ -12,7 +14,21 @@ const LoginScreen = () => {
       }
 
       return (
-        <div>login</div>
+        <div>
+          <h1>S K 8 M 8</h1>
+          <ValidInput
+            label='username'
+            validationrules={{
+              isUsername: true,
+            }}
+          />
+          <ValidInput
+              label='password'
+              validationrules={{
+                isPassword: true
+              }}
+          />
+        </div>
       );
 };
 

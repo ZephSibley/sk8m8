@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
-import validate from '../../utility/validation';
+import validate from '../../utils/validation/validateTextField';
 
 ValidInput = props => {
     // prop: validationRules: object

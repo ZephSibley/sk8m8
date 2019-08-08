@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
-import locate from '../utility/locate';
+import locate from '../utils/locate';
 
 // TODO: Map api, location null case
 

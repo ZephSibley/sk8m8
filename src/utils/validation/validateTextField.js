@@ -1,4 +1,4 @@
-const validate = (val, rules, connectedValue) => {
+const validateTextField = (val, rules, connectedValue) => {
     let isValid = true;
     for (let rule in rules) {
         switch (rule) {
@@ -34,4 +34,4 @@ const equalToValidator = (val, checkValue) => {
     return val === checkValue;
 }
 
-export default validate;
+export default validateTextField;

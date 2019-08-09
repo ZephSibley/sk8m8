@@ -8,10 +8,15 @@ const locate = async () => {
     let latitude = null,
         longitude = null;
     if (navigator.geolocation) {
-         _getCurrentPosition().then((coords) => {
-            ({ latitude, longitude } = coords);
-        })
+        try {
+            const myPosition = await _getCurrentPosition();
+            latitude = myPosition.coords.latitude;
+            longitude = myPosition.coords.longitude;
+        } catch (e) {
+            console.log(e)
+        }
     }
+    //console.log(latitude, longitude)
     return { latitude, longitude };
 }
 

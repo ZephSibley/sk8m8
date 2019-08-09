@@ -16,8 +16,8 @@ function App() {
         <Switch>
           <Route path="/login" component={LoginScreen} />
           <Route path="/signup" component={SignupScreen} />
-          <PrivateRoute path="" component={HomeScreen} />
-          <PrivateRoute path="trickspot" component={MapScreen} />
+          <PrivateRoute path="/home" component={HomeScreen} />
+          <PrivateRoute path="/trickspot" component={MapScreen} />
         </Switch>
       </div>
     </Router>

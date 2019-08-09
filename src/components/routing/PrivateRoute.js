@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 let fakeAuth = {
-  isAuthenticated: false,
+  isAuthenticated: true,
 }
 
 function PrivateRoute({ component: Component, ...rest }) {

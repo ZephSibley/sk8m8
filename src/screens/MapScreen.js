@@ -1,55 +1,72 @@
 import React, { useState, useEffect } from 'react';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
+import spinner from '../assets/img/ajax-loader.gif';
 import locate from '../utils/locate';
 
 // TODO: Map api, location null case
 
 const MapScreen = () => {
     // Marker format TBD
+    const [location, setLocation] = useState({
+        lat: null, long: null
+    });
     const [markers, setMarkers] = useState(null);
     const [radius, setRadius] = useState(10);
     const [isLoading, setLoadingStatus] = useState(true);
 
     useEffect(() => {
+        getLocation();
+        //fetchMarkers();
+    }, []);
+
+    useEffect(() => {
         fetchMarkers();
-    }, [markers, radius,]);
+    }, [location, radius])
+
+    const getLocation = async() => {
+        let { latitude, longitude } = await locate();
+        setLocation({
+            lat: latitude,
+            long: longitude
+        });
+    }
 
     const fetchMarkers = async () => {
         // Need to send location and radius
-        const { lat, long } = await locate();
-        const data = await fetch(
+        console.log('fetchMarkers', location, markers, radius)
+        /*const data = await fetch(
             '',
             lat,
             long,
             radius,
         );
         //const markers = await data.json();
-        setMarkers(data);
+        setMarkers(data); */
         setLoadingStatus(false);
     }
 
-    const handleRadiusChange = event => {
-        setRadius(event.target.value)
+    const handleRadiusChange = val => {
+        setRadius(val)
     }
 
     return (
         <div>
             Map Stuff
-            {isLoading ? "Spinner" : ""}
+            {isLoading ? <img src={spinner} /> : ""}
             <NativeSelect
                 value={radius}
-                onChange={handleRadiusChange('radius')}
+                onChange={e => handleRadiusChange(e.target.value)}
                 inputProps={{
                     name: 'radius',
                 }}
             >
-                <option value={0} />
-                <option value={5} />
-                <option value={10} />
-                <option value={25} />
-                <option value={50} />
-                <option value={100} />
+                <option value={0}>0</option>
+                <option value={5}>5</option>
+                <option value={10}>10</option>
+                <option value={25}>25</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
             </NativeSelect>
         </div>
     )

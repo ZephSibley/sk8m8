@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
+import formStyles from '../styles/forms';
 import validate from '../../utils/validation/validateTextField';
 
 const ValidInput = props => {
@@ -18,6 +19,8 @@ const ValidInput = props => {
   const [fieldValue, updateFieldValue] = React.useState('');
   const [validity, updateValidity] = React.useState(false);
   const [showField, setShowField] = React.useState(true);
+
+  const formClasses = formStyles()
 
   const inputChangeHandler = val => {
     updateFieldValue(val);
@@ -58,11 +61,13 @@ const ValidInput = props => {
         {...props}
         id={props.label}
         value={fieldValue}
+        className={formClasses.inputField}
         onChange={e => inputChangeHandler(e.target.value)}
         textcolor={
           validity ?
             'black' : '#B00020'
         }
+        // Password field handling:
         type={showField ? 'text' : 'password'}
         endAdornment={
           (props.label === 'password') ?

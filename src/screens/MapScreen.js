@@ -19,7 +19,6 @@ const MapScreen = () => {
 
     useEffect(() => {
         getLocation();
-        //fetchMarkers();
     }, []);
 
     useEffect(() => {

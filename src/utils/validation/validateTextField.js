@@ -19,8 +19,8 @@ const validateTextField = (val, rules, connectedValue) => {
     return isValid;
 }
 
-
-const emailValidator = val => { //regular expression checks for majority of email formats
+//regular expression checks for majority of email formats
+const emailValidator = val => {
     return /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(
         val
     );

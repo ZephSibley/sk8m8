@@ -52,6 +52,7 @@ const LoginScreen = () => {
           </Button>
         </label>
       </form>
+      <p>No account?</p>
       <Link 
         to='/signup'
         style={{ textDecoration: 'none' }}

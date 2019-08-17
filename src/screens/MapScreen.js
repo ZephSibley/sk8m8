@@ -5,6 +5,8 @@ import spinner from '../assets/img/ajax-loader.gif';
 import locate from '../utils/locate';
 
 // TODO: Map api, location null case
+//https://codesandbox.io/s/43p10r6w94
+// https://github.com/allenhwkim/react-openlayers ??
 
 const MapScreen = () => {
     // Marker format TBD

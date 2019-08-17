@@ -1,19 +1,20 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
+import '../styles/screens.css'
 import formStyles from '../styles/forms';
 import ValidInput from '../components/ui/ValidInput';
 
 const SignupScreen = () => {
     const formClasses = formStyles()
 
-    const signUpHandler = async () => {
+    const signupHandler = async () => {
         //await AsyncStorage.setItem('userToken', 'abc');
-        this.props.navigation.navigate('Main')
+        console.log('signup!')
     };
 
     return (
-        <div>
+        <div className={'screen'}>
             <h1>S K 8 M 8</h1>
             <form className={formClasses.form}>
                 <ValidInput
@@ -27,18 +28,18 @@ const SignupScreen = () => {
                     validationrules={{
                         equalTo: 'email', // TODO: configure equalTo
                     }}
-                    controlValue={}
+                    controlvalue={''}
                 />
                 <ValidInput
                     label='username'
                     validationrules={{
-                        isUsername: true,
+                        minLength: 3,
                     }}
                 />
                 <ValidInput
                     label='password'
                     validationrules={{
-                        isPassword: true
+                        minLength: 6
                     }}
                 />
                 <ValidInput
@@ -46,7 +47,7 @@ const SignupScreen = () => {
                     validationrules={{
                         equalTo: 'password'
                     }}
-                    controlValue={}
+                    controlvalue={''}
                 />
                 <input
                     style={{ display: 'none' }}
@@ -60,6 +61,7 @@ const SignupScreen = () => {
                         color="primary"
                         component="span"
                         className={formClasses.submit}
+                        onClick={() => signupHandler()}
                     >
                         Sign up
               </Button>

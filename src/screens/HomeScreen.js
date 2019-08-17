@@ -1,10 +1,13 @@
 import React from 'react';
 
+import '../styles/screens.css'
 
 const HomeScreen = () => {
 
     return (
-        <div>HomeScreen</div>
+        <div className={'screen'}>
+            HomeScreen
+        </div>
     );
 }
 

@@ -7,13 +7,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-import formStyles from '../styles/forms';
+import formStyles from '../../styles/forms';
 import validate from '../../utils/validation/validateTextField';
 
 const ValidInput = props => {
   // prop: label: string
-  // prop: validationRules: object
-  // prop: (optional) controlValue: string
+  // prop: validationrules: object
+  // prop: (optional) controlvalue: string
   // prop: Any Input prop https://material-ui.com/components/text-fields/
 
   const [fieldValue, updateFieldValue] = React.useState('');
@@ -32,6 +32,7 @@ const ValidInput = props => {
         connectedValue,
       )
     );
+    console.log(validity)
   };
 
   const checkConnectedValue = () => {
@@ -63,10 +64,8 @@ const ValidInput = props => {
         value={fieldValue}
         className={formClasses.inputField}
         onChange={e => inputChangeHandler(e.target.value)}
-        textcolor={
-          validity ?
-            'black' : '#B00020'
-        }
+        error={!validity}
+
         // Password field handling:
         type={showField ? 'text' : 'password'}
         endAdornment={

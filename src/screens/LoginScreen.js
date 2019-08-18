@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
-import '../styles/screens.css'
+import '../styles/screens.css';
+import frontVideo from '../assets/img/front_video_3.mp4'
 import formStyles from '../styles/forms';
 import ValidInput from '../components/ui/ValidInput';
 
@@ -14,12 +15,11 @@ const LoginScreen = () => {
     console.log('login')
   }
 
-  const signupHandler = () => {
-    console.log('signup')
-  }
-
   return (
     <div className={'screen'}>
+      <video autoPlay muted className='video-background'>
+        <source src={frontVideo} type='video/mp4' />
+      </video>
       <h1>S K 8 M 8</h1>
       <form className={formClasses.form}>
         <ValidInput

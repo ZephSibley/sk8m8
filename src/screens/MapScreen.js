@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
 import spinner from '../assets/img/ajax-loader.gif';
-import locate from '../utils/locate';
+import locate from '../utils/browser/locate';
 
 // TODO: Map api, location null case
 //https://codesandbox.io/s/43p10r6w94

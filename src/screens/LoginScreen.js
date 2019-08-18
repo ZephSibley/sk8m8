@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 
 import '../styles/screens.css';
 import frontVideo from '../assets/img/front_video_3.mp4'
+import slowNetwork from '../utils/browser/slowNetwork';
 import formStyles from '../styles/forms';
 import ValidInput from '../components/ui/ValidInput';
 
@@ -18,7 +19,7 @@ const LoginScreen = () => {
   return (
     <div className={'screen'}>
       <video autoPlay muted className='video-background'>
-        <source src={frontVideo} type='video/mp4' />
+        <source src={slowNetwork() ? '' : frontVideo} type='video/mp4' />
       </video>
       <h1>S K 8 M 8</h1>
       <form className={formClasses.form}>

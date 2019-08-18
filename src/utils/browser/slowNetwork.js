@@ -1,7 +1,7 @@
 const slowNetwork = () => {
     let slow = null
     if (window.NetworkInformation) {
-        slow = NetworkInformation.downlink < 350
+        slow = NetworkInformation.downlink < 500
     }
     return slow
 }

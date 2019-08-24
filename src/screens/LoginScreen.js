@@ -3,18 +3,11 @@ import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 import '../styles/screens.css';
-import frontVideo from '../assets/img/front_video_3.mp4'
+import frontVideo from '../assets/img/front_video_3.mp4';
 import slowNetwork from '../utils/browser/slowNetwork';
-import formStyles from '../styles/forms';
-import ValidInput from '../components/ui/ValidInput';
+import LoginForm from '../components/ui/forms/LoginForm';
 
 const LoginScreen = () => {
-  const formClasses = formStyles()
-
-  const loginHandler = async () => {
-    //await AsyncStorage.setItem('userToken', 'abc');
-    console.log('login')
-  }
 
   return (
     <div className={'screen'}>
@@ -22,37 +15,9 @@ const LoginScreen = () => {
         <source src={slowNetwork() ? '' : frontVideo} type='video/mp4' />
       </video>
       <h1>S K 8 M 8</h1>
-      <form className={formClasses.form}>
-        <ValidInput
-          label='username'
-          validationrules={{
-            minLength: 3,
-          }}
-        />
-        <ValidInput
-          label='password'
-          validationrules={{
-            minLength: 6,
-          }}
-        />
-        <input
-          style={{ display: 'none' }}
-          id="button-submit"
-          multiple
-          type="submit"
-        />
-        <label htmlFor="button-submit">
-          <Button
-            variant="contained"
-            color="primary"
-            component="span"
-            className={formClasses.submit}
-            onClick={() => loginHandler()}
-          >
-            Log in
-          </Button>
-        </label>
-      </form>
+
+      <LoginForm />
+
       <p>No account?</p>
       <Link 
         to='/signup'

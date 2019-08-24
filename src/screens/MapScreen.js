@@ -54,7 +54,7 @@ const MapScreen = () => {
     return (
         <div>
             Map Stuff
-            {isLoading ? <img src={spinner} /> : ""}
+            {isLoading ? <img src={spinner} alt='loading' /> : ""}
             <NativeSelect
                 value={radius}
                 onChange={e => handleRadiusChange(e.target.value)}

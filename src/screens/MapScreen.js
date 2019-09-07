@@ -1,49 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import Button from '@material-ui/core/Button';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
+import '../styles/screens.css'
 import spinner from '../assets/img/ajax-loader.gif';
-import locate from '../utils/browser/locate';
+import locate from '../utils/locate';
+import Map from '../components/maps/LeafletMap';
+import CreateMarkerForm from '../components/maps/CreateMarkerForm';
+import formStyles from '../styles/forms';
 
-// TODO: Map api, location null case
-//https://codesandbox.io/s/43p10r6w94
-// https://github.com/allenhwkim/react-openlayers ??
 
 const MapScreen = () => {
     // Marker format TBD
-    const [location, setLocation] = useState({
-        lat: null, long: null
-    });
-    const [markers, setMarkers] = useState(null);
+    const [location, setLocation] = useState([
+        null, null
+    ]);
     const [radius, setRadius] = useState(10);
     const [isLoading, setLoadingStatus] = useState(true);
+    const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
     useEffect(() => {
         getLocation();
     }, []);
 
-    useEffect(() => {
-        fetchMarkers();
-    }, [location, radius])
-
-    const getLocation = async() => {
-        let { latitude, longitude } = await locate();
-        setLocation({
-            lat: latitude,
-            long: longitude
-        });
-    }
-
-    const fetchMarkers = async () => {
-        // Need to send location and radius
-        console.log('fetchMarkers', location, markers, radius)
-        /*const data = await fetch(
-            '',
-            lat,
-            long,
-            radius,
-        );
-        //const markers = await data.json();
-        setMarkers(data); */
+    const getLocation = async () => {
+        const { latitude, longitude } = await locate()
+        setLocation([
+            latitude,
+            longitude
+        ]);
         setLoadingStatus(false);
     }
 
@@ -51,24 +40,56 @@ const MapScreen = () => {
         setRadius(val)
     }
 
+    const toggleCreateMarkerForm = () => {
+        setShowCreateMarkerForm(prev => !prev);
+    }
+
+    const formClasses = formStyles()
     return (
-        <div>
-            Map Stuff
-            {isLoading ? <img src={spinner} alt='loading' /> : ""}
-            <NativeSelect
-                value={radius}
-                onChange={e => handleRadiusChange(e.target.value)}
-                inputProps={{
-                    name: 'radius',
-                }}
+        <div className='screen'>
+            {isLoading ?
+                <img src={spinner} alt='loading' /> :
+                <Map location={location} radius={radius} />
+            }
+
+            <div className='map-options'>
+                <FormControlLabel
+                    className={formClasses.standardSpacing}
+                    control={
+                        <Button
+                            onClick={toggleCreateMarkerForm}
+                            variant="outlined"
+                            color="primary"
+                            component="span"
+                        >
+                            Create a Marker 
+                        </Button>
+                    }
+                />
+                <FormControl className={formClasses.standardSpacing}>
+                    <InputLabel htmlFor="radius">Radius</InputLabel>
+                    <NativeSelect
+                        value={radius}
+                        onChange={e => handleRadiusChange(e.target.value)}
+                        inputProps={{ name: 'radius', id: 'radius' }}
+                    >
+                        <option value={0}>0</option>
+                        <option value={5}>5</option>
+                        <option value={10}>10</option>
+                        <option value={25}>25</option>
+                        <option value={50}>50</option>
+                        <option value={100}>100</option>
+                    </NativeSelect>
+                </FormControl>
+            </div>
+
+            <SwipeableDrawer
+                open={showCreateMarkerForm}
+                onClose={toggleCreateMarkerForm}
+                onOpen={toggleCreateMarkerForm}
             >
-                <option value={0}>0</option>
-                <option value={5}>5</option>
-                <option value={10}>10</option>
-                <option value={25}>25</option>
-                <option value={50}>50</option>
-                <option value={100}>100</option>
-            </NativeSelect>
+                <CreateMarkerForm location={location} />
+            </SwipeableDrawer>
         </div>
     )
 }

@@ -7,6 +7,7 @@ const formStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: 225,
+        padding: 20,
     },
     inputField: {
         margin: theme.spacing(2),
@@ -14,6 +15,19 @@ const formStyles = makeStyles(theme => ({
     },
     submit: {
         margin: theme.spacing(2),
+    },
+    standardSpacing: {
+        margin: theme.spacing(2)
+    },
+    embeddedFormHeader: {
+        backgroundColor: '#30363a',
+        color: 'white',
+        width: '100%',
+        height: 'auto',
+        marginTop: 0,
+        marginBottom: 0,
+        letterSpacing: 1,
+        padding: 10,
     }
 }));
 

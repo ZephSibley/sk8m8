@@ -10,7 +10,7 @@ import LoginForm from '../components/ui/forms/LoginForm';
 const LoginScreen = () => {
 
   return (
-    <div className={'screen'}>
+    <div className={'form-screen'}>
       <video autoPlay muted className='video-background'>
         <source src={slowNetwork() ? '' : frontVideo} type='video/mp4' />
       </video>

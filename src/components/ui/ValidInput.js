@@ -24,24 +24,22 @@ const ValidInput = props => {
 
   const inputChangeHandler = val => {
     updateFieldValue(val);
-    let connectedValue = checkConnectedValue();
     updateValidity(
       validate(
         val,
         props.validationrules,
-        connectedValue,
+        checkConnectedValue,
       )
     );
-    console.log(validity)
   };
 
   const checkConnectedValue = () => {
     // Confirmation field handler
-    let connectedValue = {}
-    if (typeof props.controlValue !== 'undefined') {
+    let connectedValue = null
+    if (typeof props.controlvalue !== 'undefined') {
       connectedValue = {
         ...connectedValue,
-        equalTo: props.controlValue
+        equalTo: props.controlvalue
       };
     }
     return connectedValue;

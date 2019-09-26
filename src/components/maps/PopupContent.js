@@ -55,7 +55,7 @@ const PopupContent = props => {
     }, [props.markerId]);
 
     return (markerDetails ?
-        <Card className={classes.card}>
+        <div className={classes.card}>
             <div className={classes.details}>
                 <CardContent className={classes.content}>
                     <Typography component="h5" variant="h5">
@@ -85,7 +85,7 @@ const PopupContent = props => {
                 image="../../assets/img/ajax-loader.gif"
                 title="video"
             />
-        </Card>
+        </div>
         : <img style={{minWidth: 301}} src={spinner} alt='loading' />
     )
 }

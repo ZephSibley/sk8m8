@@ -1,10 +1,10 @@
 import React, { useEffect, useState, } from 'react';
-import { Map, Marker, TileLayer, Popup, } from 'react-leaflet'
+import { Map, TileLayer, } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 
 import setMarkerIcons from '../../utils/map/setMarkerIcons';
 import fetchMarkers from '../../utils/map/fetchMarkers';
-import PopupContent from './PopupContent';
+import MapMarker from './MapMarker';
 
 // https://stackoverflow.com/questions/42835692/react-leaflet-add-markers-dynamically
 // https://react-leaflet.js.org/docs/en/examples
@@ -22,16 +22,8 @@ const LeafletMap = props => {
         if (props.location && props.radius) {
             fetchMarkers(props.location, props.radius)
             .then(response => {
-                const markers = response.data.map((marker) =>
-                    <Marker key={marker.id} position={marker.coords}>
-                        <Popup >
-                            <PopupContent markerId={marker.id} />
-                        </Popup>
-                    </Marker>
-                )
-                setMapMarkers(markers)
-            }
-            )//.catch();
+                setMapMarkers(response.data.map(MapMarker))
+            })//.catch();
         }
     }, [props.location, props.radius,])
 

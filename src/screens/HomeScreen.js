@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import '../styles/screens.css'
+import UpdateEmailForm from '../components/ui/forms/UpdateEmailForm';
+import UpdatePasswordForm from '../components/ui/forms/UpdatePasswordForm';
 
 const HomeScreen = () => {
 
@@ -27,7 +29,8 @@ const HomeScreen = () => {
                     <Typography>Manage your account details</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    
+                    <UpdateEmailForm />
+                    <UpdatePasswordForm />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
         </div>

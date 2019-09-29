@@ -19,14 +19,13 @@ const HomeScreen = () => {
 
     return (
         <div className={'screen'}>
-            <ExpansionPanel expanded={expanded === 'accountPanel'} onChange={togglePanel('panel1')}>
+            <ExpansionPanel expanded={expanded === 'accountPanel'} onChange={togglePanel('accountPanel')}>
                 <ExpansionPanelSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="account-settings"
                     id="account-settings-header"
                 >
                     <Typography>Account settings</Typography>
-                    <Typography>Manage your account details</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <UpdateEmailForm />

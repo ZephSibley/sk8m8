@@ -16,7 +16,7 @@ const UpdateEmailForm = () => {
                 }}
             />
             <ValidInput
-                label='password'
+                label='confirm email'
                 validationrules={{
                     equalTo: 'email', //TODO
                 }}

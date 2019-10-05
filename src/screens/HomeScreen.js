@@ -9,6 +9,8 @@ import '../styles/screens.css'
 import UpdateEmailForm from '../components/ui/forms/UpdateEmailForm';
 import UpdatePasswordForm from '../components/ui/forms/UpdatePasswordForm';
 
+// https://material-ui.com/components/expansion-panels/
+
 const HomeScreen = () => {
 
     const [expanded, setExpanded] = React.useState(false);

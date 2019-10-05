@@ -8,6 +8,7 @@ import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
+import PeopleScreen from './screens/PeopleScreen';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signup" component={SignupScreen} />
           <PrivateRoute path="/home" component={HomeScreen} />
           <PrivateRoute path="/trickspot" component={MapScreen} />
+          <PrivateRoute path="/people" component={PeopleScreen} />
         </Switch>
       </MuiThemeProvider>
     </Router>

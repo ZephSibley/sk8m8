@@ -1,49 +1,87 @@
 import React from 'react';
+import { Formik, Form, } from 'formik';
+import *  as Yup from 'yup';
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
-import ValidInput from '../ValidInput';
+
+const validationSchema = Yup.object().shape({
+    email: Yup.string()
+        .email("Please enter a valid email address")
+        .required("Please enter your email address"),
+    password: Yup.string()
+        .min(6, "min. 6 characters")
+        .required("Please enter your password")
+})
 
 const LoginForm = () => {
     const formClasses = formStyles();
-
-    const loginHandler = async () => {
-        //await AsyncStorage.setItem('userToken', 'abc');
-        console.log('login')
-    }
-    
     return (
-        <form className={formClasses.form}>
-            <ValidInput
-                label='username'
-                validationrules={{
-                    minLength: 3,
-                }}
-            />
-            <ValidInput
-                label='password'
-                validationrules={{
-                    minLength: 6,
-                }}
-            />
-            <input
-                style={{ display: 'none' }}
-                id="button-submit"
-                multiple
-                type="submit"
-            />
-            <label htmlFor="button-submit">
-                <Button
-                    variant="contained"
-                    color="primary"
-                    component="span"
-                    className={formClasses.submit}
-                    onSubmit={e => loginHandler(e)}
+        <Formik
+            initialValues={{ email: '', password: '' }}
+            validationSchema={validationSchema}
+            onSubmit={(values, { setSubmitting }) => {
+                console.log(values)
+                setSubmitting(true);
+            }}
+        >
+            {({
+                values,
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                isSubmitting,
+                isValid,
+            }) => (
+                <form
+                    onSubmit={handleSubmit}
+                    className={formClasses.form}
                 >
-                    Log in
-          </Button>
-            </label>
-        </form>
+                    <TextField
+                        name='email'
+                        type='email'
+                        label='email'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.email}
+                        margin='normal'
+                        error={errors.email && touched.email}
+                        helperText={
+                            errors.email && touched.email ?
+                            errors.email : ''
+                        }
+                    />
+                    <TextField
+                        name='password'
+                        type='password'
+                        label='password'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.password}
+                        margin='normal'
+                        error={errors.password && touched.password}
+                        helperText={
+                            errors.password && touched.password ?
+                            errors.password : ''
+                        }
+                    />
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        component="span"
+                        className={formClasses.submit}
+                        type="submit"
+                        margin='normal'
+                        disabled={isSubmitting || !isValid}
+                    >
+                        Log in
+                    </Button>
+                </form>
+            )}
+        </Formik>
     )
 }
 

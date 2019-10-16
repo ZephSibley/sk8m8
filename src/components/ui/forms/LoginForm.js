@@ -1,22 +1,23 @@
 import React from 'react';
-import { Formik, Form, } from 'formik';
+import { Formik } from 'formik';
 import *  as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
 
-const validationSchema = Yup.object().shape({
-    email: Yup.string()
-        .email("Please enter a valid email address")
-        .required("Please enter your email address"),
-    password: Yup.string()
-        .min(6, "min. 6 characters")
-        .required("Please enter your password")
-})
-
 const LoginForm = () => {
     const formClasses = formStyles();
+
+    const validationSchema = Yup.object().shape({
+        email: Yup.string()
+            .email("Please enter a valid email address")
+            .required("Please enter your email address"),
+        password: Yup.string()
+            .min(6, "min. 6 characters")
+            .required("Please enter your password")
+    })
+
     return (
         <Formik
             initialValues={{ email: '', password: '' }}

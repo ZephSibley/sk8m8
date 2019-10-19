@@ -40,8 +40,8 @@ const SignupForm = () => {
                 console.log(values)
                 setSubmitting(true);
             }}
-        >
-            {({
+
+            render={({
                 values,
                 errors,
                 touched,
@@ -137,7 +137,7 @@ const SignupForm = () => {
                     </Button>
                 </form>
             )}
-        </Formik>
+        />
     )
 }
 

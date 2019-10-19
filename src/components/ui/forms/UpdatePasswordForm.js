@@ -32,8 +32,8 @@ const UpdatePasswordForm = () => {
                 console.log(values)
                 setSubmitting(true);
             }}
-        >
-            {({
+        
+            render={({
                 values,
                 errors,
                 touched,
@@ -88,7 +88,7 @@ const UpdatePasswordForm = () => {
                     </Button>
                 </form>
             )}
-        </Formik>
+        />
     )
 }
 

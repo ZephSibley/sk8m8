@@ -27,7 +27,7 @@ const LoginForm = () => {
                 console.log(values)
                 setSubmitting(true);
             }}
-        >
+        > 
             {({
                 values,
                 errors,
@@ -73,7 +73,7 @@ const LoginForm = () => {
                     <Button
                         variant="contained"
                         color="primary"
-                        component="span"
+                        component="button"
                         className={formClasses.submit}
                         type="submit"
                         margin='normal'

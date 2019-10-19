@@ -78,7 +78,7 @@ const UpdateEmailForm = () => {
                     <Button
                         variant="outlined"
                         color="primary"
-                        component="span"
+                        component="button"
                         type="submit"
                         margin='normal'
                         className={formClasses.submit}

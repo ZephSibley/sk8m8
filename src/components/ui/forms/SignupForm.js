@@ -127,7 +127,7 @@ const SignupForm = () => {
                     <Button
                         variant="contained"
                         color="primary"
-                        component="span"
+                        component="button"
                         type="submit"
                         margin='normal'
                         className={formClasses.submit}

@@ -5,8 +5,8 @@ import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 
-import fetchLocationTypes from '../../utils/map/fetchLocationTypes';
-import formStyles from '../../styles/forms';
+import fetchLocationTypes from '../../../utils/map/fetchLocationTypes';
+import formStyles from '../../../styles/forms';
 
 const CreateMarkerForm = props => {
     // prop: location; array, latlng 

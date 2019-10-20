@@ -10,7 +10,7 @@ import '../styles/screens.css'
 import spinner from '../assets/img/ajax-loader.gif';
 import locate from '../utils/browser/locate';
 import Map from '../components/maps/LeafletMap';
-import CreateMarkerForm from '../components/maps/CreateMarkerForm';
+import CreateMarkerForm from '../components/ui/forms/CreateMarkerForm';
 import formStyles from '../styles/forms';
 
 

@@ -39,16 +39,16 @@ const VideoInput = props => {
                     <VideoLibraryOutlinedIcon />
                 </Button>
             </label>
-            {props.errorMessage ? (
-                <FormHelperText id="video-upload-helper-text" error={true}>
-                    {props.errorMessage}
-                </FormHelperText>
-            ) : null}
             {fileName ? (
                 <FormHelperText id="video-upload-filename">
                     {fileName}
                 </FormHelperText>
             ) : null}
+            {props.errorMessage ? (
+                <FormHelperText id="video-upload-helper-text" error={true}>
+                    {props.errorMessage}
+                </FormHelperText>
+            ) : null} 
         </FormControl>
     );
 }

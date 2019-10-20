@@ -8,21 +8,12 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 class VideoInput extends Component {
     constructor(props) {
         super(props);
-        this.fileUpload = React.createRef();
-        this.showFileUpload = this.showFileUpload.bind(this);
         this.handleVideoChange = this.handleVideoChange.bind(this);
     }
 
     state = {
         file: undefined,
-        imagePreviewUrl: undefined
     };
-
-    showFileUpload() {
-        if (this.fileUpload) {
-            this.fileUpload.current.click();
-        }
-    }
 
     handleVideoChange(e) {
         e.preventDefault();
@@ -54,13 +45,12 @@ class VideoInput extends Component {
                     type="file"
                     accept="video/*"
                     onChange={this.handleVideoChange}
-                    ref={this.fileUpload}
                 />
                 <label htmlFor="video-upload">
                     <Button
                         color='primary'
-                        onClick={this.showFileUpload}
                         margin='normal'
+                        component="span"
                     >
                         {title}
                         <VideoLibraryOutlinedIcon />

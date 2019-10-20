@@ -67,7 +67,7 @@ class VideoInput extends Component {
                     </Button>
                 </label>
                 {errorMessage ? (
-                    <FormHelperText error={true}>
+                    <FormHelperText id="video-upload-helper-text" error={true}>
                         {errorMessage}
                     </FormHelperText>
                 ) : null}

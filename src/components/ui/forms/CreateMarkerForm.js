@@ -112,7 +112,7 @@ const CreateMarkerForm = props => {
                                 </Select>
                                 {errors.location_type &&
                                     touched.location_type &&
-                                    <FormHelperText id="location_type_helper_text">
+                                    <FormHelperText id="location_type_helper_text" error={true}>
                                         {errors.location_type}
                                     </FormHelperText>
                                 }

@@ -1,77 +1,79 @@
 import React, { Component } from "react";
-import Typography from "@material-ui/core/Typography";
+import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import VideoLibraryOutlinedIcon from '@material-ui/icons/VideoLibraryOutlined';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
 
 class VideoInput extends Component {
-  constructor(props) {
-    super(props);
-    this.fileUpload = React.createRef();
-    this.showFileUpload = this.showFileUpload.bind(this);
-    this.handleVideoChange = this.handleVideoChange.bind(this);
-  }
-
-  state = {
-    file: undefined,
-    imagePreviewUrl: undefined
-  };
-
-  showFileUpload() {
-    if (this.fileUpload) {
-      this.fileUpload.current.click();
+    constructor(props) {
+        super(props);
+        this.fileUpload = React.createRef();
+        this.showFileUpload = this.showFileUpload.bind(this);
+        this.handleVideoChange = this.handleVideoChange.bind(this);
     }
-  }
 
-  handleVideoChange(e) {
-    e.preventDefault();
-    let reader = new FileReader();
-    let file = e.target.files[0];
-    if (file) {
-      reader.onloadend = () => {
-        this.setState({
-          file: file,
-          imagePreviewUrl: reader.result
-        });
-      };
-      reader.readAsDataURL(file);
-      this.props.setFieldValue(this.props.field.name, file);
+    state = {
+        file: undefined,
+        imagePreviewUrl: undefined
+    };
+
+    showFileUpload() {
+        if (this.fileUpload) {
+            this.fileUpload.current.click();
+        }
     }
-  }
-  
 
-  render() {
-    const { errorMessage, title } = this.props;
-    const { name } = this.props.field;
+    handleVideoChange(e) {
+        e.preventDefault();
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        if (file) {
+            reader.onloadend = () => {
+                this.setState({
+                    file: file,
+                    imagePreviewUrl: reader.result
+                });
+            };
+            reader.readAsDataURL(file);
+            this.props.setFieldValue(this.props.field.name, file);
+        }
+    }
 
-    return (
-      <div>
-        <input
-          style={{ display: "none" }}
-          id={name}
-          name={name}
-          type="file"
-          accept="video/*"
-          onChange={this.handleVideoChange}
-          ref={this.fileUpload}
-        />
-        <Button
-            color='primary'
-            onClick={this.showFileUpload}
-            margin='normal'
-        >
-            {title}
-            <VideoLibraryOutlinedIcon />
-        </Button>
-        {errorMessage ? (
-          <Typography variant="caption" color="error">
-            {errorMessage}
-          </Typography>
-        ) : null}
-      </div>
-    );
-  }
+
+    render() {
+        const { errorMessage, title } = this.props;
+        const { name } = this.props.field;
+
+        return (
+            <FormControl margin='normal'>
+                <input
+                    style={{ display: "none" }}
+                    id='video-upload'
+                    name={name}
+                    type="file"
+                    accept="video/*"
+                    onChange={this.handleVideoChange}
+                    ref={this.fileUpload}
+                />
+                <label htmlFor="video-upload">
+                    <Button
+                        color='primary'
+                        onClick={this.showFileUpload}
+                        margin='normal'
+                    >
+                        {title}
+                        <VideoLibraryOutlinedIcon />
+                    </Button>
+                </label>
+                {errorMessage ? (
+                    <FormHelperText error={true}>
+                        {errorMessage}
+                    </FormHelperText>
+                ) : null}
+            </FormControl>
+        );
+    }
 }
 
 export default VideoInput;

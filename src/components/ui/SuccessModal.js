@@ -1,11 +1,12 @@
 import React, { useState, } from 'react';
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 
 
-const ErrorModal = props => {
-    // Prop: Error; string
+const SuccessModal = props => {
+    // Optional Prop: redirect; string
 
     const useStyles = makeStyles(theme => ({
         modal: {
@@ -19,7 +20,7 @@ const ErrorModal = props => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '70%',
+            width: 400,
             backgroundColor: theme.palette.background.paper,
             border: '2px solid #000',
             boxShadow: theme.shadows[5],
@@ -31,26 +32,29 @@ const ErrorModal = props => {
     return (
         <Modal
             className={classes.modal}
-            aria-labelledby="error modal"
-            aria-describedby="something went wrong"
+            aria-labelledby="success modal"
+            aria-describedby="whatever you did succeeded!"
             open={true}
         >
             <div className={classes.content}>
-                <h2 id="simple-modal-title">Uh oh, something went wrong D:</h2>
-                <p id="simple-modal-description">
-                    {props.error}
-                </p>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    component="span"
-                    onClick={e => window.location.reload()}
+                <h2 id="simple-modal-title">Success!</h2>
+                <Link
+                    to={props.redirect ?
+                        props.redirect : ''
+                    }
+                    style={{ textDecoration: 'none' }}
                 >
-                    OK
-                </Button>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        component="span"
+                    >
+                        OK
+                    </Button>
+                </Link>
             </div>
         </Modal>
     )
 }
 
-export default ErrorModal;
+export default SuccessModal;

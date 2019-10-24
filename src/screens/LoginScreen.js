@@ -7,6 +7,8 @@ import frontVideo from '../assets/img/front_video_3.mp4';
 import slowNetwork from '../utils/browser/slowNetwork';
 import LoginForm from '../components/ui/forms/LoginForm';
 
+const axios = require('axios')
+
 const LoginScreen = () => {
 
   return (
@@ -16,7 +18,7 @@ const LoginScreen = () => {
       </video>
       <h1>S K 8 M 8</h1>
 
-      <LoginForm />
+      <LoginForm requests={axios} />
 
       <p>No account?</p>
       <Link 

@@ -36,7 +36,9 @@ const ErrorModal = props => {
             open={true}
         >
             <div className={classes.content}>
-                <h2 id="simple-modal-title">Uh oh, something went wrong D:</h2>
+                <h2 id="simple-modal-title">
+                    Uh oh, something went wrong D:
+                </h2>
                 <p id="simple-modal-description">
                     {props.error}
                 </p>

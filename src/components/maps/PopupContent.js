@@ -41,6 +41,8 @@ const useStyles = makeStyles(theme => ({
 //https://material-ui.com/components/cards/
 
 const PopupContent = props => {
+    // prop: markerId; int
+
     const classes = useStyles();
     const theme = useTheme();
 

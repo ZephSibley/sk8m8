@@ -7,24 +7,24 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-    },
-    inline: {
-      display: 'inline',
-    },
-}));
-
 
 const MessageListItem = props => {
     // Prop: sender; string
     // Prop: avatar; string, url src
     // Prop: message; string
-    const classes = useStyles();
 
+    const useStyles = makeStyles(theme => ({
+        root: {
+          width: '100%',
+          maxWidth: 360,
+          backgroundColor: theme.palette.background.paper,
+        },
+        inline: {
+          display: 'inline',
+        },
+    }));
+
+    const classes = useStyles();
     return (
         <React.Fragment>
             <ListItem alignItems="flex-start">

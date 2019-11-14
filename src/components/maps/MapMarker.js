@@ -4,6 +4,9 @@ import PopupContent from './PopupContent';
 
 
 const MapMarker = props => {
+    // prop: coords; array, latlng
+    // prop: id; int
+
     return (
         <Marker key={props.id} position={props.coords}>
             <Popup >

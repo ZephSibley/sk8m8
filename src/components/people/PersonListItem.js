@@ -8,25 +8,25 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import ChatIcon from '@material-ui/icons/Chat';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-    },
-    inline: {
-      display: 'inline',
-    },
-}));
-
 
 const PersonListItem = props => {
     // Prop: username; string
     // Prop: avatar; string, url src
     // Prop: bio; string
     // Prop: chat; function, takes username - opens ChatView
-    const classes = useStyles();
 
+    const useStyles = makeStyles(theme => ({
+        root: {
+          width: '100%',
+          maxWidth: 360,
+          backgroundColor: theme.palette.background.paper,
+        },
+        inline: {
+          display: 'inline',
+        },
+    }));
+
+    const classes = useStyles();
     return (
         <React.Fragment>
             <ListItem alignItems="flex-start">

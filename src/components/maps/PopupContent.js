@@ -9,53 +9,64 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 import spinner from '../../assets/img/ajax-loader.gif';
-import fetchMarkerDetails from '../../utils/map/fetchMarkerDetails';
 
-
-const useStyles = makeStyles(theme => ({
-    card: {
-        display: 'flex',
-    },
-    details: {
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    content: {
-        flex: '1 0 auto',
-    },
-    cover: {
-        width: 151,
-    },
-    controls: {
-        display: 'flex',
-        alignItems: 'center',
-        paddingLeft: theme.spacing(1),
-        paddingBottom: theme.spacing(1),
-    },
-    playIcon: {
-        height: 38,
-        width: 38,
-    },
-}));
-
-//https://material-ui.com/components/cards/
 
 const PopupContent = props => {
     // prop: markerId; int
+    // prop: requests; http client
+
+    const useStyles = makeStyles(theme => ({
+        card: {
+            display: 'flex',
+            minWidth: 301
+        },
+        details: {
+            display: 'flex',
+            flexDirection: 'column',
+        },
+        content: {
+            flex: '1 0 auto',
+        },
+        cover: {
+            width: 151,
+        },
+        controls: {
+            display: 'flex',
+            alignItems: 'center',
+            paddingLeft: theme.spacing(1),
+            paddingBottom: theme.spacing(1),
+        },
+        playIcon: {
+            height: 38,
+            width: 38,
+        },
+    }));
 
     const classes = useStyles();
     const theme = useTheme();
 
-    const [markerDetails, updateMarkerDetails] = useState(null)
+    const [markerDetails, updateMarkerDetails] = useState({
+        name: 'Loading',
+        locationType: '',
+        creator: <img style={{minWidth: 301}} src={spinner} alt='loading' />,
+    })
 
     useEffect(() => {
-        fetchMarkerDetails(props.markerId)
-        .then(data => 
+        requests.get(`
+            ${process.env.REACT_APP_ENDPOINT}
+            /mapmarker/details?id=
+            ${props.markerId}
+        `).then(data => 
             updateMarkerDetails(data)
+        ).catch(e =>
+            updateMarkerDetails({
+                ...obj,
+                name: e
+            })    
         );
     }, [props.markerId]);
 
-    return (markerDetails ?
+    return (
         <div className={classes.card}>
             <div className={classes.details}>
                 <CardContent className={classes.content}>
@@ -83,12 +94,11 @@ const PopupContent = props => {
             </div>
             <CardMedia
                 className={classes.cover}
-                image="../../assets/img/ajax-loader.gif"
+                image={spinner}
                 title="video"
             />
         </div>
-        : <img style={{minWidth: 301}} src={spinner} alt='loading' />
-    )
+    );
 }
 
 export default PopupContent;

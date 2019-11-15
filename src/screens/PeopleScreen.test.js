@@ -1,11 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import PeopleScreen from './PeopleScreen';
 
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
 test('Basic Rendering', () => {
-    const component = renderer.create(
+    const component = shallow(
         <PeopleScreen />
     )
-    let tree = component.toJSON()
-    expect(tree).toMatchSnapshot();
 })

@@ -20,6 +20,6 @@ test('Basic Rendering', () => {
             requests={mockAxios}
         />
     )
-    let tree = component.toJSON
+    let tree = component.toJSON()
     expect(tree).toMatchSnapshot();
 })

@@ -12,6 +12,6 @@ test('Basic Rendering', () => {
     const component = renderer.create(
         <CreateMarkerForm location={[50,50]} requests={mockAxios} />
     )
-    let tree = component.toJSON
+    let tree = component.toJSON()
     expect(tree).toMatchSnapshot();
 })

@@ -11,6 +11,6 @@ test('Basic Rendering', () => {
             chat={function() {return true}}
         />
     )
-    let tree = component.toJSON
+    let tree = component.toJSON()
     expect(tree).toMatchSnapshot();
 })

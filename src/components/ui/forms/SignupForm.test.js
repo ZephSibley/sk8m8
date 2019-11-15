@@ -6,6 +6,6 @@ test('Basic Rendering', () => {
     const component = renderer.create(
         <SignupForm />
     )
-    let tree = component.toJSON
+    let tree = component.toJSON()
     expect(tree).toMatchSnapshot();
 })

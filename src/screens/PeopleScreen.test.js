@@ -6,6 +6,6 @@ test('Basic Rendering', () => {
     const component = renderer.create(
         <PeopleScreen />
     )
-    let tree = component.toJSON
+    let tree = component.toJSON()
     expect(tree).toMatchSnapshot();
 })

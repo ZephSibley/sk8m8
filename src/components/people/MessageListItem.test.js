@@ -10,6 +10,6 @@ test('Basic Rendering', () => {
             message='Hi There!'
         />
     )
-    let tree = component.toJSON
+    let tree = component.toJSON()
     expect(tree).toMatchSnapshot();
 })

@@ -8,13 +8,13 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 
-import fetchLocationTypes from '../../../utils/map/fetchLocationTypes';
 import VideoInput from '../inputs/VideoInput';
 import formStyles from '../../../styles/forms';
 
 
 const CreateMarkerForm = props => {
     // prop: location; array, latlng
+    // prop: requests; http client
 
     const formClasses = formStyles()
 
@@ -23,18 +23,18 @@ const CreateMarkerForm = props => {
     );
 
     useEffect(() => {
-        fetchLocationTypes()
-            .then(data => {
-                const options = data.map((type) =>
-                    <option key={type}>{type}</option>
-                );
-                options.unshift(<option key="blank" ></option>)
-                updateLocationTypes(options);
-            }).catch(
-                updateLocationTypes(
-                    <option>Something went wrong D:</option>
-                )
+        props.requests.get(`
+            ${process.env.REACT_APP_ENDPOINT}
+            /mapmarker/locationTypes
+        `).then(data => {
+            const options = data.map((index, type) =>
+                <option key={index}>{type}</option>
             );
+            options.unshift(<option key="blank" ></option>)
+            updateLocationTypes(options);
+        }).catch( updateLocationTypes(
+                <option>Something went wrong D:</option>
+            ));
     }, []);
 
     const validationSchema = Yup.object().shape({

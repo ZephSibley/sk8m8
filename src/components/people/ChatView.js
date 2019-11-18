@@ -12,9 +12,9 @@ const ChatView = props => {
     // Prop: interlocutor; string, person we're talking to
 
     const [myMessage, updateMyMessage] = useState('');
-    const [messages, updateMessages] = useState(
+    const [messages, updateMessages] = useState([
         <MessageListItem sender='' message='Loading' avatar={spinner} />
-    );
+    ]);
     const [hubConnection, setHubConnection] = useState(null);
     const [error, setError] = useState(false);
 
@@ -39,9 +39,10 @@ const ChatView = props => {
     const sendMessage = async (interlocutor, message) => {
         hubConnection
             .invoke('SendMessage', interlocutor, message)
-            .catch(err => updateMessages(
+            .catch(err => updateMessages([
+                ...messages,
                 <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
-            ));
+            ]));
         updateMyMessage('');
     }
 

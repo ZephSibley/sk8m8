@@ -11,11 +11,11 @@ import spinner from '../../assets/img/ajax-loader.gif';
 const ChatView = props => {
     // Prop: interlocutor; string, person we're talking to
 
+    const [hubConnection, setHubConnection] = useState(null);
     const [myMessage, updateMyMessage] = useState('');
     const [messages, updateMessages] = useState([
         <MessageListItem sender='' message='Loading' avatar={spinner} />
     ]);
-    const [hubConnection, setHubConnection] = useState(null);
 
     useEffect(() => {
         setHubConnection(new signalR.HubConnectionBuilder()
@@ -34,7 +34,10 @@ const ChatView = props => {
         
         // Might need updating
         hubConnection.on('ReceiveMessage', (req) => {
-            updateMessages([...messages, MessageListItem(req)])
+            updateMessages([
+                ...messages,
+                MessageListItem(req)
+            ])
         })
     }, [hubConnection])
 

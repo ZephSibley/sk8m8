@@ -26,19 +26,21 @@ const ChatView = props => {
     }, []);
 
     useEffect(() => {
-        hubConnection.start()
-            .then(() => console.log('Connected to chat'))
-            .catch(err => updateMessages([
-                <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
-            ]));
-        
-        // Might need updating
-        hubConnection.on('ReceiveMessage', (req) => {
-            updateMessages([
-                ...messages,
-                MessageListItem(req)
-            ])
-        })
+        if (hubConnection) {
+            hubConnection.start()
+                .then(() => console.log('Connected to chat'))
+                .catch(err => updateMessages([
+                    <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
+                ]));
+            
+            // Might need updating
+            hubConnection.on('ReceiveMessage', (req) => {
+                updateMessages([
+                    ...messages,
+                    MessageListItem(req)
+                ])
+            })
+        }
     }, [hubConnection])
 
     const sendMessage = async (interlocutor, message) => {

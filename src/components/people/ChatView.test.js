@@ -1,13 +1,16 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import ChatView from './ChatView';
 
-test('Basic Rendering', () => {
-    // const component = renderer.create(
-    //     <ChatView
-    //         interlocutor={'Zeph'}
-    //     />
-    // )
-    // let tree = component.toJSON()
-    // expect(tree).toMatchSnapshot();
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
+test('Shallow Rendering', () => {
+    const component = shallow(
+        <ChatView
+            interlocutor={'Zeph'}
+        />
+    );
 })

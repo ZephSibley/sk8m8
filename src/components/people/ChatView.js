@@ -16,7 +16,6 @@ const ChatView = props => {
         <MessageListItem sender='' message='Loading' avatar={spinner} />
     ]);
     const [hubConnection, setHubConnection] = useState(null);
-    const [error, setError] = useState(false);
 
     useEffect(() => {
         setHubConnection(new signalR.HubConnectionBuilder()

@@ -28,7 +28,9 @@ const ChatView = props => {
     useEffect(() => {
         hubConnection.start()
             .then(() => console.log('Connected to chat'))
-            .catch(err => setError(err));
+            .catch(err => updateMessages([
+                <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
+            ]));
         
         // Might need updating
         hubConnection.on('ReceiveMessage', (req) => {
@@ -71,7 +73,6 @@ const ChatView = props => {
                     Send
                 </Button>
             </form>
-            <ErrorModal error={error} />
         </div>
     );
 }

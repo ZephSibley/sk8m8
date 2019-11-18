@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, BrowserRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 import '../styles/screens.css';
@@ -21,18 +21,20 @@ const LoginScreen = () => {
       <LoginForm requests={axios} />
 
       <p>No account?</p>
-      <Link 
-        to='/signup'
-        style={{ textDecoration: 'none' }}
-      >
-        <Button
-          variant="outlined"
-          color="primary"
-          component="span"
+      <BrowserRouter>
+        <Link 
+          to='/signup'
+          style={{ textDecoration: 'none' }}
         >
-          Sign up
-        </Button>
-      </Link>
+          <Button
+            variant="outlined"
+            color="primary"
+            component="span"
+          >
+            Sign up
+          </Button>
+        </Link>
+      </BrowserRouter>
     </div>
   );
 };

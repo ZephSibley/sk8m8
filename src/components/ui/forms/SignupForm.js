@@ -5,8 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
-import SuccessModal from '../SuccessModal';
-import ErrorModal from '../ErrorModal';
+import SuccessModal from '../modals/SuccessModal';
+import ErrorModal from '../modals/ErrorModal';
 
 
 const SignupForm = ({ requests }) => {

@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
-import ErrorModal from '../ErrorModal';
+import ErrorModal from '../modals/ErrorModal';
 
 
 const LoginForm = ({ requests }) => {

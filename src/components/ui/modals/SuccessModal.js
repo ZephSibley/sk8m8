@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import {Link} from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
@@ -38,20 +38,22 @@ const SuccessModal = props => {
         >
             <div className={classes.content}>
                 <h2 id="simple-modal-title">Success!</h2>
-                <Link
-                    to={props.redirect ?
-                        props.redirect : ''
-                    }
-                    style={{ textDecoration: 'none' }}
-                >
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        component="span"
+                <BrowserRouter>
+                    <Link
+                        to={props.redirect ?
+                            props.redirect : ''
+                        }
+                        style={{ textDecoration: 'none' }}
                     >
-                        OK
-                    </Button>
-                </Link>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            component="span"
+                        >
+                            OK
+                        </Button>
+                    </Link>
+                </BrowserRouter>
             </div>
         </Modal>
     )

@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 
 import setMarkerIcons from '../../utils/map/setMarkerIcons';
 import MapMarker from './MapMarker';
-import ErrorModal from '../ui/ErrorModal';
+import ErrorModal from '../ui/modals/ErrorModal';
 
 // https://stackoverflow.com/questions/42835692/react-leaflet-add-markers-dynamically
 // https://react-leaflet.js.org/docs/en/examples

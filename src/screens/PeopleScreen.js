@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import List from '@material-ui/core/List';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
-import ErrorModal from '../components/ui/ErrorModal';
+import ErrorModal from '../components/ui/modals/ErrorModal';
 import spinner from '../assets/img/ajax-loader.gif';
 import PersonListItem from '../components/people/PersonListItem';
 import ChatView from '../components/people/ChatView';

@@ -30,7 +30,8 @@ const ChatView = props => {
         hubConnection.start()
             .then(() => console.log('Connected to chat'))
             .catch(err => setError(err));
-
+        
+        // Might need updating
         hubConnection.on('ReceiveMessage', (req) => {
             updateMessages([...messages, MessageListItem(req)])
         })

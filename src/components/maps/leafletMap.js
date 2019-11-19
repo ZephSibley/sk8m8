@@ -31,7 +31,7 @@ const LeafletMap = props => {
             `).then(response => 
                 setMapMarkers(response.data.map(MapMarker))
             ).catch(e => 
-                setMapMarkers(<ErrorModal error={e} />)
+                setMapMarkers(<ErrorModal error={e.message} />)
             );
         }
     }, [props.location, props.radius,])

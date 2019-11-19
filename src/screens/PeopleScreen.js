@@ -6,7 +6,7 @@ import ErrorModal from '../components/ui/modals/ErrorModal';
 import spinner from '../assets/img/ajax-loader.gif';
 import PersonListItem from '../components/people/PersonListItem';
 import ChatView from '../components/people/ChatView';
-import MainNav from '../components/ui/nav/MainNav';
+
 
 const PeopleScreen = () => {
     const [error, setError] = useState(false);
@@ -41,8 +41,6 @@ const PeopleScreen = () => {
                 <ChatView interlocutor={interlocutor} />
             </SwipeableDrawer>
             <ErrorModal error={error}  />
-
-            <MainNav />
         </div>
     )
 }

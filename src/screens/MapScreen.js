@@ -13,7 +13,6 @@ import locate from '../utils/browser/locate';
 import Map from '../components/maps/LeafletMap';
 import CreateMarkerForm from '../components/ui/forms/CreateMarkerForm';
 import formStyles from '../styles/forms';
-import MainNav from '../components/ui/nav/MainNav';
 
 
 const MapScreen = () => {
@@ -96,8 +95,6 @@ const MapScreen = () => {
             >
                 <CreateMarkerForm location={location} requests={axios} />
             </SwipeableDrawer>
-
-            <MainNav />
         </div>
     )
 }

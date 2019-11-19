@@ -22,7 +22,7 @@ const LeafletMap = props => {
 
     useEffect(() => {
         if (props.location && props.radius) {
-            requests.get(`
+            props.requests.get(`
                 ${process.env.REACT_APP_ENDPOINT}
                 /Mapmarker/Find
                 ?latitude=${props.location[0]}

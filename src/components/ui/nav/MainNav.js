@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
+import { Link } from 'react-router-dom';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Home from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
@@ -29,9 +30,24 @@ const MainNav = () => {
             showLabels
             className={classes.root}
         >
-            <BottomNavigationAction label="Home" icon={<Home />} />
-            <BottomNavigationAction label="Trickspot" icon={<LocationOnIcon />} />
-            <BottomNavigationAction label="People" icon={<PeopleIcon />} />
+            <BottomNavigationAction
+                component={Link}
+                to='/'
+                label="Home"
+                icon={<Home />}
+            />
+            <BottomNavigationAction
+                component={Link}
+                to='/trickspot'
+                label="Trickspot"
+                icon={<LocationOnIcon />}
+            />
+            <BottomNavigationAction
+                component={Link}
+                to='/people'
+                label="People"
+                icon={<PeopleIcon />}
+            />
         </BottomNavigation>
     );
 }

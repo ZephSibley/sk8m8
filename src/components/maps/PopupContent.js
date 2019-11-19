@@ -60,7 +60,7 @@ const PopupContent = props => {
             updateMarkerDetails(data)
         ).catch(e =>
             updateMarkerDetails({
-                ...obj,
+                ...markerDetails,
                 name: e
             })    
         );

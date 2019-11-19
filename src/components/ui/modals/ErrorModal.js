@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 const ErrorModal = props => {
     // Prop: Error; string
 
+    const [openState, setOpenState] = useState(true)
+
     const useStyles = makeStyles(theme => ({
         modal: {
             display: 'flex',
@@ -33,7 +35,7 @@ const ErrorModal = props => {
             className={classes.modal}
             aria-labelledby="error modal"
             aria-describedby="something went wrong"
-            open={true}
+            open={openState}
         >
             <div className={classes.content}>
                 <h2 id="simple-modal-title">
@@ -46,7 +48,7 @@ const ErrorModal = props => {
                     variant="contained"
                     color="primary"
                     component="span"
-                    onClick={e => window.location.reload()}
+                    onClick={e => setOpenState(false)}
                 >
                     OK
                 </Button>

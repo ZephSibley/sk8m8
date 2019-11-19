@@ -17,11 +17,14 @@ function App() {
     <Router>
       <MuiThemeProvider theme={standard}>
         <Switch>
+
           <Route path="/login" component={LoginScreen} />
           <Route path="/signup" component={SignupScreen} />
-          <PrivateRoute path="/" component={HomeScreen} />
+
+          <PrivateRoute path="/" exact component={HomeScreen} />
           <PrivateRoute path="/trickspot" component={MapScreen} />
           <PrivateRoute path="/people" component={PeopleScreen} />
+
         </Switch>
         <MainNav />
       </MuiThemeProvider>

@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import '../styles/screens.css'
 import UpdateEmailForm from '../components/ui/forms/UpdateEmailForm';
 import UpdatePasswordForm from '../components/ui/forms/UpdatePasswordForm';
+import MainNav from '../components/ui/nav/MainNav';
 
 // https://material-ui.com/components/expansion-panels/
 
@@ -51,6 +52,8 @@ const HomeScreen = () => {
                     <UpdatePasswordForm />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
+
+            <MainNav />
         </div>
     );
 }

@@ -59,12 +59,9 @@ const PopupContent = props => {
         `).then(data => 
             updateMarkerDetails(data)
         ).catch(e =>
-            updateMarkerDetails({
-                ...markerDetails,
-                name: e
-            })    
+            updateMarkerDetails(m =>  m.name = e.message)    
         );
-    }, [props.markerId]);
+    }, [props.requests, props.markerId]);
 
     return (
         <div className={classes.card}>

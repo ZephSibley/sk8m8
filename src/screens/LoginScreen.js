@@ -1,5 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import {
+  Link
+} from "react-router-dom";
 
 import '../styles/screens.css';
 import frontVideo from '../assets/img/front_video_3.mp4';
@@ -20,8 +23,8 @@ const LoginScreen = () => {
       <LoginForm requests={axios} />
 
       <p>No account?</p>
-        <a 
-          href='/signup'
+        <Link 
+          to='/signup'
           style={{ textDecoration: 'none' }}
         >
           <Button
@@ -31,7 +34,7 @@ const LoginScreen = () => {
           >
             Sign up
           </Button>
-        </a>
+        </Link>
     </div>
   );
 };

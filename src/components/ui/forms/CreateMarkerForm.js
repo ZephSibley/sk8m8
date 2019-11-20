@@ -35,7 +35,7 @@ const CreateMarkerForm = props => {
         }).catch( updateLocationTypes(
                 <option>Something went wrong D:</option>
             ));
-    }, []);
+    }, [props.requests]);
 
     const validationSchema = Yup.object().shape({
         marker_name: Yup.string()

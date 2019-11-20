@@ -109,6 +109,7 @@ exports[`Basic Rendering 1`] = `
   </p>
   <a
     href="/signup"
+    onClick={[Function]}
     style={
       Object {
         "textDecoration": "none",

@@ -35,8 +35,8 @@ const ChatView = props => {
             
             // Might need updating
             hubConnection.on('ReceiveMessage', (req) => {
-                updateMessages([
-                    ...messages,
+                updateMessages(m => [
+                    ...m,
                     MessageListItem(req)
                 ])
             })

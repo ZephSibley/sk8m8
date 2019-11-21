@@ -18,7 +18,6 @@ const UserCard = props => {
     })
 
     useEffect(() => {
-        console.log(props.requests)
         // Get location, add to queryurl
         props.requests.get(`
             ${process.env.REACT_APP_ENDPOINT}

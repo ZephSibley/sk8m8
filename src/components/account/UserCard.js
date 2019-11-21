@@ -2,9 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
+import CardContent from '@material-ui/core/CardContent';
+import Avatar from '@material-ui/core/Avatar';
 
 
 const UserCard = props => {
+    // Prop: username; string
+    // Prop: avatar; string, url
+    // Prop: bio; string
 
     const useStyles = makeStyles({
         card: {

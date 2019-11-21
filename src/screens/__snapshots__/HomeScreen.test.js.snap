@@ -14,8 +14,14 @@ exports[`Basic Rendering 1`] = `
         className="MuiCardHeader-avatar"
       >
         <div
-          className="MuiAvatar-root MuiAvatar-colorDefault"
-        />
+          className="MuiAvatar-root"
+        >
+          <img
+            alt="Loading"
+            className="MuiAvatar-img"
+            src="ajax-loader.gif"
+          />
+        </div>
       </div>
       <div
         className="MuiCardHeader-content"
@@ -23,7 +29,7 @@ exports[`Basic Rendering 1`] = `
         <span
           className="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
         >
-          zeph
+          Loading
         </span>
       </div>
     </div>
@@ -33,7 +39,7 @@ exports[`Basic Rendering 1`] = `
       <p
         className="MuiTypography-root MuiTypography-body2"
       >
-        bio bio bio
+        
       </p>
     </div>
   </div>

@@ -78,6 +78,11 @@ exports[`Basic Rendering 1`] = `
         </div>
         
       </div>
+      <span
+        className="MuiFormHelperText-root Mui-error"
+      >
+        
+      </span>
       <button
         className="MuiButtonBase-root MuiButton-root makeStyles-submit-3 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
         disabled={true}

@@ -73,7 +73,7 @@ const ChatView = props => {
                     variant="outlined"
                     color="primary"
                     component="span"
-                    onClick={sendMessage(props.interlocutor, myMessage)}
+                    onClick={() => sendMessage(props.interlocutor, myMessage)}
                 >
                     Send
                 </Button>

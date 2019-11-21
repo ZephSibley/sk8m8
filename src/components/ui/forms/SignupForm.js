@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
 import SuccessModal from '../modals/SuccessModal';
-import ErrorModal from '../modals/ErrorModal';
 
 
 const SignupForm = ({ requests }) => {

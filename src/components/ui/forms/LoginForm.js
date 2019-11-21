@@ -34,7 +34,7 @@ const LoginForm = ({ requests }) => {
                         `${process.env.REACT_APP_ENDPOINT}/account/login`,
                         values
                     ).then(response =>
-                        window.location.href = "/home"
+                        window.location.href = "/"
                     ).catch(err => {
                         setSubmitting(false);
                         setSubmitError(err.message);

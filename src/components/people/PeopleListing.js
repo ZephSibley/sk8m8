@@ -17,10 +17,12 @@ const PeopleListing = props => {
         bio: '',
         chat: function(){}
     }]);
-    const [interlocutor, setInterlocutor] = useState(false);
+    const [interlocutor, setInterlocutor] = useState('');
+    const [chatting, setChatting] = useState(false);
 
-    const openChat = username => {
-        setInterlocutor(username)
+    const toggleChat = username => {
+        setChatting(x => !x)
+        setInterlocutor(username || '')
     }
 
     useEffect(() => {
@@ -32,7 +34,7 @@ const PeopleListing = props => {
             &longitude=${props.location[1]}
             &radius=${50}
         `).then(data => {
-            data.chat = openChat
+            data.chat = toggleChat
             setPeopleListInfo(data)
         }).catch(err =>
             setPeopleListInfo([{
@@ -50,7 +52,9 @@ const PeopleListing = props => {
                 {peopleListInfo.map(PersonListItem)}
             </List>
             <SwipeableDrawer
-                open={interlocutor}
+                open={chatting}
+                onClose={() => setChatting()}
+                onOpen={() => setChatting()}
             >
                 <ChatView interlocutor={interlocutor} />
             </SwipeableDrawer>

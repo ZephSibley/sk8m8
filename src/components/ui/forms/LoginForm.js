@@ -6,7 +6,6 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
-import ErrorModal from '../modals/ErrorModal';
 
 
 const LoginForm = ({ requests }) => {

@@ -39,7 +39,7 @@ const PersonListItem = props => {
                 <ChatIcon
                     color='primary'
                     fontSize='large'
-                    onClick={props.chat(props.username)}
+                    onClick={() => props.chat(props.username)}
                 />
             </ListItem>
             <Divider variant="inset" component="li" />

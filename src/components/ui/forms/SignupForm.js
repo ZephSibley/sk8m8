@@ -35,7 +35,7 @@ const SignupForm = ({ requests }) => {
     return (
         <div>
             {success ? 
-                <SuccessModal redirect='/login' /> : null
+                <SuccessModal redirect='/' /> : null
             }
             <Formik
                 initialValues={{

@@ -4,6 +4,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import axios from 'axios';
 
 import '../styles/screens.css'
 import UserCard from '../components/account/UserCard';
@@ -26,6 +27,7 @@ const HomeScreen = () => {
         <div className={'screen'}>
 
             <UserCard
+                requests={axios}
                 username={userDetailsMock.username}
                 avatar={userDetailsMock.avatar}
                 bio={userDetailsMock.bio}

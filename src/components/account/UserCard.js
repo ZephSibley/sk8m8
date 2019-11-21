@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
@@ -6,19 +6,42 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 
+import spinner from '../../assets/img/ajax-loader.gif'
+
 
 const UserCard = props => {
-    // Prop: username; string
-    // Prop: avatar; string, url
-    // Prop: bio; string
+    // Prop: requests; http client
+
+    const [userDetails, updateUserDetails] = useState({
+        username: 'Loading',
+        avatar: spinner,
+        bio: ''
+    })
+
+    useEffect(() => {
+        console.log(props.requests)
+        // Get location, add to queryurl
+        props.requests.get(`
+            ${process.env.REACT_APP_ENDPOINT}
+            /Account/Details
+        `).then(data => 
+            updateUserDetails(data)
+        ).catch(err =>
+            updateUserDetails({
+                username: 'Something went wrong D:',
+                avatar: '',
+                bio: err.message
+            })
+        );          
+    }, [props.requests])
 
     return (
         <Card>
             <CardHeader
                 avatar={
                     <Avatar
-                        alt={props.username}
-                        src={props.avatar}
+                        alt={userDetails.username}
+                        src={userDetails.avatar}
                     />
                 }
                 // action={
@@ -26,11 +49,11 @@ const UserCard = props => {
                 //         <MoreVertIcon />
                 //     </IconButton>
                 // }
-                title={props.username}
+                title={userDetails.username}
             />
             <CardContent>
                 <Typography variant="body2" component="p">
-                    {props.bio}
+                    {userDetails.bio}
                 </Typography>
             </CardContent>
         </Card>

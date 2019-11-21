@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,18 +14,6 @@ const PersonListItem = props => {
     // Prop: bio; string
     // Prop: chat; function, takes username - opens ChatView
 
-    const useStyles = makeStyles(theme => ({
-        root: {
-          width: '100%',
-          maxWidth: 360,
-          backgroundColor: theme.palette.background.paper,
-        },
-        inline: {
-          display: 'inline',
-        },
-    }));
-
-    const classes = useStyles();
     return (
         <React.Fragment>
             <ListItem alignItems="flex-start">
@@ -41,9 +28,8 @@ const PersonListItem = props => {
                 primary={props.username}
                 secondary={
                     <Typography
-                        component="span"
+                        component="p"
                         variant="body2"
-                        className={classes.inline}
                         color="textPrimary"
                     >
                         {props.bio}

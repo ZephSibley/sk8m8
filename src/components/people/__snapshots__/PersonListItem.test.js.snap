@@ -31,7 +31,7 @@ Array [
       aria-hidden="true"
       className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge"
       focusable="false"
-      onClick={true}
+      onClick={[Function]}
       role="presentation"
       viewBox="0 0 24 24"
     >

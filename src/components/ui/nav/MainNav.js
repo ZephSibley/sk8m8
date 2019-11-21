@@ -13,7 +13,7 @@ const MainNav = () => {
     const useStyles = makeStyles({
         root: {
             width: '100vw',
-            position: 'absolute',
+            position: 'fixed',
             bottom: 0
         },
     });

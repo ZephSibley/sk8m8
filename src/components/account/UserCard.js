@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
+import UpdateStatusForm from '../ui/forms/UpdateStatusForm';
 
 import spinner from '../../assets/img/ajax-loader.gif'
 
@@ -50,9 +51,10 @@ const UserCard = props => {
                 title={userDetails.username}
             />
             <CardContent>
-                <Typography variant="body2" component="p">
-                    {userDetails.status}
-                </Typography>
+                <UpdateStatusForm 
+                    currentStatus={userDetails.status} 
+                    requests={props.requests}
+                />
             </CardContent>
         </Card>
     );

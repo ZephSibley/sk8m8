@@ -9,6 +9,9 @@ import formStyles from '../../../styles/forms';
 
 
 const UpdateStatusForm = props => {
+    // Prop: requests; http client
+    // Prop: currentStatus; string
+
     const [submitError, setSubmitError] = useState('')
 
     const formClasses = formStyles();
@@ -16,11 +19,10 @@ const UpdateStatusForm = props => {
         <div>
             <Formik
                 initialValues={{ status: '', }}
-                validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     console.log(values)
                     setSubmitting(true);
-                    requests.post(
+                    props.requests.post(
                         `${process.env.REACT_APP_ENDPOINT}/account/status`,
                         values
                     ).then(response =>
@@ -48,13 +50,13 @@ const UpdateStatusForm = props => {
                             <TextField
                                 name='status'
                                 label='status'
-                                placeholder='Whatcha sayin?'
+                                placeholder={props.currentStatus || 'Whatcha sayin?'}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.status}
                                 margin='normal'
                                 multiline
-                                rowsMax="4"
+                                rows="4"
                                 error={errors.status && touched.status}
                                 helperText={
                                     errors.status && touched.status ?

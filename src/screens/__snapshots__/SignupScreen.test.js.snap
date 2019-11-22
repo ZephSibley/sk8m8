@@ -156,7 +156,7 @@ exports[`Basic Rendering 1`] = `
         className="MuiFormHelperText-root Mui-error"
       />
       <button
-        className="MuiButtonBase-root MuiButton-root makeStyles-submit-3 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+        className="MuiButtonBase-root MuiButton-root makeStyles-submit-5 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
         disabled={true}
         margin="normal"
         onBlur={[Function]}

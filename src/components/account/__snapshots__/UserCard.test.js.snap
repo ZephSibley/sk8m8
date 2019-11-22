@@ -35,15 +35,15 @@ exports[`Basic Rendering 1`] = `
   >
     <div>
       <form
-        className="makeStyles-form-69"
+        className="makeStyles-textFieldForm-71"
         onSubmit={[Function]}
       >
         <div
           className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
         >
           <label
-            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
-            data-shrink={false}
+            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+            data-shrink={true}
           >
             status
           </label>
@@ -59,10 +59,9 @@ exports[`Basic Rendering 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
-              placeholder="Whatcha sayin?"
               required={false}
               rows="4"
-              value=""
+              value="Whatcha sayin?"
             />
           </div>
           
@@ -73,7 +72,7 @@ exports[`Basic Rendering 1`] = `
           
         </span>
         <button
-          className="MuiButtonBase-root MuiButton-root makeStyles-submit-71 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+          className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-75 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
           disabled={true}
           margin="normal"
           onBlur={[Function]}

@@ -12,7 +12,7 @@ exports[`Basic Rendering 1`] = `
     className="map-options"
   >
     <label
-      className="MuiFormControlLabel-root makeStyles-standardSpacing-4"
+      className="MuiFormControlLabel-root makeStyles-standardSpacing-8"
     >
       <span
         aria-disabled={false}
@@ -43,7 +43,7 @@ exports[`Basic Rendering 1`] = `
       />
     </label>
     <div
-      className="MuiFormControl-root makeStyles-standardSpacing-4"
+      className="MuiFormControl-root makeStyles-standardSpacing-8"
     >
       <label
         className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"

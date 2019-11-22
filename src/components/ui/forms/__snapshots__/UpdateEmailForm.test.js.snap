@@ -62,7 +62,7 @@ exports[`Basic Rendering 1`] = `
     
   </div>
   <button
-    className="MuiButtonBase-root MuiButton-root makeStyles-submit-3 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+    className="MuiButtonBase-root MuiButton-root makeStyles-submit-5 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
     disabled={true}
     margin="normal"
     onBlur={[Function]}

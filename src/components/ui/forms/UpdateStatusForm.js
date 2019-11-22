@@ -75,7 +75,7 @@ const UpdateStatusForm = props => {
                                 className={formClasses.pullRight}
                                 type="submit"
                                 margin='normal'
-                                disabled={isSubmitting || !isValid}
+                                disabled={isSubmitting}
                             >
                                 Update
                             </Button>

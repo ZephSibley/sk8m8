@@ -75,8 +75,8 @@ exports[`Basic Rendering 1`] = `
             
           </span>
           <button
-            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-75 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
-            disabled={true}
+            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-75 MuiButton-outlined MuiButton-outlinedPrimary"
+            disabled={false}
             margin="normal"
             onBlur={[Function]}
             onDragLeave={[Function]}
@@ -89,7 +89,7 @@ exports[`Basic Rendering 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
-            tabIndex={-1}
+            tabIndex={0}
             type="submit"
           >
             <span

@@ -90,7 +90,7 @@ exports[`Basic Rendering 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             required={false}
-            type="text"
+            type="username"
             value=""
           />
         </div>

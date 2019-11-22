@@ -105,6 +105,7 @@ const SignupForm = ({ requests }) => {
                             <TextField
                                 name='username'
                                 label='username'
+                                type='username'
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.username}

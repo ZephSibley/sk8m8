@@ -18,7 +18,7 @@ const UpdateStatusForm = props => {
     return (
         <div>
             <Formik
-                initialValues={{ status: '', }}
+                initialValues={{ status: props.currentStatus || 'Whatcha sayin?', }}
                 onSubmit={(values, { setSubmitting }) => {
                     console.log(values)
                     setSubmitting(true);
@@ -45,12 +45,11 @@ const UpdateStatusForm = props => {
                 }) => (
                         <form
                             onSubmit={handleSubmit}
-                            className={formClasses.form}
+                            className={formClasses.textFieldForm}
                         >
                             <TextField
                                 name='status'
                                 label='status'
-                                placeholder={props.currentStatus || 'Whatcha sayin?'}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.status}
@@ -73,7 +72,7 @@ const UpdateStatusForm = props => {
                                 variant="outlined"
                                 color="primary"
                                 component="button"
-                                className={formClasses.submit}
+                                className={formClasses.pullRight}
                                 type="submit"
                                 margin='normal'
                                 disabled={isSubmitting || !isValid}

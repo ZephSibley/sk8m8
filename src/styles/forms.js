@@ -9,12 +9,28 @@ const formStyles = makeStyles(theme => ({
         maxWidth: 225,
         padding: 20,
     },
+    inlineForm: {
+        display: 'flex',
+        justifyContent: 'space-between',
+    },
+    textFieldForm: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'right'
+    },
     inputField: {
         margin: theme.spacing(2),
         width: 225,
     },
     submit: {
         margin: theme.spacing(2),
+    },
+    inlineFormSubmit:{
+        marginTop: 'auto',
+        maxHeight: 35
+    },
+    pullRight: {
+        marginLeft: 'auto',
     },
     standardSpacing: {
         margin: theme.spacing(2)

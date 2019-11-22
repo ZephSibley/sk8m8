@@ -36,11 +36,71 @@ exports[`Basic Rendering 1`] = `
     <div
       className="MuiCardContent-root"
     >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-      >
-        
-      </p>
+      <div>
+        <form
+          className="makeStyles-form-69"
+          onSubmit={[Function]}
+        >
+          <div
+            className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+          >
+            <label
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+              data-shrink={false}
+            >
+              status
+            </label>
+            <div
+              className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-multiline MuiInput-multiline"
+              onClick={[Function]}
+            >
+              <textarea
+                aria-invalid={false}
+                className="MuiInputBase-input MuiInput-input MuiInputBase-inputMultiline MuiInput-inputMultiline"
+                disabled={false}
+                name="status"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Whatcha sayin?"
+                required={false}
+                rows="4"
+                value=""
+              />
+            </div>
+            
+          </div>
+          <span
+            className="MuiFormHelperText-root Mui-error"
+          >
+            
+          </span>
+          <button
+            className="MuiButtonBase-root MuiButton-root makeStyles-submit-71 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+            disabled={true}
+            margin="normal"
+            onBlur={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={-1}
+            type="submit"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              Update
+            </span>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
   <div
@@ -134,7 +194,7 @@ exports[`Basic Rendering 1`] = `
               className="MuiExpansionPanelDetails-root"
             >
               <form
-                className="makeStyles-form-106"
+                className="makeStyles-form-69"
                 onSubmit={[Function]}
               >
                 <div
@@ -194,7 +254,7 @@ exports[`Basic Rendering 1`] = `
                   
                 </div>
                 <button
-                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-108 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-71 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
                   disabled={true}
                   margin="normal"
                   onBlur={[Function]}
@@ -315,7 +375,7 @@ exports[`Basic Rendering 1`] = `
               className="MuiExpansionPanelDetails-root"
             >
               <form
-                className="makeStyles-form-106"
+                className="makeStyles-form-69"
                 onSubmit={[Function]}
               >
                 <div
@@ -375,7 +435,7 @@ exports[`Basic Rendering 1`] = `
                   
                 </div>
                 <button
-                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-108 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-71 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
                   disabled={true}
                   margin="normal"
                   onBlur={[Function]}

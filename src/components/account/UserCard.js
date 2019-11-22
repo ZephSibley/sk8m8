@@ -14,7 +14,7 @@ const UserCard = props => {
     const [userDetails, updateUserDetails] = useState({
         username: 'Loading',
         avatar: spinner,
-        bio: ''
+        status: ''
     })
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const UserCard = props => {
             updateUserDetails({
                 username: 'Something went wrong D:',
                 avatar: '',
-                bio: err.message
+                status: err.message
             })
         );          
     }, [props.requests])
@@ -51,7 +51,7 @@ const UserCard = props => {
             />
             <CardContent>
                 <Typography variant="body2" component="p">
-                    {userDetails.bio}
+                    {userDetails.status}
                 </Typography>
             </CardContent>
         </Card>

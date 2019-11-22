@@ -12,7 +12,7 @@ import UpdateEmailForm from '../components/ui/forms/UpdateEmailForm';
 import UpdatePasswordForm from '../components/ui/forms/UpdatePasswordForm';
 
 // CHANGE ME IN PRODUCTION
-const userDetailsMock = {username: 'zeph', avatar:'',bio:'bio bio bio'}
+const userDetailsMock = {username: 'zeph', avatar:'', status:'bio bio bio'}
 
 
 const HomeScreen = () => {

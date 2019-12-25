@@ -85,6 +85,10 @@ const CreateMarkerForm = props => {
                             onSubmit={handleSubmit}
                             className={formClasses.form}
                         >
+                            <FormHelperText>
+                                Mark this location on the map for others to see!<br />
+                                Include a video but please keep it under 10 seconds.
+                            </FormHelperText>
                             <TextField
                                 name='marker_name'
                                 label='name'

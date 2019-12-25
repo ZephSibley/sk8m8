@@ -3,8 +3,8 @@ import { Map, TileLayer, } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 
 import setMarkerIcons from '../../utils/map/setMarkerIcons';
-import fetchMarkers from '../../utils/map/fetchMarkers';
 import MapMarker from './MapMarker';
+import ErrorModal from '../ui/modals/ErrorModal';
 
 // https://stackoverflow.com/questions/42835692/react-leaflet-add-markers-dynamically
 // https://react-leaflet.js.org/docs/en/examples
@@ -12,6 +12,8 @@ import MapMarker from './MapMarker';
 const LeafletMap = props => {
     // prop: location; array
     // prop: radius; int
+    // prop: requests; http client
+
     const [mapMarkers, setMapMarkers] = useState(null)
 
     useEffect(() => {
@@ -20,12 +22,19 @@ const LeafletMap = props => {
 
     useEffect(() => {
         if (props.location && props.radius) {
-            fetchMarkers(props.location, props.radius)
-            .then(response => {
+            props.requests.get(`
+                ${process.env.REACT_APP_ENDPOINT}
+                /Mapmarker/Find
+                ?latitude=${props.location[0]}
+                &longitude=${props.location[1]}
+                &radius=${props.radius}
+            `).then(response => 
                 setMapMarkers(response.data.map(MapMarker))
-            })//.catch();
+            ).catch(e => 
+                setMapMarkers(<ErrorModal error={e.message} />)
+            );
         }
-    }, [props.location, props.radius,])
+    }, [props.location, props.radius, props.requests])
 
     return (
         <Map 

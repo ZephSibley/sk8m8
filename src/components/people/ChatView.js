@@ -3,17 +3,19 @@ import * as signalR from '@aspnet/signalr';
 import List from '@material-ui/core/List';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
-import ErrorModal from '../ui/ErrorModal';
 import MessageListItem from '../people/MessageListItem';
+import spinner from '../../assets/img/ajax-loader.gif';
 
 const ChatView = props => {
     // Prop: interlocutor; string, person we're talking to
 
-    const [myMessage, updateMyMessage] = useState('');
-    const [messages, updateMessages] = useState([]);
     const [hubConnection, setHubConnection] = useState(null);
-    const [error, setError] = useState(false);
+    const [myMessage, updateMyMessage] = useState('');
+    const [messages, updateMessages] = useState([
+        <MessageListItem sender='' message='Loading' avatar={spinner} />
+    ]);
 
     useEffect(() => {
         setHubConnection(new signalR.HubConnectionBuilder()
@@ -24,19 +26,30 @@ const ChatView = props => {
     }, []);
 
     useEffect(() => {
-        hubConnection.start()
-            .then(() => console.log('Connected to chat'))
-            .catch(err => setError(err));
-
-        hubConnection.on('ReceiveMessage', (req) => {
-            updateMessages([...messages, MessageListItem(req)])
-        })
+        if (hubConnection) {
+            hubConnection.start()
+                .then(() => console.log('Connected to chat'))
+                .catch(err => updateMessages([
+                    <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
+                ]));
+            
+            // Might need updating
+            hubConnection.on('ReceiveMessage', (req) => {
+                updateMessages(m => [
+                    ...m,
+                    MessageListItem(req)
+                ])
+            })
+        }
     }, [hubConnection])
 
     const sendMessage = async (interlocutor, message) => {
         hubConnection
             .invoke('SendMessage', interlocutor, message)
-            .catch(err => setError(err));
+            .catch(err => updateMessages([
+                ...messages,
+                <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
+            ]));
         updateMyMessage('');
     }
 
@@ -60,12 +73,11 @@ const ChatView = props => {
                     variant="outlined"
                     color="primary"
                     component="span"
-                    onClick={sendMessage(props.interlocutor, myMessage)}
+                    onClick={() => sendMessage(props.interlocutor, myMessage)}
                 >
                     Send
                 </Button>
             </form>
-            <ErrorModal error={error} />
         </div>
     );
 }

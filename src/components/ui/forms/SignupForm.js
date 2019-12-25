@@ -2,11 +2,11 @@ import React, { useState, } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
-import SuccessModal from '../SuccessModal';
-import ErrorModal from '../ErrorModal';
+import SuccessModal from '../modals/SuccessModal';
 
 
 const SignupForm = ({ requests }) => {
@@ -34,10 +34,7 @@ const SignupForm = ({ requests }) => {
     return (
         <div>
             {success ? 
-                <SuccessModal redirect='/login' /> : null
-            }
-            {submitError ?
-                <ErrorModal error={submitError} /> : null
+                <SuccessModal redirect='/' /> : null
             }
             <Formik
                 initialValues={{
@@ -108,6 +105,7 @@ const SignupForm = ({ requests }) => {
                             <TextField
                                 name='username'
                                 label='username'
+                                type='username'
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.username}
@@ -146,6 +144,12 @@ const SignupForm = ({ requests }) => {
                                         errors.confirm_password : ''
                                 }
                             />
+                            <FormHelperText
+                                component={'span'}
+                                error={true}
+                            >
+                                {submitError}
+                            </FormHelperText>
                             <Button
                                 variant="contained"
                                 color="primary"

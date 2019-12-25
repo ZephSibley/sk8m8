@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Rendering 1`] = `
+<div
+  className="screen"
+>
+  <img
+    alt="loading"
+    src="ajax-loader.gif"
+  />
+  <div
+    className="map-options"
+  >
+    <label
+      className="MuiFormControlLabel-root makeStyles-standardSpacing-8"
+    >
+      <span
+        aria-disabled={false}
+        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Create a Marker
+        </span>
+      </span>
+      <span
+        className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+      />
+    </label>
+    <div
+      className="MuiFormControl-root makeStyles-standardSpacing-8"
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+        data-shrink={true}
+        htmlFor="radius"
+      >
+        Radius
+      </label>
+      <div
+        className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+        onClick={[Function]}
+      >
+        <select
+          aria-invalid={false}
+          className="MuiNativeSelect-root MuiNativeSelect-select MuiInputBase-input MuiInput-input MuiInputBase-inputSelect"
+          disabled={false}
+          id="radius"
+          name="radius"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={false}
+          value={10}
+        >
+          <option
+            value={0}
+          >
+            0
+          </option>
+          <option
+            value={5}
+          >
+            5
+          </option>
+          <option
+            value={10}
+          >
+            10
+          </option>
+          <option
+            value={25}
+          >
+            25
+          </option>
+          <option
+            value={50}
+          >
+            50
+          </option>
+          <option
+            value={100}
+          >
+            100
+          </option>
+        </select>
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root MuiNativeSelect-icon"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

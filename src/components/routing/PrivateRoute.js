@@ -3,29 +3,17 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import getCookie from '../../utils/browser/getCookie';
 
-let fakeAuth = {
-  isAuthenticated: true,
-}
-
-function PrivateRoute({ component: Component, ...rest }) {
-    return (
-      <Route
-        {...rest}
-        render={props =>
-          fakeAuth.isAuthenticated ? (
-            <Component {...props} />
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: props.location }
-              }}
-            />
-          )
-        }
-      />
-    );
-  }
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    getCookie('jwt') ?
+      <Component {...props} /> :
+      <Redirect to={{
+        pathname: '/login',
+        state: { from: props.location }
+      }} />
+  )} />
+)
 
 export default PrivateRoute

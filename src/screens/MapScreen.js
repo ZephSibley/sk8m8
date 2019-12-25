@@ -5,6 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import axios from 'axios';
 
 import '../styles/screens.css'
 import spinner from '../assets/img/ajax-loader.gif';
@@ -49,7 +50,11 @@ const MapScreen = () => {
         <div className='screen'>
             {isLoading ?
                 <img src={spinner} alt='loading' /> :
-                <Map location={location} radius={radius} />
+                <Map 
+                    location={location}
+                    radius={radius}
+                    requests={axios}
+                />
             }
 
             <div className='map-options'>
@@ -88,7 +93,7 @@ const MapScreen = () => {
                 onClose={toggleCreateMarkerForm}
                 onOpen={toggleCreateMarkerForm}
             >
-                <CreateMarkerForm location={location} />
+                <CreateMarkerForm location={location} requests={axios} />
             </SwipeableDrawer>
         </div>
     )

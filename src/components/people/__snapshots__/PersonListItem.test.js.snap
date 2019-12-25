@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Rendering 1`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+    >
+      <div
+        className="MuiAvatar-root MuiAvatar-colorDefault"
+      />
+    </div>
+    <div
+      className="MuiListItemText-root MuiListItemText-multiline"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+      >
+        Zeph
+      </span>
+      <p
+        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextPrimary"
+      >
+        Hi There!
+      </p>
+    </div>
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge"
+      focusable="false"
+      onClick={[Function]}
+      role="presentation"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"
+      />
+    </svg>
+  </li>,
+  <li
+    className="MuiDivider-root MuiDivider-inset"
+    role="separator"
+  />,
+]
+`;

@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Rendering 1`] = `
+<div
+  className="makeStyles-card-1"
+>
+  <div
+    className="makeStyles-details-2"
+  >
+    <div
+      className="MuiCardContent-root makeStyles-content-3"
+    >
+      <h5
+        className="MuiTypography-root MuiTypography-h5"
+      >
+        Loading
+      </h5>
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
+      >
+        
+      </h6>
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
+      >
+        Created by [object Object]
+      </h6>
+    </div>
+    <div
+      className="makeStyles-controls-5"
+    >
+      <button
+        aria-label="previous"
+        className="MuiButtonBase-root MuiIconButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 6h2v12H6zm3.5 6l8.5 6V6z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        aria-label="play/pause"
+        className="MuiButtonBase-root MuiIconButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root makeStyles-playIcon-6"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8 5v14l11-7z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        aria-label="next"
+        className="MuiButtonBase-root MuiIconButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    className="MuiCardMedia-root makeStyles-cover-4"
+    style={
+      Object {
+        "backgroundImage": "url(\\"ajax-loader.gif\\")",
+      }
+    }
+    title="video"
+  />
+</div>
+`;

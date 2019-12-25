@@ -4,12 +4,16 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import axios from 'axios';
 
 import '../styles/screens.css'
+import UserCard from '../components/account/UserCard';
 import UpdateEmailForm from '../components/ui/forms/UpdateEmailForm';
 import UpdatePasswordForm from '../components/ui/forms/UpdatePasswordForm';
 
-// https://material-ui.com/components/expansion-panels/
+// CHANGE ME IN PRODUCTION
+const userDetailsMock = {username: 'zeph', avatar:'', status:'bio bio bio'}
+
 
 const HomeScreen = () => {
 
@@ -21,6 +25,14 @@ const HomeScreen = () => {
 
     return (
         <div className={'screen'}>
+
+            <UserCard
+                requests={axios}
+                username={userDetailsMock.username}
+                avatar={userDetailsMock.avatar}
+                bio={userDetailsMock.bio}
+            />
+
             <ExpansionPanel
                 expanded={expanded === 'emailPanel'}
                 onChange={togglePanel('emailPanel')}

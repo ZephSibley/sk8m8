@@ -9,6 +9,7 @@ import SignupScreen from './screens/SignupScreen';
 import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
 import PeopleScreen from './screens/PeopleScreen';
+import MainNav from './components/ui/nav/MainNav';
 
 
 function App() {
@@ -16,12 +17,16 @@ function App() {
     <Router>
       <MuiThemeProvider theme={standard}>
         <Switch>
+
           <Route path="/login" component={LoginScreen} />
           <Route path="/signup" component={SignupScreen} />
-          <PrivateRoute path="/home" component={HomeScreen} />
+
+          <PrivateRoute path="/" exact component={HomeScreen} />
           <PrivateRoute path="/trickspot" component={MapScreen} />
           <PrivateRoute path="/people" component={PeopleScreen} />
+
         </Switch>
+        <MainNav />
       </MuiThemeProvider>
     </Router>
   );

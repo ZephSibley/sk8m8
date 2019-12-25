@@ -2,16 +2,16 @@ import React, { useState, } from 'react';
 import { Formik } from 'formik';
 import *  as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
-import ErrorModal from '../ErrorModal';
 
 
 const LoginForm = ({ requests }) => {
     const formClasses = formStyles();
 
-    const [submitError, setSubmitError] = useState(null)
+    const [submitError, setSubmitError] = useState('')
 
     const validationSchema = Yup.object().shape({
         email: Yup.string()
@@ -24,10 +24,6 @@ const LoginForm = ({ requests }) => {
 
     return (
         <div>
-            {
-                submitError ?
-                    <ErrorModal error={submitError} /> : null
-            }
             <Formik
                 initialValues={{ email: '', password: '' }}
                 validationSchema={validationSchema}
@@ -38,7 +34,7 @@ const LoginForm = ({ requests }) => {
                         `${process.env.REACT_APP_ENDPOINT}/account/login`,
                         values
                     ).then(response =>
-                        window.location.href = "/home"
+                        window.location.href = "/"
                     ).catch(err => {
                         setSubmitting(false);
                         setSubmitError(err.message);
@@ -87,6 +83,12 @@ const LoginForm = ({ requests }) => {
                                         errors.password : ''
                                 }
                             />
+                            <FormHelperText
+                                component={'span'}
+                                error={true}
+                            >
+                                {submitError}
+                            </FormHelperText>
                             <Button
                                 variant="contained"
                                 color="primary"
@@ -97,7 +99,7 @@ const LoginForm = ({ requests }) => {
                                 disabled={isSubmitting || !isValid}
                             >
                                 Log in
-                        </Button>
+                            </Button>
                         </form>
                     )}
             />

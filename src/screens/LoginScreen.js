@@ -1,6 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import {
+  Link
+} from "react-router-dom";
 
 import '../styles/screens.css';
 import frontVideo from '../assets/img/front_video_3.mp4';
@@ -21,18 +23,18 @@ const LoginScreen = () => {
       <LoginForm requests={axios} />
 
       <p>No account?</p>
-      <Link 
-        to='/signup'
-        style={{ textDecoration: 'none' }}
-      >
-        <Button
-          variant="outlined"
-          color="primary"
-          component="span"
+        <Link 
+          to='/signup'
+          style={{ textDecoration: 'none' }}
         >
-          Sign up
-        </Button>
-      </Link>
+          <Button
+            variant="outlined"
+            color="primary"
+            component="span"
+          >
+            Sign up
+          </Button>
+        </Link>
     </div>
   );
 };

@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Rendering 1`] = `
+<div
+  className="form-screen"
+>
+  <h1>
+    S K 8 M 8
+  </h1>
+  <div>
+    <form
+      className="makeStyles-form-1"
+      onSubmit={[Function]}
+    >
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          data-shrink={false}
+        >
+          email
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="email"
+            value=""
+          />
+        </div>
+        
+      </div>
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          data-shrink={false}
+        >
+          confirm email
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            name="confirm_email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="email"
+            value=""
+          />
+        </div>
+        
+      </div>
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          data-shrink={false}
+        >
+          username
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="username"
+            value=""
+          />
+        </div>
+        
+      </div>
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          data-shrink={false}
+        >
+          password
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="password"
+            value=""
+          />
+        </div>
+        
+      </div>
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          data-shrink={false}
+        >
+          confirm password
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiInput-input"
+            disabled={false}
+            name="confirm_password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="password"
+            value=""
+          />
+        </div>
+        
+      </div>
+      <span
+        className="MuiFormHelperText-root Mui-error"
+      />
+      <button
+        className="MuiButtonBase-root MuiButton-root makeStyles-submit-5 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+        disabled={true}
+        margin="normal"
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={-1}
+        type="submit"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Sign up
+        </span>
+      </button>
+    </form>
+  </div>
+</div>
+`;

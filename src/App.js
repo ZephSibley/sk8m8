@@ -1,7 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-//import { hashHistory, browserHistory } from 'react-router';
 
 import standard from './styles/themes/standard';
 import PrivateRoute from './components/routing/PrivateRoute';

@@ -11,6 +11,13 @@ exports[`Basic Rendering 1`] = `
     className="makeStyles-form-1"
     onSubmit={[Function]}
   >
+    <p
+      className="MuiFormHelperText-root"
+    >
+      Mark this location on the map for others to see!
+      <br />
+      Include a video but please keep it under 10 seconds.
+    </p>
     <div
       className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
     >

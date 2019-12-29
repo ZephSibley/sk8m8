@@ -13,6 +13,7 @@ const SignupScreen = () => {
             <BackButton />
             <h1>S K 8 M 8</h1>
             <SignupForm requests={axios} />
+            <div style={{marginBottom: 100}}></div>
         </div>
     );
 }

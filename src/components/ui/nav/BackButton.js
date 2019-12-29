@@ -2,8 +2,7 @@ import React from 'react';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { makeStyles } from '@material-ui/core/styles';
 
-const BackButton = props => {
-    // prop: history; from withRouter
+const BackButton = () => {
 
     const useStyles = makeStyles({
         root: {

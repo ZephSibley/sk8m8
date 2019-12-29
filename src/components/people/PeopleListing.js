@@ -51,6 +51,7 @@ const PeopleListing = props => {
             <List>
                 {peopleListInfo.map(PersonListItem)}
             </List>
+            <div style={{marginBottom: 100}}></div>
             <SwipeableDrawer
                 open={chatting}
                 onClose={() => setChatting()}

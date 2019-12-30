@@ -6,6 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 import UpdateStatusForm from '../ui/forms/UpdateStatusForm';
 
 import spinner from '../../assets/img/ajax-loader.gif'
+import UploadAvatarForm from '../ui/forms/UploadAvatarForm';
 
 
 const UserCard = props => {
@@ -27,7 +28,7 @@ const UserCard = props => {
         ).catch(err =>
             updateUserDetails({
                 username: 'Something went wrong D:',
-                avatar: '',
+                avatar: '/',
                 status: err.message
             })
         );          
@@ -37,10 +38,13 @@ const UserCard = props => {
         <Card>
             <CardHeader
                 avatar={
+                    userDetails.avatar ?
                     <Avatar
                         alt={userDetails.username}
                         src={userDetails.avatar}
                     />
+                    :
+                    <UploadAvatarForm requests={props.requests} />
                 }
                 // action={
                 //     <IconButton aria-label="settings">

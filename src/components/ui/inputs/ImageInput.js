@@ -20,7 +20,7 @@ const ImageInput = props => {
     }
 
     return (
-        <FormControl margin='normal'>
+        <FormControl>
             <input
                 style={{ display: "none" }}
                 id='image-upload'
@@ -32,7 +32,6 @@ const ImageInput = props => {
             <label htmlFor="image-upload">
                 <Button
                     color='primary'
-                    margin='normal'
                     component="span"
                 >
                     {props.title}

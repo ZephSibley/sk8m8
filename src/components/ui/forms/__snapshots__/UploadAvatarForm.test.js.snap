@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Rendering 1`] = `
+<form
+  className="makeStyles-form-1"
+  onSubmit={[Function]}
+>
+  <div
+    className="MuiFormControl-root"
+  >
+    <input
+      accept="image/png,image/jpeg"
+      id="image-upload"
+      name="avatar"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+    <label
+      htmlFor="image-upload"
+    >
+      <span
+        aria-disabled={false}
+        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Avatar
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+            />
+          </svg>
+        </span>
+      </span>
+    </label>
+  </div>
+  
+  
+</form>
+`;

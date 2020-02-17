@@ -14,7 +14,7 @@ const ChatView = props => {
     const [hubConnection, setHubConnection] = useState(null);
     const [myMessage, updateMyMessage] = useState('');
     const [messages, updateMessages] = useState([
-        <MessageListItem sender='' message='Loading' avatar={spinner} />
+        <MessageListItem key={0} sender='' message='Loading' avatar={spinner} />
     ]);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const ChatView = props => {
             hubConnection.start()
                 .then(() => console.log('Connected to chat'))
                 .catch(err => updateMessages([
-                    <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
+                    <MessageListItem key={0} sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
                 ]));
             
             // Might need updating
@@ -48,7 +48,7 @@ const ChatView = props => {
             .invoke('SendMessage', interlocutor, message)
             .catch(err => updateMessages([
                 ...messages,
-                <MessageListItem sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
+                <MessageListItem key={0} sender='Uh oh D:' message={err} avatar={ErrorOutlineIcon} />
             ]));
         updateMyMessage('');
     }

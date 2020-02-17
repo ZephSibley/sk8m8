@@ -12,6 +12,7 @@ const PeopleListing = props => {
     // Prop: location; latlong array
 
     const [peopleListInfo, setPeopleListInfo] = useState([{
+        key: 0,
         username: 'Loading...',
         avatar: spinner,
         bio: '',
@@ -38,6 +39,7 @@ const PeopleListing = props => {
             setPeopleListInfo(data)
         }).catch(err =>
             setPeopleListInfo([{
+                key: 0,
                 username: 'Something went wrong D:',
                 avatar: '',
                 bio: err.message,

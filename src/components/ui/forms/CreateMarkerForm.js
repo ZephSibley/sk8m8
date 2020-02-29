@@ -43,6 +43,7 @@ const CreateMarkerForm = props => {
             .min(3, "min. 3 characters"),
         location_type: Yup.string()
             .required("What kind of location are you marking?"),
+        /* VIDEO UPLOAD FEATURE
         marker_video: Yup.mixed()
             .required("We need a video!")
             .test(
@@ -50,6 +51,7 @@ const CreateMarkerForm = props => {
                 "Your video is too big :(",
                 value => value && value.size <= 262144000
             )
+        */
     })
 
     return (
@@ -59,7 +61,7 @@ const CreateMarkerForm = props => {
         </h4>
             <Formik
                 initialValues={{
-                    marker_name: '',
+                    // marker_name: '', VIDEO UPLOAD FEATURE
                     location_type: '',
                     marker_video: null,
                     location: props.location,
@@ -87,7 +89,7 @@ const CreateMarkerForm = props => {
                         >
                             <FormHelperText>
                                 Mark this location on the map for others to see!<br />
-                                Include a video but please keep it under 10 seconds.
+                                {/*Include a video but please keep it under 10 seconds. VIDEO UPLOAD FEATURE */}
                             </FormHelperText>
                             <TextField
                                 name='marker_name'
@@ -121,7 +123,7 @@ const CreateMarkerForm = props => {
                                     </FormHelperText>
                                 }
                             </FormControl>
-                            <Field
+                            {process.env.REACT_APP_MARKER_VIDEO_FEATURE ? <Field
                                 name="marker_video"
                                 component={VideoInput}
                                 title="Upload"
@@ -131,7 +133,7 @@ const CreateMarkerForm = props => {
                                 }
                                 touched={touched.marker_video}
                                 onBlur={handleBlur}
-                            />
+                            /> : <p>Video upload coming soon!</p> }
                             <Button
                                 variant="contained"
                                 color="primary"

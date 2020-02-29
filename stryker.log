@@ -1,0 +1,380 @@
+18:40:08 (27372) INFO ConfigReader Using stryker.conf.js in the current working directory.
+18:40:08 (27372) DEBUG BroadcastReporter Broadcasting to reporters ["progress","clear-text","html"]
+18:40:08 (27372) DEBUG ConfigReader Loading config stryker.conf.js
+18:40:08 (27372) DEBUG ConfigReader Loaded config: {
+  "mutate": [
+    "src/**/*.js?(x)",
+    "!src/**/*@(.test|.spec|Spec).js?(x)"
+  ],
+  "logLevel": "debug",
+  "fileLogLevel": "trace",
+  "timeoutMS": 5000,
+  "timeoutFactor": 1.5,
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "reporters": [
+    "progress",
+    "clear-text",
+    "html"
+  ],
+  "coverageAnalysis": "off",
+  "testRunner": "jest",
+  "mutator": "javascript",
+  "transpilers": [],
+  "maxConcurrentTestRunners": null,
+  "symlinkNodeModules": true,
+  "thresholds": {
+    "break": null,
+    "high": 80,
+    "low": 60
+  },
+  "allowConsoleColors": true,
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "mutationScore"
+  },
+  "tempDirName": ".stryker-tmp",
+  "jest": {
+    "projectType": "react"
+  },
+  "configFile": "stryker.conf.js"
+}
+18:40:08 (27372) DEBUG PluginLoader Loading @stryker-mutator/* from D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator
+18:40:08 (27372) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter" (matched with expression @stryker-mutator/*)
+18:40:08 (27372) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator" (matched with expression @stryker-mutator/*)
+18:40:08 (27372) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner" (matched with expression @stryker-mutator/*)
+18:40:08 (27372) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter
+18:40:08 (27372) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator
+18:40:08 (27372) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner
+18:40:08 (27372) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\reporters\index.js
+18:40:08 (27372) INFO InputFileResolver Found 44 of 109 file(s) to be mutated.
+18:40:08 (27372) DEBUG InputFileResolver All input files: [
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\stryker.conf.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\stryker.log",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\.env",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\.gitignore",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\README.md",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\package-lock.json",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\package.json",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\public\\favicon.ico",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\public\\index.html",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\public\\manifest.json",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\App.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\App.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\assets\\img\\ajax-loader.gif",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\assets\\img\\front_video_3.mp4",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\assets\\img\\logo.png",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\account\\UserCard.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\account\\UserCard.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\account\\__snapshots__\\UserCard.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\LeafletMap.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\LeafletMap.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\MapMarker.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\MapMarker.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\PopupContent.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\PopupContent.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\__snapshots__\\PopupContent.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\ChatView.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\ChatView.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\MessageListItem.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\MessageListItem.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\PeopleListing.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\PeopleListing.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\PersonListItem.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\PersonListItem.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\__snapshots__\\MessageListItem.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\__snapshots__\\PeopleListing.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\__snapshots__\\PersonListItem.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\routing\\PrivateRoute.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\CreateMarkerForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\CreateMarkerForm.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\LoginForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\LoginForm.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\SignupForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\SignupForm.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdateEmailForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdateEmailForm.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdatePasswordForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdatePasswordForm.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdateStatusForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdateStatusForm.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UploadAvatarForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UploadAvatarForm.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\__snapshots__\\CreateMarkerForm.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\__snapshots__\\LoginForm.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\__snapshots__\\SignupForm.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\__snapshots__\\UpdateEmailForm.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\__snapshots__\\UpdatePasswordForm.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\__snapshots__\\UpdateStatusForm.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\__snapshots__\\UploadAvatarForm.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\ImageInput.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\ImageInput.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\VideoInput.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\VideoInput.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\__snapshots__\\ImageInput.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\__snapshots__\\VideoInput.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\modals\\ErrorModal.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\modals\\ErrorModal.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\modals\\SuccessModal.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\modals\\SuccessModal.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\nav\\BackButton.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\nav\\BackButton.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\nav\\MainNav.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\nav\\MainNav.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\nav\\__snapshots__\\BackButton.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\index.css",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\index.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\logo.svg",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\HomeScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\HomeScreen.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\LoginScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\LoginScreen.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\MapScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\MapScreen.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\PeopleScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\PeopleScreen.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\SignupScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\SignupScreen.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\__snapshots__\\HomeScreen.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\__snapshots__\\LoginScreen.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\__snapshots__\\MapScreen.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\__snapshots__\\SignupScreen.test.js.snap",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\serviceWorker.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\setupTests.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\styles\\forms.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\styles\\screens.css",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\styles\\themes\\standard.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\__mocks__\\mockAxios.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\getCookie.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\getCookie.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\locate.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\locate.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\slowNetwork.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\slowNetwork.test.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\fetch\\queryUrlBuilder.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\hooks\\useLocalStorage.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\hooks\\useSessionStorage.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\fetchLocationTypes.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\fetchMarkerDetails.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\fetchMarkers.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\setMarkerIcons.js"
+]
+18:40:08 (27372) DEBUG InputFileResolver Files to mutate: [
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\App.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\account\\UserCard.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\LeafletMap.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\MapMarker.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\maps\\PopupContent.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\ChatView.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\MessageListItem.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\PeopleListing.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\people\\PersonListItem.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\routing\\PrivateRoute.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\CreateMarkerForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\LoginForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\SignupForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdateEmailForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdatePasswordForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UpdateStatusForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\forms\\UploadAvatarForm.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\ImageInput.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\inputs\\VideoInput.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\modals\\ErrorModal.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\modals\\SuccessModal.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\nav\\BackButton.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\components\\ui\\nav\\MainNav.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\index.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\HomeScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\LoginScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\MapScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\PeopleScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\screens\\SignupScreen.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\serviceWorker.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\setupTests.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\styles\\forms.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\styles\\themes\\standard.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\__mocks__\\mockAxios.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\getCookie.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\locate.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\browser\\slowNetwork.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\fetch\\queryUrlBuilder.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\hooks\\useLocalStorage.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\hooks\\useSessionStorage.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\fetchLocationTypes.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\fetchMarkerDetails.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\fetchMarkers.js",
+  "D:\\Coding\\Projects\\sk8m8\\sk8m8\\src\\utils\\map\\setMarkerIcons.js"
+]
+18:40:08 (27372) DEBUG TemporaryDirectory Using temp directory "D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp"
+18:40:08 (27372) DEBUG TestFrameworkOrchestrator The `coverageAnalysis` setting is "off", not hooking into the test framework to achieve performance benefits.
+18:40:08 (27372) INFO InitialTestExecutor Starting initial test run. This may take a while.
+18:40:08 (27372) DEBUG Sandbox Creating a sandbox for files in D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:08 (27372) DEBUG Sandbox Creating test runner 0
+18:40:08 (27372) DEBUG ChildProcessProxy Starting D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\test-runner\ChildProcessTestRunnerWorker.js in child process 11952
+18:40:08 (27372) DEBUG TimeoutDecorator Starting timeout timer (300000 ms) for a test run
+18:40:08 (11952) DEBUG ChildProcessProxyWorker Changing current working directory for this process to D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:08 (11952) DEBUG PluginLoader Loading @stryker-mutator/* from D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator
+18:40:08 (11952) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter" (matched with expression @stryker-mutator/*)
+18:40:08 (11952) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator" (matched with expression @stryker-mutator/*)
+18:40:08 (11952) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner" (matched with expression @stryker-mutator/*)
+18:40:08 (11952) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter
+18:40:08 (11952) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator
+18:40:08 (11952) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner
+18:40:08 (11952) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\reporters\index.js
+18:40:08 (11952) DEBUG JestTestRunner Running jest with --findRelatedTests flag. Set jest.enableFindRelatedTests to false to run all tests on every mutant.
+18:40:08 (11952) DEBUG JestTestRunner Project root is D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:08 (11952) TRACE JestPromiseTestAdapter Invoking Jest with config {"roots":["<rootDir>/src"],"collectCoverageFrom":["src/**/*.{js,jsx,ts,tsx}","!src/**/*.d.ts"],"setupFiles":["D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-app-polyfill\\jsdom.js"],"setupFilesAfterEnv":["<rootDir>/src/setupTests.js"],"testMatch":["<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}","<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"],"testEnvironment":"jsdom","transform":{"^.+\\.(js|jsx|ts|tsx)$":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-scripts\\config\\jest\\babelTransform.js","^.+\\.css$":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-scripts\\config\\jest\\cssTransform.js","^(?!.*\\.(js|jsx|ts|tsx|css|json)$)":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-scripts\\config\\jest\\fileTransform.js"},"transformIgnorePatterns":["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$","^.+\\.module\\.(css|sass|scss)$"],"modulePaths":[],"moduleNameMapper":{"^react-native$":"react-native-web","^.+\\.module\\.(css|sass|scss)$":"identity-obj-proxy"},"moduleFileExtensions":["web.js","js","web.ts","ts","web.tsx","tsx","json","web.jsx","jsx","node"],"watchPlugins":["jest-watch-typeahead/filename","jest-watch-typeahead/testname"],"rootDir":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\.stryker-tmp\\sandbox3246003","collectCoverage":false,"verbose":false,"bail":false,"notify":false,"reporters":[]}
+18:40:09 (27372) TRACE ChildProcessProxy No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+  93 files checked.
+  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+
+18:40:09 (27372) ERROR log4js A worker log process hung up unexpectedly Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:200:27) {
+  errno: 'ECONNRESET',
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+18:40:09 (27372) WARN ChildProcessProxy Child process [pid 11952] exited unexpectedly with exit code 1 (without signal). Last part of stdout and stderr was:
+	No tests found, exiting with code 1
+	Run with `--passWithNoTests` to exit with code 0
+	In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+	  93 files checked.
+	  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+	  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+	  testRegex:  - 0 matches
+	Pattern:  - 0 matches
+	 ChildProcessCrashedError: Child process [pid 11952] exited unexpectedly with exit code 1 (without signal). Last part of stdout and stderr was:
+	No tests found, exiting with code 1
+	Run with `--passWithNoTests` to exit with code 0
+	In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+	  93 files checked.
+	  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+	  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+	  testRegex:  - 0 matches
+	Pattern:  - 0 matches
+	
+    at ChildProcessProxy.handleUnexpectedExit (D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\child-proxy\ChildProcessProxy.js:33:37)
+    at ChildProcess.emit (events.js:223:5)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:283:5) {
+  innerError: undefined,
+  pid: 11952,
+  exitCode: 1,
+  signal: null
+}
+18:40:09 (27372) DEBUG ChildProcessProxy Starting D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\test-runner\ChildProcessTestRunnerWorker.js in child process 17956
+18:40:09 (27372) DEBUG TimeoutDecorator Starting timeout timer (300000 ms) for a test run
+18:40:09 (17956) DEBUG ChildProcessProxyWorker Changing current working directory for this process to D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:09 (17956) DEBUG PluginLoader Loading @stryker-mutator/* from D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator
+18:40:09 (17956) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter" (matched with expression @stryker-mutator/*)
+18:40:09 (17956) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator" (matched with expression @stryker-mutator/*)
+18:40:09 (17956) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner" (matched with expression @stryker-mutator/*)
+18:40:09 (17956) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter
+18:40:09 (17956) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator
+18:40:09 (17956) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner
+18:40:09 (17956) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\reporters\index.js
+18:40:09 (17956) DEBUG JestTestRunner Running jest with --findRelatedTests flag. Set jest.enableFindRelatedTests to false to run all tests on every mutant.
+18:40:09 (17956) DEBUG JestTestRunner Project root is D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:09 (17956) TRACE JestPromiseTestAdapter Invoking Jest with config {"roots":["<rootDir>/src"],"collectCoverageFrom":["src/**/*.{js,jsx,ts,tsx}","!src/**/*.d.ts"],"setupFiles":["D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-app-polyfill\\jsdom.js"],"setupFilesAfterEnv":["<rootDir>/src/setupTests.js"],"testMatch":["<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}","<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"],"testEnvironment":"jsdom","transform":{"^.+\\.(js|jsx|ts|tsx)$":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-scripts\\config\\jest\\babelTransform.js","^.+\\.css$":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-scripts\\config\\jest\\cssTransform.js","^(?!.*\\.(js|jsx|ts|tsx|css|json)$)":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\node_modules\\react-scripts\\config\\jest\\fileTransform.js"},"transformIgnorePatterns":["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$","^.+\\.module\\.(css|sass|scss)$"],"modulePaths":[],"moduleNameMapper":{"^react-native$":"react-native-web","^.+\\.module\\.(css|sass|scss)$":"identity-obj-proxy"},"moduleFileExtensions":["web.js","js","web.ts","ts","web.tsx","tsx","json","web.jsx","jsx","node"],"watchPlugins":["jest-watch-typeahead/filename","jest-watch-typeahead/testname"],"rootDir":"D:\\Coding\\Projects\\sk8m8\\sk8m8\\.stryker-tmp\\sandbox3246003","collectCoverage":false,"verbose":false,"bail":false,"notify":false,"reporters":[]}
+18:40:09 (27372) TRACE ChildProcessProxy No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+  93 files checked.
+  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+
+18:40:09 (27372) ERROR log4js A worker log process hung up unexpectedly Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:200:27) {
+  errno: 'ECONNRESET',
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+18:40:09 (27372) WARN ChildProcessProxy Child process [pid 17956] exited unexpectedly with exit code 1 (without signal). Last part of stdout and stderr was:
+	No tests found, exiting with code 1
+	Run with `--passWithNoTests` to exit with code 0
+	In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+	  93 files checked.
+	  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+	  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+	  testRegex:  - 0 matches
+	Pattern:  - 0 matches
+	 ChildProcessCrashedError: Child process [pid 17956] exited unexpectedly with exit code 1 (without signal). Last part of stdout and stderr was:
+	No tests found, exiting with code 1
+	Run with `--passWithNoTests` to exit with code 0
+	In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+	  93 files checked.
+	  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+	  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+	  testRegex:  - 0 matches
+	Pattern:  - 0 matches
+	
+    at ChildProcessProxy.handleUnexpectedExit (D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\child-proxy\ChildProcessProxy.js:33:37)
+    at ChildProcess.emit (events.js:223:5)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:283:5) {
+  innerError: undefined,
+  pid: 17956,
+  exitCode: 1,
+  signal: null
+}
+18:40:09 (27372) DEBUG ChildProcessProxy Starting D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\test-runner\ChildProcessTestRunnerWorker.js in child process 20844
+18:40:10 (20844) DEBUG ChildProcessProxyWorker Changing current working directory for this process to D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:10 (20844) DEBUG PluginLoader Loading @stryker-mutator/* from D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator
+18:40:10 (20844) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter" (matched with expression @stryker-mutator/*)
+18:40:10 (20844) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator" (matched with expression @stryker-mutator/*)
+18:40:10 (20844) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner" (matched with expression @stryker-mutator/*)
+18:40:10 (20844) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter
+18:40:10 (20844) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator
+18:40:10 (20844) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner
+18:40:10 (20844) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\reporters\index.js
+18:40:10 (20844) DEBUG JestTestRunner Running jest with --findRelatedTests flag. Set jest.enableFindRelatedTests to false to run all tests on every mutant.
+18:40:10 (20844) DEBUG JestTestRunner Project root is D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:10 (27372) DEBUG ChildProcessProxy Disposing of worker process 20844
+18:40:10 (27372) DEBUG ChildProcessProxy Kill 20844
+18:40:10 (27372) DEBUG ChildProcessProxy Starting D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\test-runner\ChildProcessTestRunnerWorker.js in child process 29636
+18:40:10 (29636) DEBUG ChildProcessProxyWorker Changing current working directory for this process to D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:10 (29636) DEBUG PluginLoader Loading @stryker-mutator/* from D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator
+18:40:10 (29636) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter" (matched with expression @stryker-mutator/*)
+18:40:10 (29636) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator" (matched with expression @stryker-mutator/*)
+18:40:10 (29636) DEBUG PluginLoader Loading plugin "D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner" (matched with expression @stryker-mutator/*)
+18:40:10 (29636) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\html-reporter
+18:40:10 (29636) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\javascript-mutator
+18:40:11 (29636) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\jest-runner
+18:40:11 (29636) DEBUG PluginLoader Loading plugins D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\reporters\index.js
+18:40:11 (29636) DEBUG JestTestRunner Running jest with --findRelatedTests flag. Set jest.enableFindRelatedTests to false to run all tests on every mutant.
+18:40:11 (29636) DEBUG JestTestRunner Project root is D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+18:40:11 (27372) DEBUG ChildProcessProxy Disposing of worker process 29636
+18:40:11 (27372) DEBUG ChildProcessProxy Kill 29636
+18:40:11 (27372) ERROR InitialTestExecutor One or more tests resulted in an error:
+	Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 17956] exited unexpectedly with exit code 1 (without signal). Last part of stdout and stderr was:
+	No tests found, exiting with code 1
+	Run with `--passWithNoTests` to exit with code 0
+	In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+	  93 files checked.
+	  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+	  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+	  testRegex:  - 0 matches
+	Pattern:  - 0 matches
+	
+Error: Child process [pid 17956] exited unexpectedly with exit code 1 (without signal). Last part of stdout and stderr was:
+	No tests found, exiting with code 1
+	Run with `--passWithNoTests` to exit with code 0
+	In D:\Coding\Projects\sk8m8\sk8m8\.stryker-tmp\sandbox3246003
+	  93 files checked.
+	  testMatch: D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/__tests__/**/*.{js,jsx,ts,tsx}, D:/Coding/Projects/sk8m8/sk8m8\.stryker-tmp/sandbox3246003/src/**/*.{spec,test}.{js,jsx,ts,tsx} - 0 matches
+	  testPathIgnorePatterns: \\node_modules\\ - 93 matches
+	  testRegex:  - 0 matches
+	Pattern:  - 0 matches
+	
+    at ChildProcessProxy.handleUnexpectedExit (D:\Coding\Projects\sk8m8\sk8m8\node_modules\@stryker-mutator\core\src\child-proxy\ChildProcessProxy.js:33:37)
+    at ChildProcess.emit (events.js:223:5)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:283:5)

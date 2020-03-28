@@ -20,7 +20,7 @@ const PersonListItem = props => {
                 <ListItemAvatar>
                 <Avatar
                     alt={props.username}
-                    src={props.avatar}
+                    src={props.avatar || ''}
                     //imgProps={loading='lazy'}
                 />
                 </ListItemAvatar>

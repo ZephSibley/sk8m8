@@ -37,7 +37,7 @@ const UserCard = props => {
     return (
         <Card>
             <CardHeader
-                avatar={
+                /*avatar={
                     userDetails.avatar ?
                     <Avatar
                         alt={userDetails.username}
@@ -45,13 +45,15 @@ const UserCard = props => {
                     />
                     :
                     <UploadAvatarForm requests={props.requests} />
-                }
+                }*/ // AVATAR FEATURE
+                
                 // action={
                 //     <IconButton aria-label="settings">
                 //         <MoreVertIcon />
                 //     </IconButton>
                 // }
                 title={userDetails.username}
+                subheader="avatars coming soon"
             />
             <CardContent>
                 <UpdateStatusForm 

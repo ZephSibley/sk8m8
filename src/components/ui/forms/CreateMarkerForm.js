@@ -61,7 +61,7 @@ const CreateMarkerForm = props => {
         </h4>
             <Formik
                 initialValues={{
-                    // marker_name: '', VIDEO UPLOAD FEATURE
+                    marker_name: '',
                     location_type: '',
                     marker_video: null,
                     location: props.location,

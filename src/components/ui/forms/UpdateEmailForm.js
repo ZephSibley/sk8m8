@@ -23,9 +23,7 @@ const UpdateEmailForm = () => {
             initialValues={{
                 email: '',
                 confirm_email: '',
-                username: '',
-                password: '',
-                confirm_password: '',
+                current_password: '',
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) =>{
@@ -47,6 +45,20 @@ const UpdateEmailForm = () => {
                     onSubmit={handleSubmit}
                     className={formClasses.form}
                 >
+                    <TextField
+                        name='current_password'
+                        type='password'
+                        label='current password'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.password}
+                        margin='normal'
+                        error={errors.password && touched.password}
+                        helperText={
+                            errors.password && touched.password ?
+                            errors.password : ''
+                        }
+                    />
                     <TextField
                         name='email'
                         type='email'

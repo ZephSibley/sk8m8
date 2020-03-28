@@ -21,9 +21,7 @@ const UpdatePasswordForm = () => {
     return (
         <Formik
             initialValues={{
-                email: '',
-                confirm_email: '',
-                username: '',
+                current_password: '',
                 password: '',
                 confirm_password: '',
             }}
@@ -48,9 +46,23 @@ const UpdatePasswordForm = () => {
                     className={formClasses.form}
                 >
                     <TextField
+                        name='current_password'
+                        type='password'
+                        label='current password'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.password}
+                        margin='normal'
+                        error={errors.password && touched.password}
+                        helperText={
+                            errors.password && touched.password ?
+                            errors.password : ''
+                        }
+                    />
+                    <TextField
                         name='password'
                         type='password'
-                        label='password'
+                        label='new password'
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.password}

@@ -8,25 +8,17 @@ exports[`Basic Rendering 1`] = `
     className="MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-avatar"
-    >
-      <div
-        className="MuiAvatar-root"
-      >
-        <img
-          alt="Loading"
-          className="MuiAvatar-img"
-          src="ajax-loader.gif"
-        />
-      </div>
-    </div>
-    <div
       className="MuiCardHeader-content"
     >
       <span
-        className="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+        className="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
       >
         Loading
+      </span>
+      <span
+        className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        avatars coming soon
       </span>
     </div>
   </div>
@@ -35,7 +27,7 @@ exports[`Basic Rendering 1`] = `
   >
     <div>
       <form
-        className="makeStyles-textFieldForm-71"
+        className="makeStyles-textFieldForm-68"
         onSubmit={[Function]}
       >
         <div
@@ -68,11 +60,9 @@ exports[`Basic Rendering 1`] = `
         </div>
         <span
           className="MuiFormHelperText-root Mui-error"
-        >
-          
-        </span>
+        />
         <button
-          className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-75 MuiButton-outlined MuiButton-outlinedPrimary"
+          className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-72 MuiButton-outlined MuiButton-outlinedPrimary"
           disabled={false}
           margin="normal"
           onBlur={[Function]}

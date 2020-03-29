@@ -36,9 +36,7 @@ exports[`Basic Rendering 1`] = `
     </div>
     <span
       className="MuiFormHelperText-root Mui-error"
-    >
-      
-    </span>
+    />
     <button
       className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-7 MuiButton-outlined MuiButton-outlinedPrimary"
       disabled={false}

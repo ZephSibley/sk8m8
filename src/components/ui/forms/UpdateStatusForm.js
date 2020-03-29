@@ -6,13 +6,14 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
+import BackendValidationError from '../text/BackendValidationError';
 
 
 const UpdateStatusForm = props => {
     // Prop: requests; http client
     // Prop: currentStatus; string
 
-    const [submitError, setSubmitError] = useState('')
+    const [submitError, setSubmitError] = useState([])
 
     const formClasses = formStyles();
     return (
@@ -29,7 +30,7 @@ const UpdateStatusForm = props => {
                         setSubmitting(false)
                     ).catch(err => {
                         setSubmitting(false);
-                        setSubmitError(err.message);
+                        setSubmitError(Object.values(JSON.parse(err)));
                     })
                 }}
 
@@ -62,12 +63,7 @@ const UpdateStatusForm = props => {
                                         errors.status : ''
                                 }
                             />
-                            <FormHelperText
-                                component={'span'}
-                                error={true}
-                            >
-                                {submitError}
-                            </FormHelperText>
+                            <BackendValidationError resp={submitError} />
                             <Button
                                 variant="outlined"
                                 color="primary"

@@ -2,16 +2,16 @@ import React, { useState, } from 'react';
 import { Formik } from 'formik';
 import *  as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
+import BackendValidationError from '../text/BackendValidationError';
 
 
 const LoginForm = ({ requests }) => {
     const formClasses = formStyles();
 
-    const [submitError, setSubmitError] = useState('')
+    const [submitError, setSubmitError] = useState([])
 
     const validationSchema = Yup.object().shape({
         email: Yup.string()
@@ -37,7 +37,7 @@ const LoginForm = ({ requests }) => {
                         window.location.href = "/"
                     ).catch(err => {
                         setSubmitting(false);
-                        setSubmitError(err.message);
+                        setSubmitError(Object.values(JSON.parse(err)));
                     })
                 }}
 
@@ -83,12 +83,7 @@ const LoginForm = ({ requests }) => {
                                         errors.password : ''
                                 }
                             />
-                            <FormHelperText
-                                component={'span'}
-                                error={true}
-                            >
-                                {submitError}
-                            </FormHelperText>
+                            <BackendValidationError resp={submitError} />
                             <Button
                                 variant="contained"
                                 color="primary"

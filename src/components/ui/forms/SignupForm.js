@@ -2,18 +2,18 @@ import React, { useState, } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
 import SuccessModal from '../modals/SuccessModal';
+import BackendValidationError from '../text/BackendValidationError';
 
 
 const SignupForm = ({ requests }) => {
     const formClasses = formStyles();
 
     const [success, setSuccess] = useState(false);
-    const [submitError, setSubmitError] = useState(null);
+    const [submitError, setSubmitError] = useState([]);
 
     const validationSchema = Yup.object().shape({
         email: Yup.string()
@@ -53,7 +53,7 @@ const SignupForm = ({ requests }) => {
                     ).then(response =>
                         setSuccess(true)
                     ).catch(err => {
-                        setSubmitError(err.message);
+                        setSubmitError(Object.values(JSON.parse(err)));
                         setSubmitting(false);
                     }
                     );
@@ -144,12 +144,7 @@ const SignupForm = ({ requests }) => {
                                         errors.confirm_password : ''
                                 }
                             />
-                            <FormHelperText
-                                component={'span'}
-                                error={true}
-                            >
-                                {submitError}
-                            </FormHelperText>
+                            <BackendValidationError resp={submitError} />
                             <Button
                                 variant="contained"
                                 color="primary"

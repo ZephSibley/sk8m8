@@ -10,6 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 
 import VideoInput from '../inputs/VideoInput';
 import formStyles from '../../../styles/forms';
+import BackendValidationError from '../text/BackendValidationError';
 
 
 const CreateMarkerForm = props => {
@@ -21,6 +22,8 @@ const CreateMarkerForm = props => {
     const [locationTypes, updateLocationTypes] = useState(
         <option>Loading...</option>
     );
+    const [success, setSuccess] = useState(false);
+    const [submitError, setSubmitError] = useState([]);
 
     useEffect(() => {
         props.requests.get(`
@@ -69,13 +72,13 @@ const CreateMarkerForm = props => {
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
-                    requests.post(
+                    props.requests.post(
                         `${process.env.REACT_APP_ENDPOINT}/mapmarker/create`,
                         values
                     ).then(response =>
                         setSuccess(true)
                     ).catch(err => {
-                        setSubmitError(err.message);
+                        setSubmitError(Object.values(JSON.parse(err)));
                         setSubmitting(false);
                     });
                 }}
@@ -145,6 +148,7 @@ const CreateMarkerForm = props => {
                                 onBlur={handleBlur}
                             />
                             }
+                            <BackendValidationError resp={submitError} />
                             <Button
                                 variant="contained"
                                 color="primary"

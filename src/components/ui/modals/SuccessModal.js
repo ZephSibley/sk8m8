@@ -28,6 +28,10 @@ const SuccessModal = props => {
         },
     }));
 
+    function refreshPage(){ 
+        window.location.reload(); 
+    }
+
     const classes = useStyles();
     return (
         <Modal
@@ -49,6 +53,7 @@ const SuccessModal = props => {
                             variant="contained"
                             color="primary"
                             component="span"
+                            onClick={refreshPage}
                         >
                             OK
                         </Button>

@@ -24,7 +24,7 @@ const UpdateStatusForm = props => {
                     console.log(values)
                     setSubmitting(true);
                     props.requests.post(
-                        `${process.env.REACT_APP_ENDPOINT}/account/status`,
+                        `${process.env.REACT_APP_ENDPOINT}account/status`,
                         values
                     ).then(response =>
                         setSubmitting(false)

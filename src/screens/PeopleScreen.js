@@ -24,7 +24,7 @@ const PeopleScreen = () => {
     useEffect(() => {
         if (location[0] !== null && location[1] !== null) {
             axios.post(
-                `${process.env.REACT_APP_ENDPOINT}/account/updatelocation`,
+                `${process.env.REACT_APP_ENDPOINT}account/updatelocation`,
                 location
             )
         }

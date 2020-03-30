@@ -19,7 +19,7 @@ const ChatView = props => {
 
     useEffect(() => {
         setHubConnection(new signalR.HubConnectionBuilder()
-            .withUrl(`${process.env.REACT_APP_ENDPOINT}/hubs/chat`, { /*accessTokenFactory: getAccessToken()*/ })
+            .withUrl(`${process.env.REACT_APP_ENDPOINT}hubs/chat`, { /*accessTokenFactory: getAccessToken()*/ })
             .configureLogging(signalR.LogLevel.Information)
             .build()
         );

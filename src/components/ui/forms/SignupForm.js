@@ -48,7 +48,7 @@ const SignupForm = ({ requests }) => {
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
                     requests.post(
-                        `${process.env.REACT_APP_ENDPOINT}/account/create`,
+                        `${process.env.REACT_APP_ENDPOINT}account/create`,
                         values
                     ).then(response =>
                         setSuccess(true)

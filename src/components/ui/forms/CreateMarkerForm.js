@@ -73,7 +73,7 @@ const CreateMarkerForm = props => {
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
                     props.requests.post(
-                        `${process.env.REACT_APP_ENDPOINT}/mapmarker/create`,
+                        `${process.env.REACT_APP_ENDPOINT}mapmarker/create`,
                         values
                     ).then(response =>
                         setSuccess(true)

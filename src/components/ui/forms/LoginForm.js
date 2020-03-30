@@ -28,7 +28,6 @@ const LoginForm = ({ requests }) => {
                 initialValues={{ email: '', password: '' }}
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values)
                     setSubmitting(true);
                     requests.post(
                         `${process.env.REACT_APP_ENDPOINT}/account/login`,

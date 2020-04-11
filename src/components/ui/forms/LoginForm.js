@@ -30,7 +30,7 @@ const LoginForm = ({ requests }) => {
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
                     requests.post(
-                        `${process.env.REACT_APP_ENDPOINT}account/login`,
+                        `${process.env.REACT_APP_ENDPOINT}account/sitelogin`,
                         values
                     ).then(response =>
                         window.location.href = "/"

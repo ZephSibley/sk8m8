@@ -32,9 +32,10 @@ const LoginForm = ({ requests }) => {
                     requests.post(
                         `${process.env.REACT_APP_ENDPOINT}account/sitelogin`,
                         values
-                    ).then(response =>
+                    ).then(response => {
+                        window.localStorage.setItem('authenticated', true)
                         window.location.href = "/"
-                    ).catch(err => {
+                    }).catch(err => {
                         setSubmitting(false);
                         setSubmitError(Object.values(JSON.parse(err)));
                     })

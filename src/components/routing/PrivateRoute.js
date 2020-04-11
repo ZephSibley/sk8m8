@@ -3,11 +3,10 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import getCookie from '../../utils/browser/getCookie';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    getCookie('jwt') ?
+    window.localStorage.getItem('authenticated') ?
       <Component {...props} /> :
       <Redirect to={{
         pathname: '/login',

@@ -30,7 +30,7 @@ const UpdateStatusForm = props => {
                         setSubmitting(false)
                     ).catch(err => {
                         setSubmitting(false);
-                        setSubmitError(Object.values(JSON.parse(err)));
+                        setSubmitError(err.message || Object.values(JSON.parse(err)));
                     })
                 }}
 

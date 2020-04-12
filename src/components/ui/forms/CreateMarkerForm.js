@@ -78,7 +78,7 @@ const CreateMarkerForm = props => {
                     ).then(response =>
                         setSuccess(true)
                     ).catch(err => {
-                        setSubmitError(Object.values(JSON.parse(err)));
+                        setSubmitError(err.message || Object.values(JSON.parse(err)));
                         setSubmitting(false);
                     });
                 }}

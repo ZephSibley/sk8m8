@@ -37,7 +37,7 @@ const LoginForm = ({ requests }) => {
                         window.location.href = "/"
                     }).catch(err => {
                         setSubmitting(false);
-                        setSubmitError(Object.values(JSON.parse(err)));
+                        setSubmitError(err.message || Object.values(JSON.parse(err)));
                     })
                 }}
 

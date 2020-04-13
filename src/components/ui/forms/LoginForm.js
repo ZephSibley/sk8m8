@@ -34,7 +34,7 @@ const LoginForm = ({ requests }) => {
                         values
                     ).then(response => {
                         window.localStorage.setItem('authenticated', true)
-                        window.location.href = "/"
+                        //window.location.href = "/"
                     }).catch(err => {
                         setSubmitting(false);
                         setSubmitError(err.message || Object.values(JSON.parse(err)));

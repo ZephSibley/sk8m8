@@ -5,6 +5,46 @@ exports[`Basic Rendering 1`] = `
   className="screen"
 >
   <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <span
+        className="MuiFormHelperText-root Mui-error"
+      />
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+        disabled={false}
+        margin="normal"
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="submit"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Log out
+        </span>
+      </button>
+    </form>
+  </div>
+  <div
     className="MuiPaper-root MuiPaper-elevation1 MuiCard-root MuiPaper-rounded"
   >
     <div
@@ -30,7 +70,7 @@ exports[`Basic Rendering 1`] = `
     >
       <div>
         <form
-          className="makeStyles-textFieldForm-68"
+          className="makeStyles-textFieldForm-96"
           onSubmit={[Function]}
         >
           <div
@@ -65,7 +105,7 @@ exports[`Basic Rendering 1`] = `
             className="MuiFormHelperText-root Mui-error"
           />
           <button
-            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-72 MuiButton-outlined MuiButton-outlinedPrimary"
+            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-100 MuiButton-outlined MuiButton-outlinedPrimary"
             disabled={false}
             margin="normal"
             onBlur={[Function]}
@@ -183,7 +223,7 @@ exports[`Basic Rendering 1`] = `
               className="MuiExpansionPanelDetails-root"
             >
               <form
-                className="makeStyles-form-66"
+                className="makeStyles-form-94"
                 onSubmit={[Function]}
               >
                 <div
@@ -270,7 +310,7 @@ exports[`Basic Rendering 1`] = `
                   
                 </div>
                 <button
-                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-70 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-98 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
                   disabled={true}
                   margin="normal"
                   onBlur={[Function]}
@@ -391,7 +431,7 @@ exports[`Basic Rendering 1`] = `
               className="MuiExpansionPanelDetails-root"
             >
               <form
-                className="makeStyles-form-66"
+                className="makeStyles-form-94"
                 onSubmit={[Function]}
               >
                 <div
@@ -479,7 +519,7 @@ exports[`Basic Rendering 1`] = `
                   
                 </div>
                 <button
-                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-70 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-98 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
                   disabled={true}
                   margin="normal"
                   onBlur={[Function]}

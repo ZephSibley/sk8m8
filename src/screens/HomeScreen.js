@@ -10,6 +10,7 @@ import '../styles/screens.css'
 import UserCard from '../components/account/UserCard';
 import UpdateEmailForm from '../components/ui/forms/UpdateEmailForm';
 import UpdatePasswordForm from '../components/ui/forms/UpdatePasswordForm';
+import LogoutForm from '../components/ui/forms/LogoutForm';
 
 // CHANGE ME IN PRODUCTION
 const userDetailsMock = {username: 'zeph', avatar:'', status:'bio bio bio'}
@@ -25,7 +26,7 @@ const HomeScreen = () => {
 
     return (
         <div className={'screen'}>
-
+            <LogoutForm requests={axios} />
             <UserCard
                 requests={axios}
                 username={userDetailsMock.username}
@@ -63,6 +64,7 @@ const HomeScreen = () => {
                     <UpdatePasswordForm />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
+            
         </div>
     );
 }

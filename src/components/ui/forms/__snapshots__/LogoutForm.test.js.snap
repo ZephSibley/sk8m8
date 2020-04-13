@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Rendering 1`] = `
+<div
+  style={
+    Object {
+      "position": "absolute",
+      "right": 0,
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <span
+      className="MuiFormHelperText-root Mui-error"
+    />
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+      disabled={false}
+      margin="normal"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Log out
+      </span>
+    </button>
+  </form>
+</div>
+`;

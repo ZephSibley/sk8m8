@@ -29,7 +29,7 @@ const PeopleListing = props => {
     useEffect(() => {
         // Get location, add to queryurl
         props.requests.get(`
-            ${process.env.REACT_APP_ENDPOINT}People/Findlatitude=${props.location[0]}&longitude=${props.location[1]}&radius=${50}
+            ${process.env.REACT_APP_ENDPOINT}People/Find?latitude=${props.location[0]}&longitude=${props.location[1]}&radius=${50}
         `).then(data => {
             data.chat = toggleChat
             setPeopleListInfo(data)

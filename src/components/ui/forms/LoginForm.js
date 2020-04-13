@@ -31,7 +31,8 @@ const LoginForm = ({ requests }) => {
                     setSubmitting(true);
                     requests.post(
                         `${process.env.REACT_APP_ENDPOINT}account/sitelogin`,
-                        values
+                        values,
+                        { withCredentials: true },
                     ).then(response => {
                         window.localStorage.setItem('authenticated', true)
                         //window.location.href = "/"

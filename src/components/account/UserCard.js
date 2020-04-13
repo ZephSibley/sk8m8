@@ -20,9 +20,10 @@ const UserCard = props => {
 
     useEffect(() => {
         // Get location, add to queryurl
-        props.requests.get(`
-            ${process.env.REACT_APP_ENDPOINT}account/details
-        `).then(data => 
+        props.requests.get(
+            `${process.env.REACT_APP_ENDPOINT}account/details`,
+            { withCredentials: true}
+        ).then(data => 
             updateUserDetails(data)
         ).catch(err =>
             updateUserDetails({

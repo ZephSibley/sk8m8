@@ -25,7 +25,8 @@ const UpdateStatusForm = props => {
                     setSubmitting(true);
                     props.requests.post(
                         `${process.env.REACT_APP_ENDPOINT}account/status`,
-                        values
+                        values,
+                        { withCredentials: true }
                     ).then(response =>
                         setSubmitting(false)
                     ).catch(err => {

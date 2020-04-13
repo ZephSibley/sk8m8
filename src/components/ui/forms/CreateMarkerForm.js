@@ -26,9 +26,10 @@ const CreateMarkerForm = props => {
     const [submitError, setSubmitError] = useState([]);
 
     useEffect(() => {
-        props.requests.get(`
-            ${process.env.REACT_APP_ENDPOINT}mapmarker/locationTypes
-        `).then(data => {
+        props.requests.get(
+            `${process.env.REACT_APP_ENDPOINT}mapmarker/locationTypes`,
+            { withCredentials: true }
+        ).then(data => {
             const options = data.map((index, type) =>
                 <option key={index}>{type}</option>
             );
@@ -73,7 +74,8 @@ const CreateMarkerForm = props => {
                     setSubmitting(true);
                     props.requests.post(
                         `${process.env.REACT_APP_ENDPOINT}mapmarker/create`,
-                        values
+                        values,
+                        { withCredentials: true }
                     ).then(response =>
                         setSuccess(true)
                     ).catch(err => {

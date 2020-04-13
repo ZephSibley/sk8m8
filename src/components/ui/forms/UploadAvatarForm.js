@@ -39,7 +39,8 @@ const UploadAvatarForm = ({ requests }) => {
                 setSubmitting(true);
                 requests.post(
                     `${process.env.REACT_APP_ENDPOINT}account/updateavatar`,
-                    values
+                    values,
+                    { withCredentials: true }
                 ).catch(err => {
                     setSubmitError(err.message);
                     setSubmitting(false);

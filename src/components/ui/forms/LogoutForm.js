@@ -18,6 +18,7 @@ const LogoutForm = ({ requests }) => {
                     setSubmitting(true);
                     requests.get(
                         `${process.env.REACT_APP_ENDPOINT}account/sitelogout`,
+                        { withCredentials: true }
                     ).then(response => {
                         window.localStorage.setItem('authenticated', false)
                         window.location.href = "/"

@@ -52,9 +52,10 @@ const PopupContent = props => {
     })
 
     useEffect(() => {
-        props.requests.get(`
-            ${process.env.REACT_APP_ENDPOINT}mapmarker/details?id=${props.markerId}
-        `).then(data => 
+        props.requests.get(
+            `${process.env.REACT_APP_ENDPOINT}mapmarker/details?id=${props.markerId}`,
+            { withCredentials: true }
+        ).then(data => 
             updateMarkerDetails(data)
         ).catch(e =>
             updateMarkerDetails(m =>  m.name = e.message)    

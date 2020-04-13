@@ -27,8 +27,7 @@ const CreateMarkerForm = props => {
 
     useEffect(() => {
         props.requests.get(`
-            ${process.env.REACT_APP_ENDPOINT}
-            mapmarker/locationTypes
+            ${process.env.REACT_APP_ENDPOINT}mapmarker/locationTypes
         `).then(data => {
             const options = data.map((index, type) =>
                 <option key={index}>{type}</option>

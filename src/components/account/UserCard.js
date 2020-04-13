@@ -22,7 +22,7 @@ const UserCard = props => {
         // Get location, add to queryurl
         props.requests.get(`
             ${process.env.REACT_APP_ENDPOINT}
-            /Account/Details
+            Account/Details
         `).then(data => 
             updateUserDetails(data)
         ).catch(err =>

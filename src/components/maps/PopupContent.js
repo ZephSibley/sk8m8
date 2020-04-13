@@ -54,7 +54,7 @@ const PopupContent = props => {
     useEffect(() => {
         props.requests.get(`
             ${process.env.REACT_APP_ENDPOINT}
-            /mapmarker/details?id=
+            mapmarker/details?id=
             ${props.markerId}
         `).then(data => 
             updateMarkerDetails(data)

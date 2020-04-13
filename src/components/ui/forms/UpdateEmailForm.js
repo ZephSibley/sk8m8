@@ -43,7 +43,6 @@ const UpdateEmailForm = () => {
             }) => (
                 <form
                     onSubmit={handleSubmit}
-                    className={formClasses.form}
                 >
                     <TextField
                         name='current_password'

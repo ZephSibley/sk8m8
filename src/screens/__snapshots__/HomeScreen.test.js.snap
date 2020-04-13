@@ -223,7 +223,6 @@ exports[`Basic Rendering 1`] = `
               className="MuiExpansionPanelDetails-root"
             >
               <form
-                className="makeStyles-form-94"
                 onSubmit={[Function]}
               >
                 <div
@@ -431,7 +430,6 @@ exports[`Basic Rendering 1`] = `
               className="MuiExpansionPanelDetails-root"
             >
               <form
-                className="makeStyles-form-94"
                 onSubmit={[Function]}
               >
                 <div

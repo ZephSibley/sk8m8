@@ -27,7 +27,7 @@ const UpdatePasswordForm = () => {
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) =>{
-                console.log(values)
+                //console.log(values)
                 setSubmitting(true);
             }}
         

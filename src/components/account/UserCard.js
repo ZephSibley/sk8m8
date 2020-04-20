@@ -22,12 +22,7 @@ const UserCard = props => {
         // Get location, add to queryurl
         props.requests.get(
             `${process.env.REACT_APP_ENDPOINT}account/me`,
-            { 
-                withCredentials: true,
-                headers: {
-                    "sec-fetch-site": "cross-site"
-                }
-            }
+            { withCredentials: true}
         ).then(data => 
             updateUserDetails(data)
         ).catch(err =>

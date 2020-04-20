@@ -26,7 +26,11 @@ const PeopleScreen = () => {
             axios.post(
                 `${process.env.REACT_APP_ENDPOINT}account/updatelocation`,
                 location,
-                { withCredentials: true },
+                {
+                    headers: {
+                        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                    }
+                }
             )
         }
     }, [location])

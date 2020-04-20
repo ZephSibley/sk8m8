@@ -54,7 +54,11 @@ const PopupContent = props => {
     useEffect(() => {
         props.requests.get(
             `${process.env.REACT_APP_ENDPOINT}mapmarker/details?id=${props.markerId}`,
-            { withCredentials: true }
+            {
+                headers: {
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                }
+            }
         ).then(data => 
             updateMarkerDetails(data)
         ).catch(e =>

@@ -32,7 +32,11 @@ const LoginForm = ({ requests }) => {
                     requests.post(
                         `${process.env.REACT_APP_ENDPOINT}account/sitelogin`,
                         values,
-                        { withCredentials: true },
+                        {
+                            headers: {
+                                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                            }
+                        }
                     ).then(response => {
                         window.sessionStorage.setItem('token', response.jwt)
                         window.location.href = "/"

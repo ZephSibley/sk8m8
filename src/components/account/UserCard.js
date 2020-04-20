@@ -22,7 +22,11 @@ const UserCard = props => {
         // Get location, add to queryurl
         props.requests.get(
             `${process.env.REACT_APP_ENDPOINT}account/me`,
-            { withCredentials: true}
+            {
+                headers: {
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                }
+            }
         ).then(data => 
             updateUserDetails(data)
         ).catch(err =>

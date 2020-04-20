@@ -28,7 +28,11 @@ const CreateMarkerForm = props => {
     useEffect(() => {
         props.requests.get(
             `${process.env.REACT_APP_ENDPOINT}mapmarker/locationTypes`,
-            { withCredentials: true }
+            {
+                headers: {
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                }
+            }
         ).then(data => {
             const options = data.map((index, type) =>
                 <option key={index}>{type}</option>
@@ -75,7 +79,11 @@ const CreateMarkerForm = props => {
                     props.requests.post(
                         `${process.env.REACT_APP_ENDPOINT}mapmarker/create`,
                         values,
-                        { withCredentials: true }
+                        {
+                            headers: {
+                                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                            }
+                        }
                     ).then(response =>
                         setSuccess(true)
                     ).catch(err => {

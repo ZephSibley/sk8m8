@@ -26,7 +26,11 @@ const UpdateStatusForm = props => {
                     props.requests.post(
                         `${process.env.REACT_APP_ENDPOINT}account/updatestatus`,
                         values,
-                        { withCredentials: true }
+                        {
+                            headers: {
+                                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                            }
+                        }
                     ).then(response =>
                         setSubmitting(false)
                     ).catch(err => {

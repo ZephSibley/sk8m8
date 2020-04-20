@@ -40,7 +40,11 @@ const UploadAvatarForm = ({ requests }) => {
                 requests.post(
                     `${process.env.REACT_APP_ENDPOINT}account/updateavatar`,
                     values,
-                    { withCredentials: true }
+                    {
+                        headers: {
+                            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                        }
+                    }
                 ).catch(err => {
                     setSubmitError(err.message);
                     setSubmitting(false);

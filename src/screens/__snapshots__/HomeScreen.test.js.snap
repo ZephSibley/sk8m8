@@ -74,10 +74,10 @@ exports[`Basic Rendering 1`] = `
             className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
           >
             <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
-              data-shrink={true}
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+              data-shrink={false}
             >
-              status
+              Whatcha sayin?
             </label>
             <div
               className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-multiline MuiInput-multiline"
@@ -93,7 +93,7 @@ exports[`Basic Rendering 1`] = `
                 onFocus={[Function]}
                 required={false}
                 rows="4"
-                value="Whatcha sayin?"
+                value=""
               />
             </div>
             

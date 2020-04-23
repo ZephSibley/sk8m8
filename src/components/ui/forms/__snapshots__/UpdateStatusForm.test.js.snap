@@ -13,7 +13,7 @@ exports[`Basic Rendering 1`] = `
         className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
         data-shrink={true}
       >
-        status
+        Whatcha sayin?
       </label>
       <div
         className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-multiline MuiInput-multiline"

@@ -30,7 +30,7 @@ const LoginForm = ({ requests }) => {
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
                     requests.post(
-                        `${process.env.REACT_APP_ENDPOINT}account/sitelogin`,
+                        `${process.env.REACT_APP_ENDPOINT}account/login`,
                         values,
                         {
                             headers: {

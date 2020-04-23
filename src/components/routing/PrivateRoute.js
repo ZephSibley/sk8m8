@@ -6,7 +6,7 @@ import {
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    window.localStorage.getItem('token') ?
+    window.sessionStorage.getItem('token') ?
       <Component {...props} /> :
       <Redirect to={{
         pathname: '/login',

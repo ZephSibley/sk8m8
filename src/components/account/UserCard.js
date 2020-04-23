@@ -27,8 +27,8 @@ const UserCard = props => {
                     'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                 }
             }
-        ).then(data => 
-            updateUserDetails(data)
+        ).then(response => 
+            updateUserDetails(response.data)
         ).catch(err =>
             updateUserDetails({
                 username: 'Something went wrong D:',

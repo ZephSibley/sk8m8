@@ -38,8 +38,9 @@ const LoginForm = ({ requests }) => {
                             }
                         }
                     ).then(response => {
-                        window.sessionStorage.setItem('token', JSON.parse(response).jwt)
-                        window.location.href = "/"
+                        console.log(response, JSON.parse(response))
+                        //window.sessionStorage.setItem('token', JSON.parse(response).jwt)
+                        //window.location.href = "/"
                     }).catch(err => {
                         setSubmitting(false);
                         setSubmitError(err.message || Object.values(JSON.parse(err)));

@@ -38,13 +38,12 @@ const LoginForm = ({ requests }) => {
                             }
                         }
                     ).then(response => {
-                        console.log(response)
-                        //window.sessionStorage.setItem('token', JSON.parse(response).jwt)
-                        //window.location.href = "/"
-                    })/*.catch(err => {
+                        window.sessionStorage.setItem('token', response.data.jwt)
+                        window.location.href = "/"
+                    }).catch(err => {
                         setSubmitting(false);
                         setSubmitError(err.message || Object.values(JSON.parse(err)));
-                    })*/
+                    });
                 }}
 
                 render={({

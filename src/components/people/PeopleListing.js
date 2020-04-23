@@ -38,7 +38,7 @@ const PeopleListing = props => {
                 }
             ).then(response => {
                 response.data.chat = toggleChat
-                setPeopleListInfo(data)
+                setPeopleListInfo(response.data)
             }).catch(err =>
                 setPeopleListInfo([{
                     key: 0,

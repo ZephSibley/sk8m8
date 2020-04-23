@@ -19,7 +19,7 @@ const UpdateStatusForm = props => {
     return (
         <div>
             <Formik
-                initialValues={{ status: props.currentStatus || 'Whatcha sayin?', }}
+                initialValues={{ status: props.currentStatus }}
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
                     props.requests.post(
@@ -54,7 +54,7 @@ const UpdateStatusForm = props => {
                         >
                             <TextField
                                 name='status'
-                                label='status'
+                                label='Whatcha sayin?'
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.status}

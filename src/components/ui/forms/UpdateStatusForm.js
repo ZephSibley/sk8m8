@@ -15,10 +15,18 @@ const UpdateStatusForm = props => {
 
     const [submitError, setSubmitError] = useState([])
     const formClasses = formStyles();
+
+    const validationSchema = Yup.object().shape({
+        marker_name: Yup.string()
+            .required("")
+            .max(200, "Too long!"),
+    });
+
     return (
         <div>
             <Formik
                 initialValues={{ status: props.currentStatus }}
+                validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
                     props.requests.post(
@@ -74,7 +82,7 @@ const UpdateStatusForm = props => {
                                 className={formClasses.pullRight}
                                 type="submit"
                                 margin='normal'
-                                disabled={isSubmitting}
+                                disabled={isSubmitting || !isValid}
                             >
                                 Update
                             </Button>

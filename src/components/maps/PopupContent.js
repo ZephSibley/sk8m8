@@ -59,8 +59,8 @@ const PopupContent = props => {
                     'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                 }
             }
-        ).then(data => 
-            updateMarkerDetails(data)
+        ).then(response => 
+            updateMarkerDetails(response.data)
         ).catch(e =>
             updateMarkerDetails(m =>  m.name = e.message)    
         );

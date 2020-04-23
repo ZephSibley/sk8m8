@@ -36,8 +36,8 @@ const PeopleListing = props => {
                         'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                     }
                 }
-            ).then(data => {
-                data.chat = toggleChat
+            ).then(response => {
+                response.data.chat = toggleChat
                 setPeopleListInfo(data)
             }).catch(err =>
                 setPeopleListInfo([{

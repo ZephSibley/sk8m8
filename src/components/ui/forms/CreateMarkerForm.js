@@ -33,8 +33,8 @@ const CreateMarkerForm = props => {
                     'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                 }
             }
-        ).then(data => {
-            const options = data.map((index, type) =>
+        ).then(response => {
+            const options = response.data.map((index, type) =>
                 <option key={index}>{type}</option>
             );
             options.unshift(<option key="blank" ></option>)

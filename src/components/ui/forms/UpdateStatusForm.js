@@ -14,7 +14,6 @@ const UpdateStatusForm = props => {
     // Prop: currentStatus; string
 
     const [submitError, setSubmitError] = useState([])
-    console.log(props.currentStatus)
     const formClasses = formStyles();
     return (
         <div>

@@ -155,7 +155,7 @@ const CreateMarkerForm = props => {
                                 touched={touched.marker_video}
                                 onBlur={handleBlur}
                             /> :
-                            <p>Video upload coming soon!</p>                            
+                            <p>Video upload coming soon!</p>
                             }
                             <BackendValidationError resp={submitError} />
                             <Button

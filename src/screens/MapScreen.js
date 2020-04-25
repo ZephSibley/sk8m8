@@ -20,7 +20,7 @@ const MapScreen = () => {
     const [location, setLocation] = useState([
         null, null
     ]);
-    const [radius, setRadius] = useState(10);
+    const [radius, setRadius] = useState(1);
     const [isLoading, setLoadingStatus] = useState(true);
     const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
@@ -79,6 +79,7 @@ const MapScreen = () => {
                         inputProps={{ name: 'radius', id: 'radius' }}
                     >
                         <option value={0}>0</option>
+                        <option value={1}>1</option>
                         <option value={5}>5</option>
                         <option value={10}>10</option>
                         <option value={25}>25</option>

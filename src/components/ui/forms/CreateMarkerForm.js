@@ -11,6 +11,7 @@ import FormControl from '@material-ui/core/FormControl';
 import VideoInput from '../inputs/VideoInput';
 import formStyles from '../../../styles/forms';
 import BackendValidationError from '../text/BackendValidationError';
+import { Typography } from '@material-ui/core';
 
 
 const CreateMarkerForm = props => {
@@ -155,7 +156,7 @@ const CreateMarkerForm = props => {
                                 touched={touched.marker_video}
                                 onBlur={handleBlur}
                             /> :
-                            <p>Video upload coming soon!</p>
+                            <Typography color="textSecondary">Video upload coming soon!</Typography>
                             }
                             <BackendValidationError resp={submitError} />
                             <Button

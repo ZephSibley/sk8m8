@@ -144,7 +144,6 @@ const CreateMarkerForm = props => {
                                 }
                             </FormControl>
                             {process.env.REACT_APP_MARKER_VIDEO_FEATURE ?
-                            <p>Video upload coming soon!</p> :
                             <Field
                                 name="marker_video"
                                 component={VideoInput}
@@ -155,7 +154,8 @@ const CreateMarkerForm = props => {
                                 }
                                 touched={touched.marker_video}
                                 onBlur={handleBlur}
-                            />
+                            /> :
+                            <p>Video upload coming soon!</p>                            
                             }
                             <BackendValidationError resp={submitError} />
                             <Button

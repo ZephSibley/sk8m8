@@ -46,13 +46,13 @@ const CreateMarkerForm = props => {
     }, [props.requests]);
 
     const validationSchema = Yup.object().shape({
-        marker_name: Yup.string()
+        name: Yup.string()
             .required("Please give your marker a name")
             .min(3, "min. 3 characters"),
-        location_type: Yup.string()
+        category: Yup.string()
             .required("What kind of location are you marking?"),
         /* VIDEO UPLOAD FEATURE
-        marker_video: Yup.mixed()
+        video: Yup.mixed()
             .required("We need a video!")
             .test(
                 "fileSize",
@@ -69,10 +69,11 @@ const CreateMarkerForm = props => {
         </h4>
             <Formik
                 initialValues={{
-                    marker_name: '',
-                    location_type: '',
-                    marker_video: null,
-                    location: props.location,
+                    name: '',
+                    category: '',
+                    video: null,
+                    latitude: props.location[0],
+                    longitude: props.location[1],
                 }}
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
@@ -114,47 +115,47 @@ const CreateMarkerForm = props => {
                                 {/*Include a video but please keep it under 10 seconds. VIDEO UPLOAD FEATURE */}
                             </FormHelperText>
                             <TextField
-                                name='marker_name'
+                                name='name'
                                 label='name'
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.marker_name}
+                                value={values.name}
                                 margin='normal'
-                                error={errors.marker_name && touched.marker_name}
+                                error={errors.name && touched.name}
                                 helperText={
-                                    errors.marker_name && touched.marker_name ?
-                                        errors.marker_name : ''
+                                    errors.name && touched.name ?
+                                        errors.name : ''
                                 }
                             />
                             <FormControl margin='normal' style={{ maxWidth: 200 }}>
-                                <InputLabel htmlFor="location_type">Location Type</InputLabel>
+                                <InputLabel htmlFor="category">Location Type</InputLabel>
                                 <Select
                                     native
-                                    inputProps={{ name: 'location_type', id: 'location_type' }}
+                                    inputProps={{ name: 'category', id: 'category' }}
                                     style={{ width: 200, }}
-                                    value={values.location_type}
+                                    value={values.category}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 >
                                     {locationTypes}
                                 </Select>
-                                {errors.location_type &&
-                                    touched.location_type &&
-                                    <FormHelperText id="location_type_helper_text" error={true}>
-                                        {errors.location_type}
+                                {errors.category &&
+                                    touched.category &&
+                                    <FormHelperText id="category_helper_text" error={true}>
+                                        {errors.category}
                                     </FormHelperText>
                                 }
                             </FormControl>
-                            {process.env.REACT_APP_MARKER_VIDEO_FEATURE ?
+                            {process.env.REACT_APP_video_FEATURE ?
                             <Field
-                                name="marker_video"
+                                name="video"
                                 component={VideoInput}
                                 title="Upload"
                                 setFieldValue={setFieldValue}
-                                errorMessage={errors.marker_video ?
-                                    errors.marker_video : ''
+                                errorMessage={errors.video ?
+                                    errors.video : ''
                                 }
-                                touched={touched.marker_video}
+                                touched={touched.video}
                                 onBlur={handleBlur}
                             /> :
                             <Typography color="textSecondary">Video upload coming soon!</Typography>

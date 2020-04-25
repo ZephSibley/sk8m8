@@ -34,7 +34,7 @@ const CreateMarkerForm = props => {
                 }
             }
         ).then(response => {
-            const options = response.data.map((index, type) =>
+            const options = response.data.map((type, index) =>
                 <option key={index}>{type}</option>
             );
             options.unshift(<option key="blank" ></option>)

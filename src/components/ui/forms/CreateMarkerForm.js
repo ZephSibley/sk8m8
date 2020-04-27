@@ -48,7 +48,8 @@ const CreateMarkerForm = props => {
     const validationSchema = Yup.object().shape({
         name: Yup.string()
             .required("Please give your marker a name")
-            .min(3, "min. 3 characters"),
+            .min(3, "min. 3 characters")
+            .max(50, "Too long!"),
         category: Yup.string()
             .required("What kind of location are you marking?"),
         /* VIDEO UPLOAD FEATURE

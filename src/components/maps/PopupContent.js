@@ -48,7 +48,7 @@ const PopupContent = props => {
     const [markerDetails, updateMarkerDetails] = useState({
         name: 'Loading',
         locationType: '',
-        creator: <img style={{minWidth: 301}} src={spinner} alt='loading' />,
+        username: <img style={{minWidth: 301}} src={spinner} alt='loading' />,
     })
 
     useEffect(() => {
@@ -77,7 +77,7 @@ const PopupContent = props => {
                         {markerDetails.locationType}
                     </Typography>
                     <Typography variant="subtitle2" color="textSecondary">
-                        {`Created by ${markerDetails.creator}`}
+                        {`Created by ${markerDetails.username}`}
                     </Typography>
                 </CardContent>
                 <div className={classes.controls}>

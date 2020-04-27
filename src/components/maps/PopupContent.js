@@ -47,7 +47,7 @@ const PopupContent = props => {
 
     const [markerDetails, updateMarkerDetails] = useState({
         name: 'Loading',
-        locationType: '',
+        locationCategory: '',
         username: <img style={{minWidth: 301}} src={spinner} alt='loading' />,
     })
 
@@ -74,7 +74,7 @@ const PopupContent = props => {
                         {markerDetails.name}
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary">
-                        {markerDetails.locationType}
+                        {markerDetails.locationCategory}
                     </Typography>
                     <Typography variant="subtitle2" color="textSecondary">
                         {`Created by ${markerDetails.username}`}

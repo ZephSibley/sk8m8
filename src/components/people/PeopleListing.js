@@ -30,7 +30,7 @@ const PeopleListing = props => {
         // Get location, add to queryurl
         if (props.location[0] !== null && props.location[1] !== null) {
             props.requests.get(
-                `${process.env.REACT_APP_ENDPOINT}People/Find?latitude=${props.location[0]}&longitude=${props.location[1]}&radius=${50}`,
+                `${process.env.REACT_APP_ENDPOINT}People/Find?latitude=${props.location[0]}&longitude=${props.location[1]}&radius=${1}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${sessionStorage.getItem('token')}`

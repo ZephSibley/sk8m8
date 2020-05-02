@@ -5,12 +5,14 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 import '../styles/screens.css'
 import UserCard from '../components/account/UserCard';
 import UpdateEmailForm from '../components/ui/forms/UpdateEmailForm';
 import UpdatePasswordForm from '../components/ui/forms/UpdatePasswordForm';
 import LogoutForm from '../components/ui/forms/LogoutForm';
+import TsCsModal from '../components/ui/modals/TsCsModal';
 
 // CHANGE ME IN PRODUCTION
 const userDetailsMock = {username: 'zeph', avatar:'', status:'bio bio bio'}
@@ -19,6 +21,7 @@ const userDetailsMock = {username: 'zeph', avatar:'', status:'bio bio bio'}
 const HomeScreen = () => {
 
     const [expanded, setExpanded] = React.useState(false);
+    const [showTsCs, setShowTsCs] = React.useState(false);
 
     const togglePanel = panel => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -64,6 +67,9 @@ const HomeScreen = () => {
                     <UpdatePasswordForm />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
+
+            <TsCsModal open={showTsCs} />
+            <Button color="primary" onClick={ e => {  setShowTsCs(true) } }> terms and conditions.</Button>
             
         </div>
     );

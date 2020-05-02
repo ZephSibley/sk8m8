@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { Formik } from 'formik';
+import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -7,13 +7,14 @@ import Button from '@material-ui/core/Button';
 import formStyles from '../../../styles/forms';
 import SuccessModal from '../modals/SuccessModal';
 import BackendValidationError from '../text/BackendValidationError';
-
+import TsCsModal from '../modals/TsCsModal';
 
 const SignupForm = ({ requests }) => {
     const formClasses = formStyles();
 
     const [success, setSuccess] = useState(false);
     const [submitError, setSubmitError] = useState([]);
+    const [showTsCs, setShowTsCs] = useState(false);
 
     const validationSchema = Yup.object().shape({
         email: Yup.string()
@@ -28,7 +29,10 @@ const SignupForm = ({ requests }) => {
             .min(6, "min. 6 characters")
             .required("Please enter your password"),
         confirm_password: Yup.string()
-            .oneOf([Yup.ref('password'), null], 'Passwords must match')
+            .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+        terms: Yup.bool()
+            .required()
+            .oneOf([true]),
     })
 
     return (
@@ -43,6 +47,7 @@ const SignupForm = ({ requests }) => {
                     username: '',
                     password: '',
                     confirm_password: '',
+                    terms: false,
                 }}
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
@@ -145,6 +150,11 @@ const SignupForm = ({ requests }) => {
                                 }
                             />
                             <BackendValidationError resp={submitError} />
+                            <TsCsModal open={showTsCs} />
+                            <label>
+                                <Field type="checkbox" name="terms" />
+                                <Button color="primary" onClick={ e => {  setShowTsCs(true) } }> terms and conditions.</Button>
+                            </label>
                             <Button
                                 variant="contained"
                                 color="primary"

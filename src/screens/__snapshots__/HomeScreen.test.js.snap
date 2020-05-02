@@ -102,8 +102,8 @@ exports[`Basic Rendering 1`] = `
             className="MuiFormHelperText-root Mui-error"
           />
           <button
-            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-92 MuiButton-outlined MuiButton-outlinedPrimary"
-            disabled={false}
+            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-92 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+            disabled={true}
             margin="normal"
             onBlur={[Function]}
             onDragLeave={[Function]}
@@ -116,7 +116,7 @@ exports[`Basic Rendering 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="submit"
           >
             <span
@@ -544,5 +544,29 @@ exports[`Basic Rendering 1`] = `
       </div>
     </div>
   </div>
+  <button
+    className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <span
+      className="MuiButton-label"
+    >
+       terms and conditions.
+    </span>
+  </button>
 </div>
 `;

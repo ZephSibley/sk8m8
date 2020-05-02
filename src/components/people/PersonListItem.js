@@ -11,7 +11,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 const PersonListItem = props => {
     // Prop: username; string
     // Prop: avatar; string, url src
-    // Prop: bio; string
+    // Prop: status; string
     // Prop: chat; function, takes username - opens ChatView
 
     return (
@@ -32,15 +32,17 @@ const PersonListItem = props => {
                         variant="body2"
                         color="textPrimary"
                     >
-                        {props.bio}
+                        {props.status}
                     </Typography>
                 }
                 />
-                <ChatIcon
-                    color='primary'
-                    fontSize='large'
-                    onClick={() => props.chat(props.username)}
-                />
+                {/*
+                    <ChatIcon
+                        color='primary'
+                        fontSize='large'
+                        onClick={() => props.chat(props.username)}
+                    />
+                */}
             </ListItem>
             <Divider variant="inset" component="li" />
         </React.Fragment>

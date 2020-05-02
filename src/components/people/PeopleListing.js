@@ -15,7 +15,7 @@ const PeopleListing = props => {
         key: 0,
         username: 'Loading...',
         avatar: spinner,
-        bio: '',
+        status: '',
         chat: function(){}
     }]);
     const [interlocutor, setInterlocutor] = useState('');
@@ -44,7 +44,7 @@ const PeopleListing = props => {
                     key: 0,
                     username: 'Something went wrong D:',
                     avatar: '',
-                    bio: err.message,
+                    status: err.message,
                     chat: function(){}
                 }])
             );

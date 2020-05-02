@@ -5,14 +5,12 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import formStyles from '../../../styles/forms';
-import SuccessModal from '../modals/SuccessModal';
 import BackendValidationError from '../text/BackendValidationError';
 import TsCsModal from '../modals/TsCsModal';
 
 const SignupForm = ({ requests }) => {
     const formClasses = formStyles();
 
-    const [success, setSuccess] = useState(false);
     const [submitError, setSubmitError] = useState([]);
     const [showTsCs, setShowTsCs] = useState(false);
 
@@ -37,9 +35,6 @@ const SignupForm = ({ requests }) => {
 
     return (
         <div>
-            {success ? 
-                <SuccessModal redirect='/' /> : null
-            }
             <Formik
                 initialValues={{
                     email: '',
@@ -56,7 +51,7 @@ const SignupForm = ({ requests }) => {
                         `${process.env.REACT_APP_ENDPOINT}account/create`,
                         values
                     ).then(response =>
-                        setSuccess(true)
+                        window.location.href = "/"
                     ).catch(err => {
                         setSubmitError(err.message || Object.values(JSON.parse(err)));
                         setSubmitting(false);

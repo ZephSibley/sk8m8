@@ -112,7 +112,7 @@ const CreateMarkerForm = props => {
                             className={formClasses.form}
                         >
                             <FormHelperText>
-                                Mark this location on the map for others to see!<br />
+                                Mark YOUR CURRENT LOCATION on the map for others to see!<br />
                                 {/*Include a video but please keep it under 10 seconds. VIDEO UPLOAD FEATURE */}
                             </FormHelperText>
                             <TextField

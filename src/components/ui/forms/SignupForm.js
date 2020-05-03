@@ -22,6 +22,7 @@ const SignupForm = ({ requests }) => {
             .oneOf([Yup.ref('email'), null], 'Emails must match'),
         username: Yup.string()
             .min(3, "Username must be at least 3 characters")
+            .max(26, "Username is too long!")
             .required("Please enter a username"),
         password: Yup.string()
             .min(6, "min. 6 characters")

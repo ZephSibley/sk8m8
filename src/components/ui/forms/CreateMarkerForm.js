@@ -79,7 +79,6 @@ const CreateMarkerForm = props => {
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
-                    console.log(values)
                     props.requests.post(
                         `${process.env.REACT_APP_ENDPOINT}mapmarker/create`,
                         values,

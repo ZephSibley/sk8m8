@@ -16,7 +16,6 @@ const locate = async () => {
             console.log(e)
         }
     }
-    //console.log(latitude, longitude)
     return { latitude, longitude };
 }
 

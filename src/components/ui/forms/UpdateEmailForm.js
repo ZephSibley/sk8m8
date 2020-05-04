@@ -27,7 +27,6 @@ const UpdateEmailForm = () => {
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) =>{
-                console.log(values)
                 setSubmitting(true);
             }}
             

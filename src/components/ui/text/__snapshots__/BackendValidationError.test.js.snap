@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering a string 1`] = `
+<pre
+  className="MuiFormHelperText-root Mui-error"
+>
+  this is a string
+</pre>
+`;
+
+exports[`Rendering an array 1`] = `
+<pre
+  className="MuiFormHelperText-root Mui-error"
+>
+  rendering
+  an
+  array
+</pre>
+`;

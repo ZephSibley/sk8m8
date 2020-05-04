@@ -88,9 +88,10 @@ const CreateMarkerForm = props => {
                                 'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                             }
                         }
-                    ).then(response =>
+                    ).then(response => {
                         setSuccess(true)
-                    ).catch(err => {
+                        window.location.href = "/#/trickspot";
+                    }).catch(err => {
                         setSubmitError(err.message || Object.values(JSON.parse(err)));
                         setSubmitting(false);
                     });

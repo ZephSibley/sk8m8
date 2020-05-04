@@ -5,7 +5,7 @@ const BackendValidationError = ({ resp }) => {
     
     return (
         <FormHelperText
-            component={'span'}
+            component={'pre'}
             error={true}
         >
             {resp}

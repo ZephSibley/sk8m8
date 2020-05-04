@@ -62,7 +62,7 @@ exports[`Basic Rendering 1`] = `
       </div>
       
     </div>
-    <span
+    <pre
       className="MuiFormHelperText-root Mui-error"
     />
     <button

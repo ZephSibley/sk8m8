@@ -10,10 +10,10 @@ exports[`Basic Rendering 1`] = `
       className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
     >
       <label
-        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
-        data-shrink={true}
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+        data-shrink={false}
       >
-        Whatcha sayin?
+        Hey hey hey
       </label>
       <div
         className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-multiline MuiInput-multiline"
@@ -29,17 +29,17 @@ exports[`Basic Rendering 1`] = `
           onFocus={[Function]}
           required={false}
           rows="4"
-          value="Hey hey hey"
+          value=""
         />
       </div>
       
     </div>
-    <span
+    <pre
       className="MuiFormHelperText-root Mui-error"
     />
     <button
-      className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-7 MuiButton-outlined MuiButton-outlinedPrimary"
-      disabled={false}
+      className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-7 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+      disabled={true}
       margin="normal"
       onBlur={[Function]}
       onDragLeave={[Function]}
@@ -52,7 +52,7 @@ exports[`Basic Rendering 1`] = `
       onTouchEnd={[Function]}
       onTouchMove={[Function]}
       onTouchStart={[Function]}
-      tabIndex={0}
+      tabIndex={-1}
       type="submit"
     >
       <span

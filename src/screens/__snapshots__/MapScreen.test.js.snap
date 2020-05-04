@@ -66,12 +66,17 @@ exports[`Basic Rendering 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           required={false}
-          value={10}
+          value={1}
         >
           <option
             value={0}
           >
             0
+          </option>
+          <option
+            value={1}
+          >
+            1
           </option>
           <option
             value={5}

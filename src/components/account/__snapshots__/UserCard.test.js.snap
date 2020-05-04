@@ -58,12 +58,12 @@ exports[`Basic Rendering 1`] = `
           </div>
           
         </div>
-        <span
+        <pre
           className="MuiFormHelperText-root Mui-error"
         />
         <button
-          className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-72 MuiButton-outlined MuiButton-outlinedPrimary"
-          disabled={false}
+          className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-72 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+          disabled={true}
           margin="normal"
           onBlur={[Function]}
           onDragLeave={[Function]}
@@ -76,7 +76,7 @@ exports[`Basic Rendering 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="submit"
         >
           <span

@@ -92,7 +92,7 @@ const CreateMarkerForm = props => {
                         setSuccess(true)
                         window.location.href = "/#/trickspot";
                     }).catch(err => {
-                        setSubmitError(err.message || Object.values(JSON.parse(err)));
+                        setSubmitError(err.response ?  err.response.data : err.message);
                         setSubmitting(false);
                     });
                 }}

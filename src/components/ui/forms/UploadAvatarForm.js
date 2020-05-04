@@ -46,7 +46,7 @@ const UploadAvatarForm = ({ requests }) => {
                         }
                     }
                 ).catch(err => {
-                    setSubmitError(err.message);
+                    setSubmitError(err.response ?  err.response.data : err.message);
                     setSubmitting(false);
                 })
             }}

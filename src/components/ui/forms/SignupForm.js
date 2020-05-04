@@ -51,10 +51,10 @@ const SignupForm = ({ requests }) => {
                     requests.post(
                         `${process.env.REACT_APP_ENDPOINT}account/create`,
                         values
-                    ).then(response =>
+                    ).then(response => {
                         window.location.href = "/"
-                    ).catch(err => {
-                        setSubmitError(err.message || Object.values(JSON.parse(err)));
+                    }).catch(err => {
+                        setSubmitError(err.response ?  err.response.data : err.message);
                         setSubmitting(false);
                     }
                     );

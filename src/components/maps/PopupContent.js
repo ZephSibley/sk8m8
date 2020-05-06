@@ -7,8 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
-
-import spinner from '../../assets/img/ajax-loader.gif';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 const PopupContent = props => {
@@ -48,7 +47,7 @@ const PopupContent = props => {
     const [markerDetails, updateMarkerDetails] = useState({
         name: 'Loading',
         locationCategory: '',
-        username: <img style={{minWidth: 301}} src={spinner} alt='loading' />,
+        username: <CircularProgress />,
     })
 
     useEffect(() => {
@@ -97,7 +96,7 @@ const PopupContent = props => {
             {/*
                 <CardMedia
                     className={classes.cover}
-                    image={spinner}
+                    image={CircularProgress}
                     title="video"
                 />
             */}

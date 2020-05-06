@@ -4,9 +4,9 @@ import List from '@material-ui/core/List';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import MessageListItem from '../people/MessageListItem';
-import spinner from '../../assets/img/ajax-loader.gif';
 
 const ChatView = props => {
     // Prop: interlocutor; string, person we're talking to
@@ -14,7 +14,7 @@ const ChatView = props => {
     const [hubConnection, setHubConnection] = useState(null);
     const [myMessage, updateMyMessage] = useState('');
     const [messages, updateMessages] = useState([
-        <MessageListItem key={0} sender='' message='Loading' avatar={spinner} />
+        <MessageListItem key={0} sender='' message='Loading' avatar={CircularProgress} />
     ]);
 
     useEffect(() => {

@@ -5,10 +5,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
 
 import '../styles/screens.css'
-import spinner from '../assets/img/ajax-loader.gif';
 import locate from '../utils/browser/locate';
 import Map from '../components/maps/LeafletMap';
 import CreateMarkerForm from '../components/ui/forms/CreateMarkerForm';
@@ -49,7 +49,7 @@ const MapScreen = () => {
     return (
         <div className='screen'>
             {isLoading ?
-                <img src={spinner} alt='loading' /> :
+                <CircularProgress /> :
                 <Map 
                     location={location}
                     radius={radius}

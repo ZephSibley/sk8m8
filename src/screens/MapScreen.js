@@ -66,6 +66,7 @@ const MapScreen = () => {
                             variant="outlined"
                             color="primary"
                             component="span"
+                            disabled={!localStorage.getItem('token')}
                         >
                             Create a Marker 
                         </Button>

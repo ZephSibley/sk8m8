@@ -24,7 +24,7 @@ const UserCard = props => {
             `${process.env.REACT_APP_ENDPOINT}account/me`,
             {
                 headers: {
-                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
             }
         ).then(response => 

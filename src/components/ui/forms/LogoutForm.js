@@ -11,7 +11,7 @@ const LogoutForm = ({ requests }) => {
                 
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(true);
-                    window.sessionStorage.removeItem('token')
+                    window.localStorage.removeItem('token')
                     window.location.href = "/"
                 }}
 

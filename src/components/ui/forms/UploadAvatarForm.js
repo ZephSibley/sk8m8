@@ -42,7 +42,7 @@ const UploadAvatarForm = ({ requests }) => {
                     values,
                     {
                         headers: {
-                            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
                         }
                     }
                 ).catch(err => {

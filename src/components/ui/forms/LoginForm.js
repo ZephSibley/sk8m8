@@ -34,11 +34,11 @@ const LoginForm = ({ requests }) => {
                         values,
                         {
                             headers: {
-                                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                                'Authorization': `Bearer ${localStorage.getItem('token')}`
                             }
                         }
                     ).then(response => {
-                        window.sessionStorage.setItem('token', response.data.jwt)
+                        window.localStorage.setItem('token', response.data.jwt)
                         window.location.href = "/"
                     }).catch(err => {
                         setSubmitting(false);

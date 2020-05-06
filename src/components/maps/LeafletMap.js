@@ -26,7 +26,7 @@ const LeafletMap = props => {
                 `${process.env.REACT_APP_ENDPOINT}Mapmarker/Find?latitude=${props.location[0]}&longitude=${props.location[1]}&radius=${props.radius}`,
                 {
                     headers: {
-                        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
                 }
             ).then(response => 

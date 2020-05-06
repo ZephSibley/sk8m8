@@ -31,7 +31,7 @@ const CreateMarkerForm = props => {
             `${process.env.REACT_APP_ENDPOINT}mapmarker/locationTypes`,
             {
                 headers: {
-                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
             }
         ).then(response => {
@@ -84,7 +84,7 @@ const CreateMarkerForm = props => {
                         values,
                         {
                             headers: {
-                                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                                'Authorization': `Bearer ${localStorage.getItem('token')}`
                             }
                         }
                     ).then(response => {

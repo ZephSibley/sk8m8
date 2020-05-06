@@ -34,7 +34,7 @@ const UpdateStatusForm = props => {
                         values,
                         {
                             headers: {
-                                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                                'Authorization': `Bearer ${localStorage.getItem('token')}`
                             }
                         }
                     ).then(response =>

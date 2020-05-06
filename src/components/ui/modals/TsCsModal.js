@@ -44,7 +44,7 @@ const TsCsModal = props => {
                 </p>
                 <p>
                     Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms.
-                    These terms apply to all visitors, users, and others woh access or use the Service.
+                    These terms apply to all visitors, users, and others who access or use the Service.
                 </p>
                 <p>
                     By Accessing or using the Service you agree to be bound by these Terms.
@@ -60,7 +60,7 @@ const TsCsModal = props => {
                     Location based features
                 </h3>
                 <p>
-                    The core features of the Service are location based.
+                    The core features of the Service are location-based.
                     By using these features you agree to grant use of your location while using the Service.
                     We will NOT collect location information while the Service is not in use.
                 </p>
@@ -72,19 +72,19 @@ const TsCsModal = props => {
                 </p>
                 <ul>
                     <li>
-                        use the Service for any purpose illegal, harmful, or prohibited by these Terms and Conditions.
+                        Use the Service for any purpose illegal, harmful, or prohibited by these Terms and Conditions.
                     </li>
                     <li>
-                        impersonate any person or entity, or upload media of another person without their permission.
+                        Impersonate any person or entity, or upload media of another person without their permission.
                     </li>
                     <li>
-                        use the Service to deliver content which includes hate speech, racism, bigotry, spam, targetted harrassment, or fraudulent content.
+                        Use the Service to deliver content which includes hate speech, racism, bigotry, spam, targeted harassment, or fraudulent content.
                     </li>
                     <li>
-                        maintain more than one account or share an account with another person.
+                        Maintain more than one account or share an account with another person.
                     </li>
                     <li>
-                        create another account if we have terminated your account, without permission.
+                        Create another account if we have terminated your account, without permission.
                     </li>
                 </ul>
                 <h3>

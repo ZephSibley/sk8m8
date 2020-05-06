@@ -18,11 +18,14 @@ const PersonListItem = props => {
         <React.Fragment>
             <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                <Avatar
-                    alt={props.username}
-                    src={props.avatar || ''}
-                    //imgProps={loading='lazy'}
-                />
+                    {typeof props.avatar === "function" ?
+                        props.avatar : // If it's a function it is a component
+                        <Avatar
+                            alt={props.username}
+                            src={props.avatar || ''}
+                            //imgProps={loading='lazy'}
+                        />
+                    }
                 </ListItemAvatar>
                 <ListItemText
                 primary={props.username}

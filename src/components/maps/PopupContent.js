@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
+import Link from 'react-router-dom/Link';
 
 import spinner from '../../assets/img/ajax-loader.gif';
 
@@ -61,9 +62,16 @@ const PopupContent = props => {
             }
         ).then(response => 
             updateMarkerDetails(response.data)
-        ).catch(e =>
-            updateMarkerDetails(m =>  m.name = e.message)    
-        );
+        ).catch(e => {
+            if (e.response && e.response.status === 401) {
+                updateMarkerDetails({
+                    name: '',
+                    locationCategory: <div><Link to='/login' label='Log in' /> or <Link to='/signup' label='sign up' /> to view markers</div>,
+                    username: <img style={{minWidth: 301}} src={spinner} alt='loading' />,
+                })
+            }
+            updateMarkerDetails(m =>  m.name = e.message)   
+        });
     }, [props.requests, props.markerId]);
 
     return (

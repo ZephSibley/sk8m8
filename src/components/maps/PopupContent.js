@@ -8,7 +8,6 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Link from 'react-router-dom/Link';
 
 
 const PopupContent = props => {

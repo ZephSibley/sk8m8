@@ -66,7 +66,7 @@ const PopupContent = props => {
                 updateMarkerDetails({
                     name: '',
                     locationCategory: <div><Link to='/login' label='Log in' /> or <Link to='/signup' label='sign up' /> to view marker details</div>,
-                    username: <img style={{minWidth: 301}} src={spinner} alt='loading' />,
+                    username: '',
                 })
             }
             updateMarkerDetails(m =>  m.name = e.message)

@@ -18,7 +18,7 @@ const MainNav = () => {
         },
     });
 
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState(1);
 
     const classes = useStyles();
     return (
@@ -32,13 +32,13 @@ const MainNav = () => {
         >
             <BottomNavigationAction
                 component={Link}
-                to='/'
+                to='/home'
                 label="Home"
                 icon={<Home />}
             />
             <BottomNavigationAction
                 component={Link}
-                to='/trickspot'
+                to='/'
                 label="Trickspot"
                 icon={<LocationOnIcon />}
             />

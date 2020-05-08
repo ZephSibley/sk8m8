@@ -60,7 +60,7 @@ const MapScreen = () => {
             <div className='map-options'>
                 <FormControlLabel
                     className={formClasses.standardSpacing}
-                    control={
+                    control={ window.localStorage.getItem('token') ?
                         <Button
                             onClick={toggleCreateMarkerForm}
                             variant="outlined"
@@ -68,6 +68,15 @@ const MapScreen = () => {
                             component="span"
                         >
                             Create a Marker 
+                        </Button>
+                        :
+                        <Button
+                            onClick={e => {window.location.href = "#/login"}}
+                            variant="outlined"
+                            color="primary"
+                            component="span"
+                        >
+                            Log in / Sign up
                         </Button>
                     }
                 />

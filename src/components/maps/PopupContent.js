@@ -62,15 +62,14 @@ const PopupContent = props => {
         ).then(response => 
             updateMarkerDetails(response.data)
         ).catch(e => {
-            console.log(e.response.status)
-            if (e.response && e.response.status === 401) {
+            e.response && e.response.status === 401 ?
                 updateMarkerDetails({
                     name: '',
                     locationCategory: <div><Link to='/login' label='Log in' /> or <Link to='/signup' label='sign up' /> to view marker details</div>,
                     username: '',
                 })
-            }
-            updateMarkerDetails(m =>  m.name = e.message)
+                :
+                updateMarkerDetails(m =>  {m.name = e.message; m.username = '';})
         });
     }, [props.requests, props.markerId]);
 

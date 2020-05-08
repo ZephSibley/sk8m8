@@ -84,7 +84,7 @@ const PopupContent = props => {
                         {markerDetails.locationCategory}
                     </Typography>
                     <Typography variant="subtitle2" color="textSecondary">
-                        {`Created by ${markerDetails.username}`}
+                        {markerDetails.username ? `Created by ${markerDetails.username}` : ''}
                     </Typography>
                 </CardContent>
                 {/*

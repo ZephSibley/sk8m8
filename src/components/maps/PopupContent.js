@@ -62,6 +62,7 @@ const PopupContent = props => {
         ).then(response => 
             updateMarkerDetails(response.data)
         ).catch(e => {
+            console.log(e.response.status)
             if (e.response && e.response.status === 401) {
                 updateMarkerDetails({
                     name: '',

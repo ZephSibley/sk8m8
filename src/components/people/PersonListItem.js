@@ -5,7 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import ChatIcon from '@material-ui/icons/Chat';
+// import ChatIcon from '@material-ui/icons/Chat';
 
 
 const PersonListItem = props => {

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import  CircularProgress from '@material-ui/core/CircularProgress'
 
 import UpdateStatusForm from '../ui/forms/UpdateStatusForm';
-import UploadAvatarForm from '../ui/forms/UploadAvatarForm';
+// import UploadAvatarForm from '../ui/forms/UploadAvatarForm';
 
 
 const UserCard = props => {

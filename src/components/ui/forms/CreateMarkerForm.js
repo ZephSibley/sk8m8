@@ -23,7 +23,6 @@ const CreateMarkerForm = props => {
     const [locationTypes, updateLocationTypes] = useState(
         <option>Loading...</option>
     );
-    const [success, setSuccess] = useState(false);
     const [submitError, setSubmitError] = useState([]);
 
     useEffect(() => {
@@ -88,7 +87,6 @@ const CreateMarkerForm = props => {
                             }
                         }
                     ).then(response => {
-                        setSuccess(true)
                         window.location.href = "/#/trickspot";
                     }).catch(err => {
                         setSubmitError(err.response ?  err.response.data : err.message);

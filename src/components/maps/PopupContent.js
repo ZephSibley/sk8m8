@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, } from '@material-ui/core/styles';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import IconButton from '@material-ui/core/IconButton';
+// import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+// import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+// import SkipNextIcon from '@material-ui/icons/SkipNext';
+
 
 
 const PopupContent = props => {
@@ -42,7 +43,6 @@ const PopupContent = props => {
     }));
 
     const classes = useStyles();
-    const theme = useTheme();
 
     const [markerDetails, updateMarkerDetails] = useState({
         name: 'Loading',

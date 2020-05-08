@@ -64,7 +64,7 @@ const PopupContent = props => {
             e.response && e.response.status === 401 ?
                 updateMarkerDetails({
                     name: '',
-                    locationCategory: <div><a href='/#/login'>Log in</a> or <a href='/#/signup'>sign up</a> to view marker details</div>,
+                    locationCategory: <div>Please <a href='/#/login'>Log in</a> or <a href='/#/signup'>sign up</a> to view marker details</div>,
                     username: '',
                 })
                 :

@@ -1,6 +1,7 @@
 import React, { useState, } from 'react';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
+import yellow from '@material-ui/core/colors/yellow';
 
 
 const MarkerStars = ({
@@ -42,8 +43,8 @@ const MarkerStars = ({
         <span>
             {starCount}
             {starred ?
-                <StarIcon onClick={unstarMarker} /> :
-                <StarBorderIcon onClick={starMarker} />
+                <StarIcon style={{ color: yellow[500] }} onClick={unstarMarker} /> :
+                <StarBorderIcon style={{ color: yellow[500] }} onClick={starMarker} />
             }
         </span>
     )

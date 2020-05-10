@@ -33,6 +33,11 @@ exports[`Basic Rendering 1`] = `
           focusable="false"
           onClick={[Function]}
           role="presentation"
+          style={
+            Object {
+              "color": "#ffeb3b",
+            }
+          }
           viewBox="0 0 24 24"
         >
           <path

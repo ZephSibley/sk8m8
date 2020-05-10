@@ -9,6 +9,11 @@ exports[`No stars 1`] = `
     focusable="false"
     onClick={[Function]}
     role="presentation"
+    style={
+      Object {
+        "color": "#ffeb3b",
+      }
+    }
     viewBox="0 0 24 24"
   >
     <path
@@ -31,6 +36,11 @@ exports[`Not starred by user 1`] = `
     focusable="false"
     onClick={[Function]}
     role="presentation"
+    style={
+      Object {
+        "color": "#ffeb3b",
+      }
+    }
     viewBox="0 0 24 24"
   >
     <path
@@ -49,6 +59,11 @@ exports[`Starred by user 1`] = `
     focusable="false"
     onClick={[Function]}
     role="presentation"
+    style={
+      Object {
+        "color": "#ffeb3b",
+      }
+    }
     viewBox="0 0 24 24"
   >
     <path

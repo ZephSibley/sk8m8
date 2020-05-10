@@ -41,11 +41,11 @@ const MarkerStars = ({
 
     return (
         <span>
-            {starCount}
             {starred ?
                 <StarIcon style={{ color: yellow[500] }} onClick={unstarMarker} /> :
                 <StarBorderIcon style={{ color: yellow[500] }} onClick={starMarker} />
             }
+            {starCount}
         </span>
     )
 }

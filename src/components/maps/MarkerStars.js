@@ -15,6 +15,7 @@ const MarkerStars = ({
         e.preventDefault()
         requests.post(
             `${process.env.REACT_APP_ENDPOINT}mapmarker/starmarker?markerId=${markerId}`,
+            null,
             {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`

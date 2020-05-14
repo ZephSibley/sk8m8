@@ -20,7 +20,6 @@ const MapScreen = () => {
     const [location, setLocation] = useState([
         null, null
     ]);
-    const [radius, setRadius] = useState(1);
     const [isLoading, setLoadingStatus] = useState(true);
     const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
@@ -37,10 +36,6 @@ const MapScreen = () => {
         setLoadingStatus(false);
     }
 
-    const handleRadiusChange = val => {
-        setRadius(val)
-    }
-
     const toggleCreateMarkerForm = () => {
         setShowCreateMarkerForm(prev => !prev);
     }
@@ -52,7 +47,6 @@ const MapScreen = () => {
                 <CircularProgress /> :
                 <Map 
                     location={location}
-                    radius={radius}
                     requests={axios}
                 />
             }
@@ -80,22 +74,6 @@ const MapScreen = () => {
                         </Button>
                     }
                 />
-                <FormControl className={formClasses.standardSpacing}>
-                    <InputLabel htmlFor="radius">Radius</InputLabel>
-                    <NativeSelect
-                        value={radius}
-                        onChange={e => handleRadiusChange(e.target.value)}
-                        inputProps={{ name: 'radius', id: 'radius' }}
-                    >
-                        <option value={0}>0</option>
-                        <option value={1}>1</option>
-                        <option value={5}>5</option>
-                        <option value={10}>10</option>
-                        <option value={25}>25</option>
-                        <option value={50}>50</option>
-                        <option value={100}>100</option>
-                    </NativeSelect>
-                </FormControl>
             </div>
 
             <SwipeableDrawer

@@ -11,7 +11,6 @@ import ErrorModal from '../ui/modals/ErrorModal';
 
 const LeafletMap = props => {
     // prop: location; array
-    // prop: radius; int
     // prop: requests; http client
 
     const [mapMarkers, setMapMarkers] = useState(null)
@@ -21,9 +20,9 @@ const LeafletMap = props => {
     }, []);
 
     useEffect(() => {
-        if (props.location && props.radius) {
+        if (props.location) {
             props.requests.get(
-                `${process.env.REACT_APP_ENDPOINT}Mapmarker/Find?latitude=${props.location[0]}&longitude=${props.location[1]}&radius=${props.radius}`,
+                `${process.env.REACT_APP_ENDPOINT}Mapmarker/Find?latitude=${props.location[0]}&longitude=${props.location[1]}&radius=100`,
                 {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -35,7 +34,7 @@ const LeafletMap = props => {
                 setMapMarkers(<ErrorModal error={e.message} />)
             );
         }
-    }, [props.location, props.radius, props.requests])
+    }, [props.location, props.requests])
 
     return (
         <Map 

@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import NativeSelect from '@material-ui/core/NativeSelect';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';

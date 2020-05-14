@@ -87,7 +87,7 @@ const CreateMarkerForm = props => {
                             }
                         }
                     ).then(response => {
-                        window.location.href = "/#/trickspot";
+                        window.location.href = "/#/";
                     }).catch(err => {
                         setSubmitError(err.response ?  err.response.data : err.message);
                         setSubmitting(false);

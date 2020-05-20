@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import CheckIcon from '@material-ui/icons/Check';
 
 import formStyles from '../../../styles/forms';
+import BackendValidationError from '../text/BackendValidationError';
 
 
-const UpdatePasswordForm = () => {
+const UpdatePasswordForm = ({ requests }) => {
     const formClasses = formStyles();
+
+    const [success, setSuccess] = useState(false);
+    const [submitError, setSubmitError] = useState('');
 
     const validationSchema = Yup.object().shape({
         password: Yup.string()
@@ -21,16 +26,33 @@ const UpdatePasswordForm = () => {
     return (
         <Formik
             initialValues={{
-                current_password: '',
+                oldPassword: '',
                 password: '',
                 confirm_password: '',
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) =>{
-                //console.log(values)
                 setSubmitting(true);
+                setSuccess(false);
+                requests.post(
+                    `${process.env.REACT_APP_ENDPOINT}account/changepassword`,
+                    values,
+                    {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    }
+                ).then(e =>{
+                    setSubmitting(false);
+                    setSuccess(true);
+                }).catch(err => {
+                    setSubmitting(false);
+                    if (err.response && err.response.status === 401) {
+                        setSubmitError("Incorrect Password")
+                    }
+                    setSubmitError(err.message || Object.values(JSON.parse(err)));
+                });
             }}
-        
             render={({
                 values,
                 errors,
@@ -45,7 +67,7 @@ const UpdatePasswordForm = () => {
                     onSubmit={handleSubmit}
                 >
                     <TextField
-                        name='current_password'
+                        name='oldPassword'
                         type='password'
                         label='current password'
                         onChange={handleChange}
@@ -86,6 +108,7 @@ const UpdatePasswordForm = () => {
                             errors.confirm_password : ''
                         }
                     />
+                    <BackendValidationError resp={submitError} />
                     <Button
                         variant="outlined"
                         color="primary"
@@ -95,7 +118,7 @@ const UpdatePasswordForm = () => {
                         className={formClasses.submit}
                         disabled={isSubmitting || !isValid}
                     >
-                        Update Password
+                        {success ? <CheckIcon /> : "Update Password"}
                     </Button>
                 </form>
             )}

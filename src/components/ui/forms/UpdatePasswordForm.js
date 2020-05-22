@@ -16,6 +16,8 @@ const UpdatePasswordForm = ({ requests }) => {
     const [submitError, setSubmitError] = useState('');
 
     const validationSchema = Yup.object().shape({
+        oldPassword: Yup.string()
+            .required("Please enter your current password"),
         password: Yup.string()
             .min(6, "min. 6 characters")
             .required("Please enter your password"),
@@ -72,12 +74,12 @@ const UpdatePasswordForm = ({ requests }) => {
                         label='current password'
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.password}
+                        value={values.oldPassword}
                         margin='normal'
-                        error={errors.password && touched.password}
+                        error={errors.oldPassword && touched.oldPassword}
                         helperText={
-                            errors.password && touched.password ?
-                            errors.password : ''
+                            errors.oldPassword && touched.oldPassword ?
+                            errors.oldPassword : ''
                         }
                     />
                     <TextField

@@ -46,9 +46,9 @@ const PopupContent = props => {
     const classes = useStyles();
 
     const [markerDetails, updateMarkerDetails] = useState({
-        name: 'Loading',
+        name: <CircularProgress />,
         locationCategory: '',
-        username: <CircularProgress />,
+        username: '',
         starCount: 0,
         hasStarred: false,
     })
@@ -73,7 +73,7 @@ const PopupContent = props => {
                     hasStarred: false,
                 })
                 :
-                updateMarkerDetails(m =>  {m.name = e.message; m.username = '';})
+                updateMarkerDetails(m => m.name = e.message)
         });
     }, [props.requests, props.markerId]);
 

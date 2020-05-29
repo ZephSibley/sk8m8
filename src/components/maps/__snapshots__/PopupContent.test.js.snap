@@ -13,7 +13,31 @@ exports[`Basic Rendering 1`] = `
       <h5
         className="MuiTypography-root MuiTypography-h5"
       >
-        Loading
+        <div
+          className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
+            }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
+          >
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20.2}
+              strokeWidth={3.6}
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </h5>
       <h6
         className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
@@ -23,7 +47,7 @@ exports[`Basic Rendering 1`] = `
       <h6
         className="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
       >
-        Created by [object Object]
+        
       </h6>
       <span>
         <svg

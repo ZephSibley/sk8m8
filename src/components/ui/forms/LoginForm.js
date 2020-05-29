@@ -42,7 +42,9 @@ const LoginForm = ({ requests }) => {
                         window.location.href = "/"
                     }).catch(err => {
                         setSubmitting(false);
-                        setSubmitError(err.message || Object.values(JSON.parse(err)));
+                        err.response && err.response.status === 401 ?
+                            setSubmitError("incorrect email or password") :
+                            setSubmitError(err.message || Object.values(JSON.parse(err)));
                     });
                 }}
 

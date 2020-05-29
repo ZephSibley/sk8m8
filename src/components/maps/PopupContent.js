@@ -61,8 +61,10 @@ const PopupContent = props => {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
             }
-        ).then(response => 
-            updateMarkerDetails(response.data)
+        ).then(response =>
+            response.data !== null ?
+                updateMarkerDetails(response.data)
+                : updateMarkerDetails(m => m.name = "Something went wrong")
         ).catch(e => {
             e.response && e.response.status === 401 ?
                 updateMarkerDetails({

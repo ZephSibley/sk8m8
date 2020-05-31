@@ -44,7 +44,10 @@ const formStyles = makeStyles(theme => ({
         marginBottom: 0,
         letterSpacing: 1,
         padding: 10,
-    }
+    },
+    minimalSpacing: {
+        margin: theme.spacing(1)
+    },
 }));
 
 export default formStyles

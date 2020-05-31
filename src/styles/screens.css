@@ -21,8 +21,8 @@
   }
 
 .map-options {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
 }

@@ -12,6 +12,7 @@ import ErrorModal from '../ui/modals/ErrorModal';
 const LeafletMap = props => {
     // prop: location; array
     // prop: requests; http client
+    // prop: zoomLevel; int
 
     const [mapMarkers, setMapMarkers] = useState(null)
 
@@ -47,7 +48,7 @@ const LeafletMap = props => {
                 position: 'absolute',
                 zIndex: -1,
             }}
-            zoom={14}
+            zoom={props.zoomLevel}
         >
             <TileLayer
                 url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

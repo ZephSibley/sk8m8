@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
 
 import '../styles/screens.css'
@@ -10,27 +9,38 @@ import locate from '../utils/browser/locate';
 import Map from '../components/maps/LeafletMap';
 import CreateMarkerForm from '../components/ui/forms/CreateMarkerForm';
 import formStyles from '../styles/forms';
+import getGeoPerms from '../utils/browser/getGeoPerms';
+import geoPermsEnum from '../utils/enums/geoPerms';
 
 
 const MapScreen = () => {
     // Marker format TBD
+    const [geoPerms, setGeoPerms] = useState(geoPermsEnum.UNKNOWN)
     const [location, setLocation] = useState([
-        null, null
+        51.8126, 5.8372
     ]);
-    const [isLoading, setLoadingStatus] = useState(true);
     const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
     useEffect(() => {
-        getLocation();
-    }, []);
+        negotiateGeoPerms()
+        if (geoPerms === geoPermsEnum.GRANTED) {
+            getLocation();
+        }
+    }, [geoPerms]);
+
+    const negotiateGeoPerms = async () => {
+        setGeoPerms(await getGeoPerms());
+    }
 
     const getLocation = async () => {
         const { latitude, longitude } = await locate()
-        setLocation([
-            latitude,
-            longitude
-        ]);
-        setLoadingStatus(false);
+        // If we get null the user probably blocked geolocation
+        if (latitude !== null && longitude !== null) {
+            setLocation([
+                latitude,
+                longitude
+            ]);
+        }
     }
 
     const toggleCreateMarkerForm = () => {
@@ -40,30 +50,27 @@ const MapScreen = () => {
     const formClasses = formStyles()
     return (
         <div className='screen'>
-            {isLoading ?
-                <CircularProgress /> :
-                <Map 
-                    location={location}
-                    requests={axios}
-                />
-            }
-
+            <Map
+                location={location}
+                requests={axios}
+                zoomLevel={geoPerms === geoPermsEnum.GRANTED ? 18 : 5}
+            />
             <div className='map-options'>
                 <FormControlLabel
-                    className={formClasses.standardSpacing}
-                    control={ window.localStorage.getItem('token') ?
+                    className={formClasses.minimalSpacing}
+                    control={window.localStorage.getItem('token') ?
                         <Button
                             onClick={toggleCreateMarkerForm}
-                            variant="outlined"
+                            variant="contained"
                             color="primary"
                             component="span"
                         >
-                            Create a Marker 
+                            Create a Marker
                         </Button>
                         :
                         <Button
-                            onClick={e => {window.location.href = "#/login"}}
-                            variant="outlined"
+                            onClick={e => { window.location.href = "#/login" }}
+                            variant="contained"
                             color="primary"
                             component="span"
                         >
@@ -71,6 +78,22 @@ const MapScreen = () => {
                         </Button>
                     }
                 />
+                {geoPerms !== geoPermsEnum.GRANTED ?
+                    <FormControlLabel
+                        className={formClasses.minimalSpacing}
+                        control={
+                            <Button
+                                onClick={getLocation}
+                                variant="contained"
+                                color="primary"
+                                component="span"
+                            >
+                                Show My Location
+                        </Button>
+                        } />
+                    :
+                    ""
+                }
             </div>
 
             <SwipeableDrawer

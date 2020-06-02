@@ -16,9 +16,7 @@ import geoPermsEnum from '../utils/enums/geoPerms';
 const MapScreen = () => {
     // Marker format TBD
     const [geoPerms, setGeoPerms] = useState(geoPermsEnum.UNKNOWN)
-    const [location, setLocation] = useState([
-        51.8126, 5.8372
-    ]);
+    const [location, setLocation] = useState(null);
     const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
     useEffect(() => {
@@ -41,6 +39,7 @@ const MapScreen = () => {
                 longitude
             ]);
         }
+        negotiateGeoPerms();
     }
 
     const toggleCreateMarkerForm = () => {

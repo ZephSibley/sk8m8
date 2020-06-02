@@ -40,7 +40,7 @@ const LeafletMap = props => {
     return (
         <Map 
             center={props.location ? 
-                props.location : [51.26829, -1.087]
+                props.location : [51.8126, 5.8372]
             }
             style={{
                 width: '100%',

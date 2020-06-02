@@ -16,13 +16,18 @@ import geoPermsEnum from '../utils/enums/geoPerms';
 const MapScreen = () => {
     // Marker format TBD
     const [geoPerms, setGeoPerms] = useState(geoPermsEnum.UNKNOWN)
-    const [location, setLocation] = useState(null);
+    const [location, setLocation] = useState([51.8126, 5.8372]);
     const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
     useEffect(() => {
+        console.log("use")
         negotiateGeoPerms()
         if (geoPerms === geoPermsEnum.GRANTED) {
-            getLocation();
+            getLocation().then(result => {
+                if (result[0] !== null && result[1] !== null) {
+                    setLocation(result);
+                }
+            }).catch(e => console.log(e));
         }
     }, [geoPerms]);
 
@@ -31,15 +36,10 @@ const MapScreen = () => {
     }
 
     const getLocation = async () => {
-        const { latitude, longitude } = await locate()
-        // If we get null the user probably blocked geolocation
-        if (latitude !== null && longitude !== null) {
-            setLocation([
-                latitude,
-                longitude
-            ]);
-        }
+        console.log("get")
+        const location = await locate()
         negotiateGeoPerms();
+        if (location) {return location}
     }
 
     const toggleCreateMarkerForm = () => {

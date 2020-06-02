@@ -10,11 +10,7 @@ const PeopleScreen = () => {
     ]);
 
     const getLocation = async () => {
-        const { latitude, longitude } = await locate()
-        setLocation([
-            latitude,
-            longitude
-        ]);
+        setLocation(await locate());
     }
 
     useEffect(() => {

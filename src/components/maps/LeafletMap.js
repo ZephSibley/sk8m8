@@ -35,13 +35,12 @@ const LeafletMap = props => {
                 setMapMarkers(<ErrorModal error={e.message} />)
             );
         }
+        console.log(props.location)
     }, [props.location, props.requests])
 
     return (
         <Map 
-            center={props.location ? 
-                props.location : [51.8126, 5.8372]
-            }
+            center={props.location}
             style={{
                 width: '100%',
                 height: '100%',

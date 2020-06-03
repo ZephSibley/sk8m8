@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useEffect, useState, } from 'react';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import yellow from '@material-ui/core/colors/yellow';
@@ -11,6 +11,10 @@ const MarkerStars = ({
     hasStarred
 }) => {
     const [starred, setStarred] = useState(hasStarred);
+
+    useEffect(() => {
+        setStarred(hasStarred)
+    }, [hasStarred]);
 
     const starMarker = e => {
         e.preventDefault()

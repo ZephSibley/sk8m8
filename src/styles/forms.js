@@ -48,6 +48,22 @@ const formStyles = makeStyles(theme => ({
     minimalSpacing: {
         margin: theme.spacing(1)
     },
+    modal: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '25px',
+        maxHeight: '90%'
+    },
+    modalContent: {
+        width: '70%',
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+        maxHeight: '100%',
+        overflow: 'scroll',
+    },
 }));
 
 export default formStyles

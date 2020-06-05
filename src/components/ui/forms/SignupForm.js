@@ -3,10 +3,11 @@ import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 
 import formStyles from '../../../styles/forms';
 import BackendValidationError from '../text/BackendValidationError';
-import TsCsModal from '../modals/TsCsModal';
+import TsCs from '../text/TsCs';
 
 const SignupForm = ({ requests }) => {
     const formClasses = formStyles();
@@ -146,7 +147,24 @@ const SignupForm = ({ requests }) => {
                                 }
                             />
                             <BackendValidationError resp={submitError} />
-                            <TsCsModal open={showTsCs} />
+                            <Modal
+                                className={formClasses.modal}
+                                aria-labelledby="TsCs modal"
+                                aria-describedby="application terms and conditions"
+                                open={showTsCs}
+                            >
+                                <div className={formClasses.modalContent}>
+                                    <TsCs />
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        component="span"
+                                        onClick={e => setShowTsCs(false)}
+                                    >
+                                        OK
+                                    </Button>
+                                </div>
+                            </Modal>
                             <label>
                                 <Field type="checkbox" name="terms" />
                                 <Button color="primary" onClick={ e => {  setShowTsCs(true) } }> terms and conditions.</Button>

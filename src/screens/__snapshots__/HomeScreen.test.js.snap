@@ -67,7 +67,7 @@ exports[`Basic Rendering 1`] = `
     >
       <div>
         <form
-          className="makeStyles-textFieldForm-88"
+          className="makeStyles-textFieldForm-3"
           onSubmit={[Function]}
         >
           <div
@@ -102,7 +102,7 @@ exports[`Basic Rendering 1`] = `
             className="MuiFormHelperText-root Mui-error"
           />
           <button
-            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-92 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+            className="MuiButtonBase-root MuiButton-root makeStyles-pullRight-7 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
             disabled={true}
             margin="normal"
             onBlur={[Function]}
@@ -306,7 +306,7 @@ exports[`Basic Rendering 1`] = `
                   
                 </div>
                 <button
-                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-90 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-5 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
                   disabled={true}
                   margin="normal"
                   onBlur={[Function]}
@@ -519,7 +519,7 @@ exports[`Basic Rendering 1`] = `
                   
                 </pre>
                 <button
-                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-90 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
+                  className="MuiButtonBase-root MuiButton-root makeStyles-submit-5 MuiButton-outlined MuiButton-outlinedPrimary Mui-disabled Mui-disabled"
                   disabled={true}
                   margin="normal"
                   onBlur={[Function]}

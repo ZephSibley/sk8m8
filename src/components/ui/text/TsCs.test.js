@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow  } from 'enzyme';
-import ErrorModal from './ErrorModal';
+import TsCs from './TsCs';
 
 test('Error Message Renders', () => {
     const component = shallow(
-        <ErrorModal
+        <TsCs
             open={true}
         />
     );

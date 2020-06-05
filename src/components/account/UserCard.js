@@ -29,13 +29,17 @@ const UserCard = props => {
             }
         ).then(response => 
             updateUserDetails(response.data)
-        ).catch(err =>
+        ).catch(err => {
+            if (err.response && err.response.status === 401) {
+                window.localStorage.removeItem('token');
+                window.location.reload();
+            }
             updateUserDetails({
                 username: 'Something went wrong D:',
                 avatar: '/',
                 status: err.message
             })
-        );          
+        });
     }, [props.requests])
 
     return (

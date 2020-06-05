@@ -30,7 +30,12 @@ const PeopleScreen = () => {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
                 }
-            )
+            ).catch(err => {
+                if (err.response && err.response.status === 401) {
+                    window.localStorage.removeItem('token');
+                    window.location.reload();
+                }
+            })
         }
     }, [location])
     

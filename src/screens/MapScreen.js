@@ -20,7 +20,6 @@ const MapScreen = () => {
     const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
     useEffect(() => {
-        console.log("use")
         negotiateGeoPerms()
         if (geoPerms === geoPermsEnum.GRANTED) {
             getLocation().then(result => {
@@ -36,7 +35,6 @@ const MapScreen = () => {
     }
 
     const getLocation = async () => {
-        console.log("get")
         const location = await locate()
         negotiateGeoPerms();
         if (location) {return location}

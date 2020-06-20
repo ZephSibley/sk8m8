@@ -35,7 +35,6 @@ const LeafletMap = props => {
                 setMapMarkers(<ErrorModal error={e.message} />)
             );
         }
-        console.log(props.location)
     }, [props.location, props.requests])
 
     return (

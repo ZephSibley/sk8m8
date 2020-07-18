@@ -21,7 +21,6 @@ const MapScreen = () => {
 
     const getLocation = useCallback(
         async () => {
-            console.log('getlocation')
             const location = await locate()
             negotiateGeoPerms();
             if (location) { return location }
@@ -38,7 +37,6 @@ const MapScreen = () => {
     }
 
     useEffect(() => {
-        console.log('useeffect')
         negotiateGeoPerms()
         if (geoPerms === geoPermsEnum.GRANTED) {
             getLocation().then(result => {

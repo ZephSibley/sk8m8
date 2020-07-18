@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, } from 'react';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
@@ -19,7 +19,26 @@ const MapScreen = () => {
     const [location, setLocation] = useState([51.8126, 5.8372]);
     const [showCreateMarkerForm, setShowCreateMarkerForm] = useState(false);
 
+    const getLocation = useCallback(
+        async () => {
+            console.log('getlocation')
+            const location = await locate()
+            negotiateGeoPerms();
+            if (location) { return location }
+        },
+        []
+    )
+
+    const negotiateGeoPerms = async () => {
+        setGeoPerms(await getGeoPerms());
+    }
+
+    const toggleCreateMarkerForm = () => {
+        setShowCreateMarkerForm(prev => !prev);
+    }
+
     useEffect(() => {
+        console.log('useeffect')
         negotiateGeoPerms()
         if (geoPerms === geoPermsEnum.GRANTED) {
             getLocation().then(result => {
@@ -28,21 +47,7 @@ const MapScreen = () => {
                 }
             }).catch(e => console.log(e));
         }
-    }, [geoPerms]);
-
-    const negotiateGeoPerms = async () => {
-        setGeoPerms(await getGeoPerms());
-    }
-
-    const getLocation = async () => {
-        const location = await locate()
-        negotiateGeoPerms();
-        if (location) {return location}
-    }
-
-    const toggleCreateMarkerForm = () => {
-        setShowCreateMarkerForm(prev => !prev);
-    }
+    }, [geoPerms, getLocation,]);
 
     const formClasses = formStyles()
     return (

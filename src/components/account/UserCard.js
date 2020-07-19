@@ -61,7 +61,7 @@ const UserCard = props => {
                 //     </IconButton>
                 // }
                 title={userDetails.username}
-                subheader="avatars coming soon"
+                subheader=""
             />
             <CardContent>
                 <UpdateStatusForm 
